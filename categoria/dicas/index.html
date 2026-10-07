@@ -4,438 +4,405 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dicas - Yamato Corp</title>
+    <meta name="description" content="">
+    
     
 
-    <meta name="description" content="Posts da categoria Dicas no Yamato Corp">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Dicas - Yamato Corp">
-    <meta property="og:description" content="Posts da categoria Dicas no Yamato Corp">
-    <meta property="og:site_name" content="Yamato Corp">
-    <link rel="canonical" href="https://yamatocorp.com.br/categoria/dicas/" />
-
-    
-    <meta name="twitter:card" content="summary">
-    
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
-
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
     
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Dicas - Yamato Corp",
-      "url": "https://yamatocorp.com.br/categoria/dicas/",
-      "description": "Artigos sobre Dicas no site Yamato Corp"
-    }
-    </script>
-
+    
 </head>
-<body class="d-flex flex-column min-vh-100">
-
-    <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #2b5c92;">
-        <div class="container py-1 py-lg-2">
-
-            <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
-                
-                    <span class="fs-4 tracking-wide">Yamato Corp</span>
-                
-            </a>
-
-            <button class="navbar-toggler border-0 shadow-none p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar menu de navegação">
-                <i class="bi bi-list text-white" style="font-size: 1.8rem;"></i>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav me-auto gap-1 gap-lg-3">
-                    
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/" style="font-size: 0.95rem;">Início</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/cultura-pop-e-manga/" style="font-size: 0.95rem;">Cultura Pop e Mangá</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/desafios-e-jogos/" style="font-size: 0.95rem;">Desafios e Jogos</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/dicas/" style="font-size: 0.95rem;">Dicas</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/mercado-de-arte/" style="font-size: 0.95rem;">Mercado de Arte</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/presentes/" style="font-size: 0.95rem;">Presentes</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/public/" style="font-size: 0.95rem;">Public</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/tecnologia-e-ferramentas/" style="font-size: 0.95rem;">Tecnologia e Ferramentas</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/tutoriais-e-aulas/" style="font-size: 0.95rem;">Tutoriais e Aulas</a>
-                        </li>
-                        
-                    
-                </ul>
-
-                <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();" style="width: 100%; max-width: 320px;">
-                    <div class="input-group">
-                        <input class="form-control border-0 shadow-none py-2 ps-3" type="search" id="searchInput" placeholder="Pesquisar por..." autocomplete="off" style="font-size: 0.95rem; border-radius: 4px 0 0 4px;">
-                        <span class="input-group-text bg-white border-0 text-muted pe-3" style="border-radius: 0 4px 4px 0;">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </div>
-
-                    <div id="searchResults" class="list-group position-absolute w-100 shadow-lg rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;"></div>
-                </form>
-
-            </div>
-        </div>
-    </nav>
-
-    <main class="container mt-5 mb-5 flex-grow-1">
-        <header class="mb-5 border-bottom pb-4">
-            <h1 class="h3 text-muted">Explorando a categoria:</h1>
-            <h2 class="display-5 fw-bold">Dicas</h2>
-        </header>
-
-        <div class="row">
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/onde-encontrar-mimos-exclusivos-para-eventos-infantis-na-capital-paulista/" class="text-decoration-none text-dark">Onde encontrar mimos exclusivos para eventos infantis na capital paulista</a>
-                        </h2>
-                        <p class="text-muted small mb-0">03/09/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/conflitos-institucionais-na-educacao-como-resolver/" class="text-decoration-none text-dark">Conflitos Institucionais na Educação: Como Resolver</a>
-                        </h2>
-                        <p class="text-muted small mb-0">16/08/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/compreendendo-por-que-autista-leve-e-pcd-na-legislacao-atual/">
-                        <img src="/static/uploads/compreendendo-por-que-autista-leve-e-pcd-na-legislacao-atual.jpg" alt="Compreendendo por que autista leve é PCD na legislação atual " class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" loading="lazy">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/compreendendo-por-que-autista-leve-e-pcd-na-legislacao-atual/" class="text-decoration-none text-dark">Compreendendo por que autista leve é PCD na legislação atual </a>
-                        </h2>
-                        <p class="text-muted small mb-0">12/06/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/dicas-para-encontrar-desenvolvedores-de-jogos-infantis-em-sao-paulo/">
-                        <img src="/static/uploads/dicas-para-encontrar-desenvolvedores-de-jogos-infantis-em-sao-paulo.jpg" alt="Dicas para encontrar desenvolvedores de jogos infantis em São Paulo" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" loading="lazy">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/dicas-para-encontrar-desenvolvedores-de-jogos-infantis-em-sao-paulo/" class="text-decoration-none text-dark">Dicas para encontrar desenvolvedores de jogos infantis em São Paulo</a>
-                        </h2>
-                        <p class="text-muted small mb-0">29/05/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/coins-fc-26-organizacao-digital-e-o-controle-de-saldos-em-plataformas-online/" class="text-decoration-none text-dark">COINS FC 26: Organização Digital e o Controle de Saldos em Plataformas Online</a>
-                        </h2>
-                        <p class="text-muted small mb-0">03/04/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/onde-buscar-apoio-fonoaudiologico-para-o-desenvolvimento-infantil/" class="text-decoration-none text-dark">Onde buscar apoio fonoaudiológico para o desenvolvimento infantil</a>
-                        </h2>
-                        <p class="text-muted small mb-0">01/04/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/10-fatos-surpreendentes-sobre-a-nutricao-infantil-divertidos/" class="text-decoration-none text-dark">10 Fatos Surpreendentes Sobre a Nutrição Infantil Divertidos</a>
-                        </h2>
-                        <p class="text-muted small mb-0">06/03/2026</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/rotina-matinal-infantil-como-comecar-o-dia-com-organizacao-e-leveza/">
-                        <img src="/static/uploads/rotina-matinal-infantil.jpg" alt="Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" loading="lazy">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/rotina-matinal-infantil-como-comecar-o-dia-com-organizacao-e-leveza/" class="text-decoration-none text-dark">Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza</a>
-                        </h2>
-                        <p class="text-muted small mb-0">15/12/2025</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/modelos-exclusivos-para-colecionadores-de-veiculos/">
-                        <img src="/static/uploads/unnamed.png" alt="Modelos Exclusivos para Colecionadores de Veículos: Uma Paixão em Miniatura" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" loading="lazy">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/modelos-exclusivos-para-colecionadores-de-veiculos/" class="text-decoration-none text-dark">Modelos Exclusivos para Colecionadores de Veículos: Uma Paixão em Miniatura</a>
-                        </h2>
-                        <p class="text-muted small mb-0">23/07/2025</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 bg-light">
-                    
-                    <a href="/a-importancia-da-moradia-digna-para-o-desenvolvimento-das-criancas/">
-                        <img src="/static/uploads/mulher-feliz-com-chaves-com-fundo-de-casa-nova-propriedade-arrendamento-imovel-para-realocacao-leasing-seguro-e-compra-compra-ou-aluguel_165330-7754.avif" alt="A Importância da Moradia Digna para o Desenvolvimento das Crianças" class="card-img-top rounded-top" style="height: 200px; object-fit: cover;" loading="lazy">
-                    </a>
-                    
-                    <div class="card-body">
-                        <h2 class="h5 card-title">
-                            <a href="/a-importancia-da-moradia-digna-para-o-desenvolvimento-das-criancas/" class="text-decoration-none text-dark">A Importância da Moradia Digna para o Desenvolvimento das Crianças</a>
-                        </h2>
-                        <p class="text-muted small mb-0">21/06/2025</p>
-                    </div>
-                </div>
-            </div>
-            
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
         </div>
 
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/dicas/" style="color:#ffffff;">Dicas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
         
-        <nav aria-label="Navegação de páginas" class="mt-5">
-            <ul class="pagination justify-content-center">
-                
-                <li class="page-item disabled"><span class="page-link text-muted bg-light">Página 1 de 2</span></li>
-                
-                <li class="page-item"><a class="page-link text-dark" href="/categoria/dicas/page/2/">Mais Antigos →</a></li>
-                
-            </ul>
-        </nav>
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
         
-    </main>
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
 
-    <footer class="text-light py-5 mt-auto" style="background-color: #212529;">
-        <div class="container">
-            <div class="row gy-4 text-center text-md-start">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
 
-                <div class="col-lg-5 pe-lg-5">
-                    <p class="text-uppercase fw-bold mb-3 d-flex align-items-center justify-content-center justify-content-md-start">
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container">
+    <header style="margin-bottom: 3rem; text-align: center;">
+        <h1 class="page-title" style="border: none; padding: 0;">Dicas</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem;">Veja todas as notícias desta categoria.</p>
+    </header>
+
+    <div class="gs-grid">
+        
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/onde-encontrar-mimos-exclusivos-para-eventos-infantis-na-capital-paulista/">
+                    <div class="gs-card__img-wrapper">
                         
-                            Yamato Corp
+                            <div style="width: 100%; height: 100%; background: #333;"></div>
                         
-                    </p>
-
-                    <p class="text-light opacity-75 small lh-lg mb-0">
-                        
-                    </p>
-                </div>
-
-                <div class="col-lg-3">
-                    <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Navegação</p>
-                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        
-                            <li><a href="/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Início</a></li>
-                            
-                            <li><a href="/contato/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Contato</a></li>
-                            
-                            <li><a href="/politica-de-privacidade/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Política de Privacidade</a></li>
-                            
-                            <li><a href="/termos-de-uso/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Termos de Uso</a></li>
-                            
-                            <li><a href="/sobre/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Sobre</a></li>
-                            
-                        
-                    </ul>
-                </div>
-
-                <div class="col-lg-4">
-                    <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Siga-nos</p>
-                    <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
-
-                        
-
-                        
-
-                        
-
-                        
-
                     </div>
-                </div>
-
-            </div>
-
-            <hr class="mt-5 mb-4 border-secondary opacity-25">
-
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="small mb-0 opacity-75">
-                        Powered by Ankars
-                    </p>
-                </div>
-
-                <div class="col-md-6 text-center text-md-end">
-                    <ul class="list-inline mb-0">
+                    <h3 class="gs-card__title">Onde encontrar mimos exclusivos para eventos infantis na capital paulista</h3>
+                    <div class="gs-card__meta">
+                        03/09/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/conflitos-institucionais-na-educacao-como-resolver/">
+                    <div class="gs-card__img-wrapper">
                         
-                            
-                            
-
-                            
+                            <div style="width: 100%; height: 100%; background: #333;"></div>
                         
-                            
-                            
-
-                            
+                    </div>
+                    <h3 class="gs-card__title">Conflitos Institucionais na Educação: Como Resolver</h3>
+                    <div class="gs-card__meta">
+                        16/08/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/compreendendo-por-que-autista-leve-e-pcd-na-legislacao-atual/">
+                    <div class="gs-card__img-wrapper">
                         
-                            
-                            
-
-                            
+                            <img src="/static/uploads/compreendendo-por-que-autista-leve-e-pcd-na-legislacao-atual.jpg" alt="Compreendendo por que autista leve é PCD na legislação atual " loading="lazy">
                         
-                            
-                            
-
-                            
+                    </div>
+                    <h3 class="gs-card__title">Compreendendo por que autista leve é PCD na legislação atual </h3>
+                    <div class="gs-card__meta">
+                        12/06/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/dicas-para-encontrar-desenvolvedores-de-jogos-infantis-em-sao-paulo/">
+                    <div class="gs-card__img-wrapper">
                         
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+                            <img src="/static/uploads/dicas-para-encontrar-desenvolvedores-de-jogos-infantis-em-sao-paulo.jpg" alt="Dicas para encontrar desenvolvedores de jogos infantis em São Paulo" loading="lazy">
+                        
+                    </div>
+                    <h3 class="gs-card__title">Dicas para encontrar desenvolvedores de jogos infantis em São Paulo</h3>
+                    <div class="gs-card__meta">
+                        29/05/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/coins-fc-26-organizacao-digital-e-o-controle-de-saldos-em-plataformas-online/">
+                    <div class="gs-card__img-wrapper">
+                        
+                            <div style="width: 100%; height: 100%; background: #333;"></div>
+                        
+                    </div>
+                    <h3 class="gs-card__title">COINS FC 26: Organização Digital e o Controle de Saldos em Plataformas Online</h3>
+                    <div class="gs-card__meta">
+                        03/04/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/onde-buscar-apoio-fonoaudiologico-para-o-desenvolvimento-infantil/">
+                    <div class="gs-card__img-wrapper">
+                        
+                            <div style="width: 100%; height: 100%; background: #333;"></div>
+                        
+                    </div>
+                    <h3 class="gs-card__title">Onde buscar apoio fonoaudiológico para o desenvolvimento infantil</h3>
+                    <div class="gs-card__meta">
+                        01/04/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/10-fatos-surpreendentes-sobre-a-nutricao-infantil-divertidos/">
+                    <div class="gs-card__img-wrapper">
+                        
+                            <div style="width: 100%; height: 100%; background: #333;"></div>
+                        
+                    </div>
+                    <h3 class="gs-card__title">10 Fatos Surpreendentes Sobre a Nutrição Infantil Divertidos</h3>
+                    <div class="gs-card__meta">
+                        06/03/2026
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/rotina-matinal-infantil-como-comecar-o-dia-com-organizacao-e-leveza/">
+                    <div class="gs-card__img-wrapper">
+                        
+                            <img src="/static/uploads/rotina-matinal-infantil.jpg" alt="Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza" loading="lazy">
+                        
+                    </div>
+                    <h3 class="gs-card__title">Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza</h3>
+                    <div class="gs-card__meta">
+                        15/12/2025
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/modelos-exclusivos-para-colecionadores-de-veiculos/">
+                    <div class="gs-card__img-wrapper">
+                        
+                            <img src="/static/uploads/unnamed.png" alt="Modelos Exclusivos para Colecionadores de Veículos: Uma Paixão em Miniatura" loading="lazy">
+                        
+                    </div>
+                    <h3 class="gs-card__title">Modelos Exclusivos para Colecionadores de Veículos: Uma Paixão em Miniatura</h3>
+                    <div class="gs-card__meta">
+                        23/07/2025
+                    </div>
+                </a>
+            </article>
+            
+            <article class="gs-card" style="grid-column: span 12; @media(min-width: 768px){ grid-column: span 4; }">
+                <a href="/a-importancia-da-moradia-digna-para-o-desenvolvimento-das-criancas/">
+                    <div class="gs-card__img-wrapper">
+                        
+                            <img src="/static/uploads/mulher-feliz-com-chaves-com-fundo-de-casa-nova-propriedade-arrendamento-imovel-para-realocacao-leasing-seguro-e-compra-compra-ou-aluguel_165330-7754.avif" alt="A Importância da Moradia Digna para o Desenvolvimento das Crianças" loading="lazy">
+                        
+                    </div>
+                    <h3 class="gs-card__title">A Importância da Moradia Digna para o Desenvolvimento das Crianças</h3>
+                    <div class="gs-card__meta">
+                        21/06/2025
+                    </div>
+                </a>
+            </article>
+            
+        
+    </div>
 
     
+    <nav class="pagination">
+        
+        
+            <a href="/categoria/dicas/page/2/">Próxima</a>
+        
+    </nav>
+    
+</main>
 
-    <style>
-        .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
-        #searchResults::-webkit-scrollbar { width: 6px; }
-        #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
-    </style>
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const searchResults = document.getElementById('searchResults');
-            let postsData = null;
-            let carregandoBanco = false;
-
-            if(searchInput && searchResults) {
-
-                // SCRIPT DE PESQUISA OTIMIZADO (Lazy Fetch)
-                searchInput.addEventListener('focus', async () => {
-                    if (!postsData && !carregandoBanco) {
-                        carregandoBanco = true;
-                        try {
-                            const response = await fetch('/posts.json');
-                            if (response.ok) {
-                                postsData = await response.json();
-                            }
-                        } catch (error) {
-                            console.error("Erro ao carregar o banco de pesquisa.");
-                        }
-                    }
-                });
-
-                searchInput.addEventListener('input', (e) => {
-                    if (!postsData) return; // Se ainda não baixou, não faz nada
-
-                    const query = e.target.value.toLowerCase().trim();
-                    searchResults.innerHTML = '';
-
-                    if (query.length < 2) {
-                        searchResults.classList.add('d-none');
-                        return;
-                    }
-
-                    const filteredPosts = postsData.filter(post => post.title.toLowerCase().includes(query));
-
-                    if (filteredPosts.length > 0) {
-                        filteredPosts.forEach(post => {
-                            const link = document.createElement('a');
-                            link.href = `/${post.slug}/`;
-                            link.className = 'list-group-item list-group-item-action d-flex align-items-center border-0 border-bottom';
-                            const imgHtml = post.image ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">` : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
-                            link.innerHTML = `${imgHtml}<div class="overflow-hidden"><h6 class="mb-0 text-truncate text-dark fw-bold" style="font-size: 0.9rem;">${post.title}</h6><small class="text-muted" style="font-size: 0.75rem;">${post.date}</small></div>`;
-                            searchResults.appendChild(link);
-                        });
-                        searchResults.classList.remove('d-none');
-                    } else {
-                        searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small">Nenhum artigo encontrado.</div>';
-                        searchResults.classList.remove('d-none');
-                    }
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                        searchResults.classList.add('d-none');
-                    }
-                });
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
             }
         });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    
+    });
+</script>
 </body>
 </html>

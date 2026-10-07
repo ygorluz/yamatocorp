@@ -4,455 +4,512 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yamato Corp</title>
-
     <meta name="description" content="">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Yamato Corp">
-    <meta property="og:description" content="">
-    <meta property="og:site_name" content="Yamato Corp">
-    <link rel="canonical" href="https://yamatocorp.com.br/" />
-
     
-    <meta name="twitter:card" content="summary">
     
 
-    
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
-
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
     
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Yamato Corp",
-      "url": "https://yamatocorp.com.br/",
-      "description": "",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://yamatocorp.com.br/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-    <style>
-        body { background-color: #f6f6f6; color: #333333; }
-        .custom-hover:hover { opacity: 1 !important; text-decoration: underline !important; }
-        #searchResults::-webkit-scrollbar { width: 6px; }
-        #searchResults::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
-
-        /* Estilos do Novo Layout Mosaico */
-        .bg-gradient-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
-        }
-        .img-zoom { transition: transform 0.4s ease; }
-        .hero-card:hover .img-zoom { transform: scale(1.05); }
-        .badge-editorial { font-size: 0.75rem; background-color: white; color: #2B5C92; border: 1px solid #2B5C92; border-radius: 2px; }
-        .text-editorial { color: #2B5C92; }
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    </style>
+    
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #2b5c92;">
-        <div class="container py-1 py-lg-2">
-
-            <a class="navbar-brand fw-bold d-flex align-items-center me-lg-5" href="/">
+            <a href="/" class="gs-header__logo">
                 
-                    <span class="fs-4 tracking-wide">Yamato Corp</span>
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
                 
             </a>
+        </div>
 
-            <button class="navbar-toggler border-0 shadow-none p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar menu de navegação">
-                <i class="bi bi-list text-white" style="font-size: 1.8rem;"></i>
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto gap-1 gap-lg-3">
-                    
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/" style="font-size: 0.95rem;">Início</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/cultura-pop-e-manga/" style="font-size: 0.95rem;">Cultura Pop e Mangá</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/desafios-e-jogos/" style="font-size: 0.95rem;">Desafios e Jogos</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/dicas/" style="font-size: 0.95rem;">Dicas</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/mercado-de-arte/" style="font-size: 0.95rem;">Mercado de Arte</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/presentes/" style="font-size: 0.95rem;">Presentes</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/public/" style="font-size: 0.95rem;">Public</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/tecnologia-e-ferramentas/" style="font-size: 0.95rem;">Tecnologia e Ferramentas</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-white fw-bold" href="/categoria/tutoriais-e-aulas/" style="font-size: 0.95rem;">Tutoriais e Aulas</a>
-                        </li>
-                        
-                    
-                </ul>
-                <form class="d-flex position-relative mt-3 mt-lg-0" onsubmit="event.preventDefault();" style="width: 100%; max-width: 320px;">
-                    <div class="input-group">
-                        <input class="form-control border-0 shadow-none py-2 ps-3" type="search" id="searchInput" placeholder="Pesquisar por..." autocomplete="off" style="font-size: 0.95rem; border-radius: 4px 0 0 4px;">
-                        <span class="input-group-text bg-white border-0 text-muted pe-3" style="border-radius: 0 4px 4px 0;">
-                            <i class="bi bi-search"></i>
-                        </span>
-                    </div>
-                    <div id="searchResults" class="list-group position-absolute w-100 shadow-lg rounded-3 d-none" style="top: 110%; z-index: 1000; max-height: 350px; overflow-y: auto;"></div>
-                </form>
-            </div>
         </div>
-    </nav>
+    </div>
+</header>
 
-    <main class="container mt-4 mb-5 flex-grow-1">
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
 
-        
-
-        
-            
-        
-
-        
-
-        
-            <h2 class="fw-bold mb-4 border-bottom pb-2 text-dark mt-5 pt-4">Novos Artigos</h2>
-            <div class="row g-4 mb-4">
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/olha-como-o-traco-dos-animes-evoluiu-f09f98b1/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/Olha-como-o-traco-dos-animes-evoluiu.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/olha-como-o-traco-dos-animes-evoluiu-f09f98b1/" class="text-decoration-none text-dark custom-hover">Olha como o traço dos animes evoluiu 😱</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 15/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/velas-e-saltos_altos-desenhos-de-palito-escondidos-de-tinta-colora-ou-morre/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/VELAS-E-SALTOS_ALTOS-DESENHOS-DE-PALITO-ESCONDIDOS-DE-TINTA-Colora.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/velas-e-saltos_altos-desenhos-de-palito-escondidos-de-tinta-colora-ou-morre/" class="text-decoration-none text-dark custom-hover">VELAS E SALTOS_ALTOS, DESENHOS DE PALITO ESCONDIDOS DE TINTA (Colora ou Morre)</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 15/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/vou-te-ensinar-a-pintar-bombons-de-chocolate-fica-incrivelmente-lindo-e-delicioso/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/Vou-te-ensinar-a-pintar-bombons-de-chocolate-Fica-incrivelmente.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/vou-te-ensinar-a-pintar-bombons-de-chocolate-fica-incrivelmente-lindo-e-delicioso/" class="text-decoration-none text-dark custom-hover">Vou te ensinar a pintar bombons de chocolate! Fica incrivelmente lindo e delicioso.</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 15/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/como-escrever-roteiro-de-quadrinhos-e-mangas-guia-pratico-para-aprender-a-desenhar/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/Como-escrever-ROTEIRO-de-QUADRINHOS-e-MANGAS-Guia-pratico.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/como-escrever-roteiro-de-quadrinhos-e-mangas-guia-pratico-para-aprender-a-desenhar/" class="text-decoration-none text-dark custom-hover">Como escrever ROTEIRO de QUADRINHOS e MANGÁS + Guia prático para aprender a desenhar</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 15/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/como-pintar-animes-e-misturar-cores-com-lapis-de-cor-pele-cabelo-e-texturas/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/Como-PINTAR-ANIMES-e-MISTURAR-CORES-com-LAPIS-DE-COR.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/como-pintar-animes-e-misturar-cores-com-lapis-de-cor-pele-cabelo-e-texturas/" class="text-decoration-none text-dark custom-hover">Como PINTAR ANIMES e MISTURAR CORES com LÁPIS DE COR !!(pele, cabelo e texturas!!)</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 14/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/colorindo-os-novos-desenhos-da-maria-clara-e-jp/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/Colorindo-os-novos-desenhos-da-Maria-Clara-e-JP.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/colorindo-os-novos-desenhos-da-maria-clara-e-jp/" class="text-decoration-none text-dark custom-hover">Colorindo os novos desenhos da Maria Clara e JP.</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 14/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center gap-3 h-100">
-                        
-                        <a href="/vamos-colorir-o-wichi-aprenda-as-cores-um-heroi-do-coracao/" class="flex-shrink-0 overflow-hidden shadow-sm">
-                            <img src="/static/uploads/Vamos-colorir-o-Wichi-Aprenda-as-cores-Um.jpg" alt="None" title="None" class="hero-card img-zoom" style="width: 120px; height: 85px; object-fit: cover;" loading="lazy">
-                        </a>
-                        
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 class="fw-bold mb-1 lh-sm line-clamp-2" style="font-size: 0.95rem;">
-                                <a href="/vamos-colorir-o-wichi-aprenda-as-cores-um-heroi-do-coracao/" class="text-decoration-none text-dark custom-hover">Vamos colorir o Wichi | Aprenda as cores | Um herói do coração</a>
-                            </h3>
-                            <div class="text-muted fw-semibold d-flex align-items-center gap-2 mt-1" style="font-size: 0.75rem;">
-                                
-                                <span class="text-dark"><i class="bi bi-person-fill text-muted"></i> Braqueossáuro</span>
-                                <span><i class="bi bi-calendar3"></i> 14/10/2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        
-
-        
-        <nav aria-label="Navegação de páginas" class="mt-5 pt-4 border-top">
-            <ul class="pagination justify-content-center">
-                
-                <li class="page-item"><a class="page-link text-dark fw-bold border-0 bg-transparent" href="/page/13/"><i class="bi bi-arrow-left"></i> Mais Recentes</a></li>
-                
-                <li class="page-item disabled"><span class="page-link text-muted bg-transparent border-0 px-4">Página 14 de 14</span></li>
-                
-            </ul>
-        </nav>
-        
-
-    </main>
-
-    <footer class="text-light py-5 mt-auto" style="background-color: #212529;">
-        <div class="container">
-            <div class="row gy-4 text-center text-md-start">
-                <div class="col-lg-5 pe-lg-5">
-                    <p class="text-uppercase fw-bold mb-3 d-flex align-items-center justify-content-center justify-content-md-start">
-                        
-                            Yamato Corp
-                        
-                    </p>
-                    <p class="text-light opacity-75 small lh-lg mb-0">
-                        
-                    </p>
-                </div>
-                <div class="col-lg-3">
-                    <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Navegação</p>
-                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        
-                            <li><a href="/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Início</a></li>
-                            
-                            <li><a href="/contato/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Contato</a></li>
-                            
-                            <li><a href="/politica-de-privacidade/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Política de Privacidade</a></li>
-                            
-                            <li><a href="/termos-de-uso/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Termos de Uso</a></li>
-                            
-                            <li><a href="/sobre/" class="text-decoration-none text-light opacity-75 custom-hover"><i class="bi bi-chevron-right small me-1"></i> Sobre</a></li>
-                            
-                        
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <p class="text-uppercase fw-bold mb-3 text-white-50" style="font-size: 0.9rem; letter-spacing: 1px;">Siga-nos</p>
-                    <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-5 mb-4 border-secondary opacity-25">
-
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="small mb-0 opacity-75">
-                        Powered by Ankars
-                    </p>
-                </div>
-
-                <div class="col-md-6 text-center text-md-end">
-                    <ul class="list-inline mb-0">
-                        
-                            
-                            
-
-                            
-                        
-                            
-                            
-
-                            
-                        
-                            
-                            
-
-                            
-                        
-                            
-                            
-
-                            
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
     
+        <span>Yamato Corp</span>
+    
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const searchResults = document.getElementById('searchResults');
-            let postsData = null;
-            let carregandoBanco = false;
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
 
-            searchInput.addEventListener('focus', async () => {
-                if (!postsData && !carregandoBanco) {
-                    carregandoBanco = true;
-                    try {
-                        const response = await fetch('/posts.json');
-                        if (response.ok) {
-                            postsData = await response.json();
-                        }
-                    } catch (error) {
-                        console.error("Erro ao carregar o banco de pesquisa.");
-                    }
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
                 }
             });
-
-            searchInput.addEventListener('input', (e) => {
-                if (!postsData) return;
-
-                const query = e.target.value.toLowerCase().trim();
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
                 searchResults.innerHTML = '';
-
-                if (query.length < 2) {
-                    searchResults.classList.add('d-none');
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
                     return;
                 }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
 
-                const filteredPosts = postsData.filter(post =>
-                    post.title.toLowerCase().includes(query)
-                );
+<main style="max-width: 1400px; margin: 0 auto; overflow: hidden; padding-bottom: 3rem;">
+    
+        
+        <div class="gs-hero-carousel-wrapper">
+            <button class="gs-carousel-btn gs-carousel-prev" onclick="document.getElementById('main-carousel').scrollBy({left: -window.innerWidth * 0.7, behavior: 'smooth'})" aria-label="Anterior">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="gs-carousel-btn gs-carousel-next" onclick="document.getElementById('main-carousel').scrollBy({left: window.innerWidth * 0.7, behavior: 'smooth'})" aria-label="Próximo">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="gs-hero-carousel" id="main-carousel">
+                
+                <article class="gs-hero-slide">
+                    <a href="/olha-como-o-traco-dos-animes-evoluiu-f09f98b1/">
+                        
+                            <img src="/static/uploads/Olha-como-o-traco-dos-animes-evoluiu.jpg" alt="Olha como o traço dos animes evoluiu 😱">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Olha como o traço dos animes evoluiu 😱</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/velas-e-saltos_altos-desenhos-de-palito-escondidos-de-tinta-colora-ou-morre/">
+                        
+                            <img src="/static/uploads/VELAS-E-SALTOS_ALTOS-DESENHOS-DE-PALITO-ESCONDIDOS-DE-TINTA-Colora.jpg" alt="VELAS E SALTOS_ALTOS, DESENHOS DE PALITO ESCONDIDOS DE TINTA (Colora ou Morre)">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>VELAS E SALTOS_ALTOS, DESENHOS DE PALITO ESCONDIDOS DE TINTA (Colora ou Morre)</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/vou-te-ensinar-a-pintar-bombons-de-chocolate-fica-incrivelmente-lindo-e-delicioso/">
+                        
+                            <img src="/static/uploads/Vou-te-ensinar-a-pintar-bombons-de-chocolate-Fica-incrivelmente.jpg" alt="Vou te ensinar a pintar bombons de chocolate! Fica incrivelmente lindo e delicioso.">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Vou te ensinar a pintar bombons de chocolate! Fica incrivelmente lindo e delicioso.</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/como-escrever-roteiro-de-quadrinhos-e-mangas-guia-pratico-para-aprender-a-desenhar/">
+                        
+                            <img src="/static/uploads/Como-escrever-ROTEIRO-de-QUADRINHOS-e-MANGAS-Guia-pratico.jpg" alt="Como escrever ROTEIRO de QUADRINHOS e MANGÁS + Guia prático para aprender a desenhar">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Como escrever ROTEIRO de QUADRINHOS e MANGÁS + Guia prático para aprender a desenhar</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/como-pintar-animes-e-misturar-cores-com-lapis-de-cor-pele-cabelo-e-texturas/">
+                        
+                            <img src="/static/uploads/Como-PINTAR-ANIMES-e-MISTURAR-CORES-com-LAPIS-DE-COR.jpg" alt="Como PINTAR ANIMES e MISTURAR CORES com LÁPIS DE COR !!(pele, cabelo e texturas!!)">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Como PINTAR ANIMES e MISTURAR CORES com LÁPIS DE COR !!(pele, cabelo e texturas!!)</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+            </div>
+        </div>
 
-                if (filteredPosts.length > 0) {
-                    filteredPosts.forEach(post => {
-                        const link = document.createElement('a');
-                            const url = `/${post.slug}/`;
-                            link.href = url;
-                            link.className = 'list-group-item list-group-item-action d-flex align-items-center py-3 border-start-0 border-end-0 border-top-0';
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            
+            
 
-                        const imgHtml = post.image
-                            ? `<img src="${post.image}" class="rounded me-3 object-fit-cover" style="width: 45px; height: 45px;">`
-                            : `<div class="bg-secondary rounded me-3 opacity-25" style="width: 45px; height: 45px;"></div>`;
-
-                        link.innerHTML = `
-                            ${imgHtml}
-                            <div class="overflow-hidden">
-                                <h6 class="mb-0 text-truncate text-dark fw-bold" style="font-size: 0.9rem;">${post.title}</h6>
-                                <small class="text-muted" style="font-size: 0.75rem;">${post.date}</small>
+            
+            
+            
+                <h3 class="gs-highlight-header" style="border-left-color: #555; margin-top: 3rem;">Últimas Notícias</h3>
+                <div class="gs-feed-list">
+                    
+                    <article class="gs-feed-item">
+                        <a href="/olha-como-o-traco-dos-animes-evoluiu-f09f98b1/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Olha-como-o-traco-dos-animes-evoluiu.jpg" alt="Olha como o traço dos animes evoluiu 😱" loading="lazy">
+                                
                             </div>
-                        `;
-                        searchResults.appendChild(link);
-                    });
-                    searchResults.classList.remove('d-none');
-                } else {
-                    searchResults.innerHTML = '<div class="list-group-item text-muted text-center py-3 border-0 small">Nenhum artigo encontrado.</div>';
-                    searchResults.classList.remove('d-none');
-                }
-            });
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Olha como o traço dos animes evoluiu 😱</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">A evolução do traço dos animes ao longo dos anos 😱
+Os animes são uma forma popular de entretenimento que conquistou fãs em todo o mundo. A evolução do traço dos</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/velas-e-saltos_altos-desenhos-de-palito-escondidos-de-tinta-colora-ou-morre/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/VELAS-E-SALTOS_ALTOS-DESENHOS-DE-PALITO-ESCONDIDOS-DE-TINTA-Colora.jpg" alt="VELAS E SALTOS_ALTOS, DESENHOS DE PALITO ESCONDIDOS DE TINTA (Colora ou Morre)" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">VELAS E SALTOS_ALTOS, DESENHOS DE PALITO ESCONDIDOS DE TINTA (Colora ou Morre)</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">A arte escondida com tinta do desenho de palito do Color or Die
+Descubra a magia por trás das pinturas escondidas com tinta
+Quem nunca se maravilhou com aquelas</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/vou-te-ensinar-a-pintar-bombons-de-chocolate-fica-incrivelmente-lindo-e-delicioso/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Vou-te-ensinar-a-pintar-bombons-de-chocolate-Fica-incrivelmente.jpg" alt="Vou te ensinar a pintar bombons de chocolate! Fica incrivelmente lindo e delicioso." loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Vou te ensinar a pintar bombons de chocolate! Fica incrivelmente lindo e delicioso.</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Como pintar bombom de chocolate de forma incrivelmente linda e saborosa
+Pintar bombons de chocolate é uma ótima maneira de dar um toque especial às suas sobreme</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/como-escrever-roteiro-de-quadrinhos-e-mangas-guia-pratico-para-aprender-a-desenhar/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Como-escrever-ROTEIRO-de-QUADRINHOS-e-MANGAS-Guia-pratico.jpg" alt="Como escrever ROTEIRO de QUADRINHOS e MANGÁS + Guia prático para aprender a desenhar" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Como escrever ROTEIRO de QUADRINHOS e MANGÁS + Guia prático para aprender a desenhar</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Como Escrever Roteiro de Quadrinhos e Mangás
 
-            document.addEventListener('click', (e) => {
-                if (searchInput && searchResults && !searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                    searchResults.classList.add('d-none');
-                }
-            });
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-
+Escrever um roteiro de quadrinhos e mangás não é uma tarefa simples, mas com as dicas corretas e um pouco de práti</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/como-pintar-animes-e-misturar-cores-com-lapis-de-cor-pele-cabelo-e-texturas/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Como-PINTAR-ANIMES-e-MISTURAR-CORES-com-LAPIS-DE-COR.jpg" alt="Como PINTAR ANIMES e MISTURAR CORES com LÁPIS DE COR !!(pele, cabelo e texturas!!)" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Como PINTAR ANIMES e MISTURAR CORES com LÁPIS DE COR !!(pele, cabelo e texturas!!)</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Como Pintar Animes e Misturar Cores com Lápis Escolar: Dicas para Criar Pele, Cabelo e Texturas Incríveis!
+Introdução
+Pintar animes pode ser uma atividade praze</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/colorindo-os-novos-desenhos-da-maria-clara-e-jp/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Colorindo-os-novos-desenhos-da-Maria-Clara-e-JP.jpg" alt="Colorindo os novos desenhos da Maria Clara e JP." loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Colorindo os novos desenhos da Maria Clara e JP.</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Colorindo os novos desenhos da Maria Clara e JP
+Quem não gosta de passar um tempo colorindo desenhos? É uma atividade relaxante e divertida, principalmente para</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/vamos-colorir-o-wichi-aprenda-as-cores-um-heroi-do-coracao/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Vamos-colorir-o-Wichi-Aprenda-as-cores-Um.jpg" alt="Vamos colorir o Wichi | Aprenda as cores | Um herói do coração" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Vamos colorir o Wichi | Aprenda as cores | Um herói do coração</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Aprenda as Cores com o Herói do Coração Wichi
+A importância de aprender as cores na infância
+A fase da infância é um período crucial para o desenvolvimento infa</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                </div>
+            
+        </div>
     
 
+    
+    <nav class="pagination" style="margin-top: 4rem; text-align: center;">
+        
+            <a href="/page/13/" style="padding: 0.8rem 1.5rem; background: #eee; border-radius: 4px; font-weight: 700; margin-right: 1rem; color: #333; text-decoration: none;">Anterior</a>
+        
+        
+    </nav>
+    
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
 </body>
 </html>
