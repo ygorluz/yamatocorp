@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpeza de Caixa de Gordura em Juiz de Fora: Como Evitar Mau Cheiro, Pragas e Transbordamentos no Imóvel - Yamato Corp</title>
+    <meta name="description" content="Limpeza de caixa de gordura em Juiz de Fora: evite mau cheiro, pragas e transbordamentos com dicas práticas e eficientes para seu imóvel.">
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/desafios-e-jogos/" style="color:#ffffff;">Desafios e Jogos</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Limpeza de Caixa de Gordura em Juiz de Fora: Como Evitar Mau Cheiro, Pragas e Transbordamentos no Imóvel</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Limpeza de caixa de gordura em Juiz de Fora: evite mau cheiro, pragas e transbordamentos com dicas práticas e eficientes para seu imóvel.</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-10-08" style="color: var(--text-muted);">
+                        08/10/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/limpeza-de-caixa-de-gordura-em-juiz-de-fora-como-evitar-mau-cheiro-pragas-e-transbordamentos-no-imovel.jpg" alt="Limpeza de Caixa de Gordura em Juiz de Fora: Como Evitar Mau Cheiro, Pragas e Transbordamentos no Imóvel">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>A <strong>caixa de gordura</strong> &eacute; um componente fundamental em qualquer im&oacute;vel, especialmente em resid&ecirc;ncias, restaurantes e estabelecimentos comerciais que produzem grande quantidade de res&iacute;duos oleosos na cozinha. Sua fun&ccedil;&atilde;o principal &eacute; reter a gordura e os res&iacute;duos s&oacute;lidos para evitar que eles sejam lan&ccedil;ados diretamente na rede de esgoto, prevenindo entupimentos e danos ambientais. Por&eacute;m, quando a manuten&ccedil;&atilde;o &eacute; negligenciada, podem surgir problemas como <strong>mau cheiro</strong>, prolifera&ccedil;&atilde;o de <strong>pragas</strong> e at&eacute; mesmo <strong>transbordamentos</strong> que comprometem a higiene e o conforto do local.</p>
+<p>Neste contexto, compreender a import&acirc;ncia da limpeza da caixa de gordura e adotar pr&aacute;ticas eficientes para sua manuten&ccedil;&atilde;o preventiva torna-se essencial para preservar a sa&uacute;de do ambiente e a seguran&ccedil;a dos moradores ou funcion&aacute;rios.</p>
+<h2>O Que &Eacute; A Caixa De Gordura E Qual Sua Fun&ccedil;&atilde;o No Sistema De Esgoto?</h2>
+<p>A <strong><a href="https://santacandidadesentupidora.com.br/limpeza-de-caixa-de-gordura-em-juiz-de-fora-mg/" target="_blank" rel="noopener">limpeza de caixa de gordura em Juiz de Fora</a> </strong>&eacute; um reservat&oacute;rio instalado no sistema de esgoto de cozinhas que atua como um filtro prim&aacute;rio para os res&iacute;duos de gordura e &oacute;leo provenientes de pias, tanques e m&aacute;quinas de lavar lou&ccedil;as. Geralmente fabricada em concreto, pl&aacute;stico ou fibra de vidro, ela &eacute; projetada para reter as part&iacute;culas gordurosas que, por serem menos densas que a &aacute;gua, permanecem na superf&iacute;cie, enquanto a &aacute;gua continua seu fluxo para a rede p&uacute;blica.</p>
+<p>Essa instala&ccedil;&atilde;o evita que a gordura se acumule nas tubula&ccedil;&otilde;es, o que causaria entupimentos, retorno de esgoto e danos estruturais ao im&oacute;vel. Al&eacute;m disso, a caixa de gordura contribui para a preserva&ccedil;&atilde;o do meio ambiente, impedindo que subst&acirc;ncias poluentes entrem nos rios e c&oacute;rregos.</p>
+<h2>Principais Problemas Decorrentes Da Falta De Manuten&ccedil;&atilde;o</h2>
+<p>Quando a <strong>caixa de gordura</strong> n&atilde;o &eacute; limpa regularmente, diversos problemas podem surgir, impactando diretamente a qualidade de vida e a seguran&ccedil;a do local. Entre os principais desafios est&atilde;o:</p>
+<h3>Mau Cheiro</h3>
+<p>O ac&uacute;mulo de gordura em decomposi&ccedil;&atilde;o dentro da caixa gera odores desagrad&aacute;veis que podem invadir ambientes internos, tornando a conviv&ecirc;ncia desconfort&aacute;vel. O cheiro forte &eacute; resultado da a&ccedil;&atilde;o de bact&eacute;rias anaer&oacute;bicas sobre os res&iacute;duos, que liberam gases como o sulfeto de hidrog&ecirc;nio, conhecido pelo odor caracter&iacute;stico de ovo podre.</p>
+<h3>Prolifera&ccedil;&atilde;o de Pragas</h3>
+<p>Ambientes &uacute;midos e com res&iacute;duos alimentares atraem insetos e roedores. A caixa de gordura, quando mal conservada, pode se tornar um criadouro para baratas, moscas e at&eacute; ratos, que representam riscos &agrave; sa&uacute;de humana, transmitindo doen&ccedil;as e contaminando alimentos.</p>
+<h3>Transbordamentos</h3>
+<p>A capacidade da caixa &eacute; limitada, e o excesso de gordura acumulada pode causar o transbordamento do reservat&oacute;rio, levando &agrave; sujeira no ambiente externo ou at&eacute; mesmo dentro do im&oacute;vel. Esse problema exige reparos urgentes e pode ocasionar preju&iacute;zos financeiros consider&aacute;veis.</p>
+<h3>Entupimentos e Danos na Rede de Esgoto</h3>
+<p>Se a gordura escorrer para as tubula&ccedil;&otilde;es, ela se solidifica e provoca obstru&ccedil;&otilde;es. Isso dificulta o escoamento da &aacute;gua e pode resultar em refluxo de &aacute;guas servidas, causando infiltra&ccedil;&otilde;es e deteriora&ccedil;&atilde;o das estruturas do im&oacute;vel.</p>
+<h2>Frequ&ecirc;ncia Ideal Para A Limpeza Da Caixa De Gordura</h2>
+<p>A periodicidade da limpeza depende do volume de uso da cozinha e da capacidade do reservat&oacute;rio, mas recomenda-se que seja feita, no m&iacute;nimo, a cada tr&ecirc;s meses para resid&ecirc;ncias e mensalmente para estabelecimentos comerciais com alta produ&ccedil;&atilde;o de res&iacute;duos oleosos. Ignorar essa recomenda&ccedil;&atilde;o aumenta consideravelmente os riscos de problemas mencionados anteriormente.</p>
+<p>Al&eacute;m da limpeza, &eacute; importante realizar inspe&ccedil;&otilde;es regulares para verificar o estado da caixa, identificar rachaduras, vazamentos ou sinais de desgaste que possam comprometer o funcionamento adequado do sistema.</p>
+<h2>Como &Eacute; Realizada A Limpeza De Caixa De Gordura Em Juiz De Fora?</h2>
+<p>Na cidade de Juiz de Fora, onde o clima e as condi&ccedil;&otilde;es urbanas demandam cuidados espec&iacute;ficos, a limpeza de caixa de gordura deve ser feita por profissionais especializados, utilizando equipamentos adequados para garantir efici&ecirc;ncia e seguran&ccedil;a.</p>
+<p>O processo consiste em:</p>
+<p>- <strong>Retirada do conte&uacute;do s&oacute;lido e pastoso</strong> acumulado, que &eacute; removido manualmente ou com aux&iacute;lio de suc&ccedil;&atilde;o mec&acirc;nica;</p>
+<p>- <strong>Lavagem interna</strong> da caixa com &aacute;gua de alta press&atilde;o, eliminando res&iacute;duos aderidos &agrave;s paredes;</p>
+<p>- <strong>Descarte correto</strong> da gordura e res&iacute;duos retirados, conforme as normas ambientais vigentes, evitando contamina&ccedil;&atilde;o do solo e dos corpos d&rsquo;&aacute;gua;</p>
+<p>- <strong>Avalia&ccedil;&atilde;o da estrutura</strong> para detectar poss&iacute;veis falhas que possam comprometer a estanqueidade e a efici&ecirc;ncia do equipamento.</p>
+<p>Optar por profissionais locais &eacute; vantajoso, pois eles conhecem as particularidades da regi&atilde;o e das legisla&ccedil;&otilde;es municipais relacionadas ao manejo de res&iacute;duos.</p>
+<h2>Dicas Pr&aacute;ticas Para Evitar O Ac&uacute;mulo Excessivo De Gordura</h2>
+<p>Al&eacute;m da limpeza profissional, algumas atitudes cotidianas ajudam a preservar a caixa de gordura e a prolongar o intervalo entre higieniza&ccedil;&otilde;es:</p>
+<h3>Evitar Descartar Gordura Quente</h3>
+<p>Despejar &oacute;leo ou gordura ainda quente na pia facilita sua passagem pela caixa e posterior solidifica&ccedil;&atilde;o nas tubula&ccedil;&otilde;es. O ideal &eacute; esperar esfriar e acondicionar o res&iacute;duo em recipientes pr&oacute;prios para descarte.</p>
+<h3>Utilizar Peneiras ou Grades nas Pias</h3>
+<p>Esses acess&oacute;rios ret&ecirc;m restos de alimentos e impedem que eles entrem na tubula&ccedil;&atilde;o, reduzindo a carga de res&iacute;duos que a caixa precisa filtrar.</p>
+<h3>N&atilde;o Utilizar Produtos Qu&iacute;micos em Excesso</h3>
+<p>Produtos de limpeza agressivos podem prejudicar as bact&eacute;rias ben&eacute;ficas presentes no sistema biol&oacute;gico da caixa e da rede de esgoto, comprometendo a decomposi&ccedil;&atilde;o natural dos res&iacute;duos.</p>
+<h3>Reduzir o Uso de Detergentes e Sab&otilde;es em Excesso</h3>
+<p>O excesso desses produtos pode afetar a efici&ecirc;ncia da caixa, causando a dispers&atilde;o da gordura em part&iacute;culas menores que passam pela caixa e obstruem o esgoto.</p>
+<h2>Impactos Ambientais E Legais Da Neglig&ecirc;ncia Com A Caixa De Gordura</h2>
+<p>O descarte incorreto de gordura tem consequ&ecirc;ncias graves para o meio ambiente, pois o &oacute;leo acumulado nas redes de esgoto pode contaminar a &aacute;gua, afetar a fauna aqu&aacute;tica e poluir o solo. Em Juiz de Fora, assim como em outras cidades brasileiras, existem normas ambientais que regulamentam a manuten&ccedil;&atilde;o e o descarte adequado desses res&iacute;duos.</p>
+<p>O n&atilde;o cumprimento dessas regras pode acarretar multas, interdi&ccedil;&atilde;o do estabelecimento e at&eacute; processos judiciais, especialmente em casos de danos ambientais comprovados.</p>
+<h2>A Import&acirc;ncia De Uma Empresa Especializada E Confi&aacute;vel</h2>
+<p>Para garantir a efic&aacute;cia da limpeza e o cumprimento das normas ambientais, &eacute; fundamental contratar uma empresa com experi&ecirc;ncia e certifica&ccedil;&otilde;es adequadas. Al&eacute;m do servi&ccedil;o de retirada e limpeza, essas empresas costumam oferecer relat&oacute;rios t&eacute;cnicos que comprovam a realiza&ccedil;&atilde;o do procedimento, o que pode ser exigido em fiscaliza&ccedil;&otilde;es.</p>
+<p>Ao escolher um prestador de servi&ccedil;o, verifique:</p>
+<p>- Avalia&ccedil;&otilde;es e recomenda&ccedil;&otilde;es de clientes anteriores;</p>
+<p>- Equipamentos e t&eacute;cnicas utilizadas;</p>
+<p>- Procedimentos de descarte de res&iacute;duos;</p>
+<p>- Transpar&ecirc;ncia e clareza no or&ccedil;amento.</p>
+<h2>Benef&iacute;cios Da Manuten&ccedil;&atilde;o Preventiva Para Im&oacute;veis Em Juiz De Fora</h2>
+<p>Realizar a manuten&ccedil;&atilde;o preventiva da caixa de gordura traz in&uacute;meros benef&iacute;cios, tanto para resid&ecirc;ncias quanto para estabelecimentos comerciais:</p>
+<p>- <strong>Evita transtornos causados por entupimentos e transbordamentos;</strong></p>
+<p>- <strong>Preserva a sa&uacute;de dos moradores e funcion&aacute;rios ao eliminar focos de pragas e odores;</strong></p>
+<p>- <strong>Contribui para a conserva&ccedil;&atilde;o do meio ambiente, evitando polui&ccedil;&atilde;o;</strong></p>
+<p>- <strong>Reduz custos com reparos emergenciais e multas ambientais;</strong></p>
+<p>- <strong>Garante o cumprimento das exig&ecirc;ncias legais municipais e estaduais.</strong></p>
+<h2>Considera&ccedil;&otilde;es Finais</h2>
+<p>O cuidado adequado com a caixa de gordura &eacute; indispens&aacute;vel para manter a higiene, a seguran&ccedil;a e o conforto de qualquer im&oacute;vel. Com pr&aacute;ticas corretas de uso, aten&ccedil;&atilde;o &agrave; frequ&ecirc;ncia de limpeza e contrata&ccedil;&atilde;o de profissionais qualificados, &eacute; poss&iacute;vel evitar os problemas mais comuns, como mau cheiro, pragas e transbordamentos, que comprometem o bem-estar e a infraestrutura.</p>
+<p>Investir na manuten&ccedil;&atilde;o preventiva &eacute; uma atitude consciente que protege o patrim&ocirc;nio e o meio ambiente, al&eacute;m de assegurar a tranquilidade dos moradores e usu&aacute;rios do espa&ccedil;o.</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>
