@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como proteger a família com cobertura veicular em Cajamar - Yamato Corp</title>
+    <meta name="description" content="Descubra como proteger sua família em Cajamar com a melhor cobertura veicular. Segurança, economia e tranquilidade para você dirigir sem preocupações!">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/como-proteger-a-familia-com-cobertura-veicular-em-cajamar/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como proteger a família com cobertura veicular em Cajamar</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Descubra como proteger sua família em Cajamar com a melhor cobertura veicular. Segurança, economia e tranquilidade para você dirigir sem preocupações!</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-10-14" style="color: var(--text-muted);">
+                        14/10/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/como-proteger-a-familia-com-cobertura-veicular-em-cajamar.jpg" alt="Como proteger a família com cobertura veicular em Cajamar">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>A seguran&ccedil;a da fam&iacute;lia &eacute; prioridade m&aacute;xima para qualquer pessoa, e proteger os ve&iacute;culos com&nbsp;<strong><a href="https://www.affareseguros.com.br" target="_blank" rel="noopener">Seguro De Carro Em Cajamar</a> </strong>que transportam entes queridos diariamente &eacute; parte essencial desse cuidado. Em uma cidade como Cajamar, que vem crescendo rapidamente, o tr&acirc;nsito intenso e as estradas em constante movimenta&ccedil;&atilde;o exigem aten&ccedil;&atilde;o redobrada para evitar imprevistos. Ter uma <strong>cobertura veicular</strong> adequada garante tranquilidade, prote&ccedil;&atilde;o financeira e suporte em situa&ccedil;&otilde;es de sinistros, acidentes ou roubos.</p>
+<h2>A Import&acirc;ncia Da Cobertura Veicular Para Fam&iacute;lias</h2>
+<p>Os carros s&atilde;o muito mais do que simples meios de transporte &mdash; eles representam liberdade, conforto e, principalmente, seguran&ccedil;a para os membros da fam&iacute;lia. No entanto, enfrentar problemas como colis&otilde;es, furtos, danos naturais ou at&eacute; mesmo acidentes com terceiros pode gerar transtornos e despesas inesperadas.</p>
+<p>Contar com uma <strong>cobertura veicular eficaz</strong> &eacute; essencial para que esses riscos n&atilde;o comprometam o or&ccedil;amento familiar e para que todos possam estar protegidos quando estiverem na estrada ou no tr&acirc;nsito urbano.</p>
+<h3>Riscos comuns no tr&acirc;nsito de Cajamar</h3>
+<p>Cajamar tem um fluxo significativo de ve&iacute;culos, tanto por ser um polo industrial e log&iacute;stico quanto por sua proximidade com a capital paulista. Isso aumenta a possibilidade de:</p>
+<p>- <strong>Acidentes de tr&acirc;nsito</strong>: colis&otilde;es, capotamentos e atropelamentos.</p>
+<p>- <strong>Roubo e furto</strong>: ve&iacute;culos estacionados em &aacute;reas p&uacute;blicas podem ser alvos.</p>
+<p>- <strong>Danos causados por fen&ocirc;menos naturais</strong>: enchentes, tempestades e quedas de &aacute;rvores.</p>
+<p>- <strong>Danos a terceiros</strong>: envolvendo terceiros em acidentes e poss&iacute;veis a&ccedil;&otilde;es judiciais.</p>
+<p>Esses riscos refor&ccedil;am a necessidade de uma cobertura veicular completa, que ofere&ccedil;a prote&ccedil;&atilde;o n&atilde;o s&oacute; ao ve&iacute;culo, mas tamb&eacute;m &agrave; fam&iacute;lia que depende dele.</p>
+<h2>Tipos De Cobertura Veicular Essenciais Para Proteger Sua Fam&iacute;lia</h2>
+<p>Existem diferentes op&ccedil;&otilde;es de cobertura veicular que podem ser contratadas conforme o perfil de uso, o valor do ve&iacute;culo e as necessidades da fam&iacute;lia. Entender cada uma delas ajuda a escolher a melhor prote&ccedil;&atilde;o.</p>
+<h3>Cobertura contra colis&atilde;o e danos materiais</h3>
+<p>Essa &eacute; a cobertura b&aacute;sica para danos causados ao pr&oacute;prio ve&iacute;culo em acidentes, sejam eles com outros carros, objetos ou quedas. Ela cobre:</p>
+<p>- Reparos em funilaria e pintura.</p>
+<p>- Troca de pe&ccedil;as danificadas.</p>
+<p>- Danos em vidros, far&oacute;is e lanternas.</p>
+<p>Ter essa cobertura evita que os custos de conserto saiam do bolso da fam&iacute;lia, garantindo que o ve&iacute;culo volte rapidamente a circular em seguran&ccedil;a.</p>
+<h3>Cobertura contra roubo e furto</h3>
+<p>Infelizmente, o roubo e furto de ve&iacute;culos s&atilde;o problemas reais em muitas cidades brasileiras. Essa cobertura garante o ressarcimento do valor do ve&iacute;culo ou o reparo em caso de tentativa de furto, protegendo a fam&iacute;lia de perdas financeiras significativas.</p>
+<h3>Cobertura contra danos a terceiros (Responsabilidade Civil Facultativa)</h3>
+<p>Acidentes que envolvem terceiros podem gerar despesas altas, incluindo indeniza&ccedil;&otilde;es por danos materiais e corporais. Essa cobertura protege o segurado contra essas despesas, evitando que a fam&iacute;lia tenha que arcar com processos ou valores elevados.</p>
+<h3>Cobertura para vidros, far&oacute;is e acess&oacute;rios</h3>
+<p>Al&eacute;m da cobertura b&aacute;sica, &eacute; poss&iacute;vel optar por prote&ccedil;&otilde;es espec&iacute;ficas para vidros, retrovisores, far&oacute;is e outros acess&oacute;rios do ve&iacute;culo que podem ser danificados com facilidade. Isso &eacute; especialmente &uacute;til para fam&iacute;lias que utilizam o carro diariamente e precisam de agilidade na manuten&ccedil;&atilde;o.</p>
+<h3>Assist&ecirc;ncia 24 horas</h3>
+<p>Ter suporte em situa&ccedil;&otilde;es emergenciais, como pane, troca de pneus, chaveiro e reboque, &eacute; fundamental para garantir a seguran&ccedil;a da fam&iacute;lia. A assist&ecirc;ncia 24 horas oferece tranquilidade para qualquer problema inesperado, especialmente em momentos de urg&ecirc;ncia.</p>
+<h2>Benef&iacute;cios De Contratar Um Seguro De Carro Em Cajamar</h2>
+<p>Contratar um seguro de carro em Cajamar traz vantagens espec&iacute;ficas para quem busca proteger sua fam&iacute;lia e seu patrim&ocirc;nio. Destacam-se:</p>
+<p>- <strong>Atendimento local</strong>: seguradoras com presen&ccedil;a na regi&atilde;o oferecem mais agilidade e melhor conhecimento das especificidades do tr&acirc;nsito e da cidade.</p>
+<p>- <strong>Planos personalizados</strong>: f&aacute;ceis de ajustar conforme o perfil do condutor e as necessidades de prote&ccedil;&atilde;o.</p>
+<p>- <strong>Custos competitivos</strong>: devido &agrave; concorr&ecirc;ncia regional, h&aacute; boas op&ccedil;&otilde;es de pre&ccedil;os e condi&ccedil;&otilde;es vantajosas.</p>
+<p>- <strong>Rapidez na indeniza&ccedil;&atilde;o</strong>: em caso de sinistros, o processo costuma ser mais &aacute;gil quando a seguradora atua localmente.</p>
+<p>- <strong>Coberturas especiais para Cajamar</strong>: algumas seguradoras oferecem prote&ccedil;&otilde;es adicionais para &aacute;reas industriais e regi&otilde;es de maior risco.</p>
+<h2>Como Escolher A Melhor Cobertura Veicular Para Sua Fam&iacute;lia Em Cajamar</h2>
+<p>Selecionar a cobertura ideal requer an&aacute;lise cuidadosa do uso do ve&iacute;culo, do perfil dos condutores e das necessidades da fam&iacute;lia. Alguns passos ajudam a garantir a melhor escolha:</p>
+<h3>Avalie o uso do ve&iacute;culo</h3>
+<p>- O carro &eacute; usado para trabalho di&aacute;rio, transporte dos filhos ou apenas para lazer?</p>
+<p>- Quais os trajetos mais frequentes (zonas urbanas, rodovias, &aacute;reas rurais)?</p>
+<p>- O ve&iacute;culo fica estacionado em locais seguros ou expostos ao risco?</p>
+<h3>Considere o perfil dos condutores</h3>
+<p>- Quantas pessoas dirigem o ve&iacute;culo?</p>
+<p>- Qual o hist&oacute;rico de dire&ccedil;&atilde;o dos motoristas?</p>
+<p>- H&aacute; condutores jovens ou inexperientes que podem aumentar o risco?</p>
+<h3>Analise o valor do ve&iacute;culo</h3>
+<p>Ve&iacute;culos mais novos e de maior valor geralmente exigem coberturas mais amplas para garantir reparos adequados e indeniza&ccedil;&otilde;es justas em caso de sinistros.</p>
+<h3>Compare planos e seguradoras</h3>
+<p>Pesquise diferentes seguradoras e seus planos, verificando:</p>
+<p>- Coberturas inclu&iacute;das.</p>
+<p>- Franquias e valores de indeniza&ccedil;&atilde;o.</p>
+<p>- Reputa&ccedil;&atilde;o e avalia&ccedil;&otilde;es de clientes.</p>
+<p>- Servi&ccedil;os adicionais como assist&ecirc;ncia 24 horas.</p>
+<h2>Dicas Para Aumentar A Prote&ccedil;&atilde;o Veicular Em Cajamar</h2>
+<p>Al&eacute;m de contratar uma cobertura adequada, algumas atitudes ajudam a proteger ainda mais a fam&iacute;lia e o ve&iacute;culo.</p>
+<h3>Estacione em locais seguros</h3>
+<p>Sempre que poss&iacute;vel, opte por estacionar em garagens fechadas, condom&iacute;nios com seguran&ccedil;a ou locais com vigil&acirc;ncia. Isso reduz o risco de roubo e vandalismo.</p>
+<h3>Mantenha o ve&iacute;culo com manuten&ccedil;&atilde;o em dia</h3>
+<p>Revis&otilde;es regulares garantem que o carro esteja em condi&ccedil;&otilde;es seguras para rodar, reduzindo a chance de acidentes causados por falhas mec&acirc;nicas.</p>
+<h3>Utilize dispositivos de seguran&ccedil;a</h3>
+<p>Alarmes, rastreadores e bloqueadores eletr&ocirc;nicos aumentam a prote&ccedil;&atilde;o contra furtos e roubos, facilitando a recupera&ccedil;&atilde;o em caso de sinistro.</p>
+<h3>Evite dirigir em hor&aacute;rios e locais de maior risco</h3>
+<p>Planejar rotas e evitar &aacute;reas conhecidas por altos &iacute;ndices de criminalidade ou tr&acirc;nsito perigoso ajuda a minimizar riscos.</p>
+<h3>Eduque os motoristas da fam&iacute;lia</h3>
+<p>Promova boas pr&aacute;ticas de dire&ccedil;&atilde;o defensiva e conscientiza&ccedil;&atilde;o sobre seguran&ccedil;a no tr&acirc;nsito para todos que dirigem o ve&iacute;culo.</p>
+<h2>A Import&acirc;ncia Do Atendimento Em Caso De Sinistro</h2>
+<p>Um dos pontos mais importantes da cobertura veicular &eacute; o suporte oferecido quando acontece algum acidente ou problema. Ter uma seguradora que oferece atendimento &aacute;gil, transparente e eficiente &eacute; fundamental para minimizar o impacto na rotina da fam&iacute;lia.</p>
+<h3>Central de atendimento 24 horas</h3>
+<p>Em situa&ccedil;&otilde;es emergenciais, como acidentes ou panes, o atendimento imediato pode fazer toda a diferen&ccedil;a. &Eacute; importante verificar se a seguradora possui uma central acess&iacute;vel a qualquer momento.</p>
+<h3>Processo simplificado de indeniza&ccedil;&atilde;o</h3>
+<p>Quando ocorre um sinistro, a burocracia pode ser um problema. Optar por seguradoras que facilitam o processo e oferecem clareza nas etapas ajuda a garantir que a fam&iacute;lia seja indenizada rapidamente.</p>
+<h3>Rede de oficinas credenciadas</h3>
+<p>Ter acesso a oficinas autorizadas pela seguradora garante qualidade nos reparos e seguran&ccedil;a de que o ve&iacute;culo ser&aacute; restaurado adequadamente.</p>
+<h2>Considera&ccedil;&otilde;es Finais Sobre Prote&ccedil;&atilde;o Veicular Em Cajamar</h2>
+<p>Proteger a fam&iacute;lia vai muito al&eacute;m de cuidados pessoais; envolve tamb&eacute;m garantir que o meio de transporte utilizado diariamente esteja protegido contra os diversos riscos do tr&acirc;nsito e do ambiente. A contrata&ccedil;&atilde;o de uma <strong>cobertura veicular em Cajamar</strong> &eacute; um investimento inteligente para assegurar tranquilidade, seguran&ccedil;a e respaldo financeiro em momentos de imprevistos.</p>
+<p>Avaliar os tipos de cobertura dispon&iacute;veis, escolher uma seguradora confi&aacute;vel e adotar pr&aacute;ticas seguras no dia a dia s&atilde;o passos fundamentais para manter a fam&iacute;lia protegida. Afinal, a seguran&ccedil;a no tr&acirc;nsito come&ccedil;a com preven&ccedil;&atilde;o e prote&ccedil;&atilde;o adequadas, garantindo que todos possam chegar ao seu destino com paz de esp&iacute;rito.</p>
+<p>Com a crescente import&acirc;ncia da mobilidade em Cajamar e regi&atilde;o, contar com um seguro que atenda &agrave;s necessidades locais &eacute; indispens&aacute;vel. Assim, &eacute; poss&iacute;vel desfrutar do transporte com confian&ccedil;a, sabendo que qualquer eventualidade ter&aacute; o suporte necess&aacute;rio para ser superada sem comprometer o bem-estar familiar.</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>
