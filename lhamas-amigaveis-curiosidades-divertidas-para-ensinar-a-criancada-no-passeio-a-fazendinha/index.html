@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lhamas Amigáveis: Curiosidades Divertidas para Ensinar a Criançada no Passeio à Fazendinha - Yamato Corp</title>
+    <meta name="description" content="Descubra curiosidades divertidas sobre lhamas amigáveis para encantar e educar a criançada no passeio à fazendinha!">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/lhamas-amigaveis-curiosidades-divertidas-para-ensinar-a-criancada-no-passeio-a-fazendinha/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/dicas/" style="color:#ffffff;">Dicas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Lhamas Amigáveis: Curiosidades Divertidas para Ensinar a Criançada no Passeio à Fazendinha</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Descubra curiosidades divertidas sobre lhamas amigáveis para encantar e educar a criançada no passeio à fazendinha!</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-11-06" style="color: var(--text-muted);">
+                        06/11/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/lhamas-amigaveis-curiosidades-divertidas-para-ensinar-a-criancada-no-passeio-a-fazendinha.jpg" alt="Lhamas Amigáveis: Curiosidades Divertidas para Ensinar a Criançada no Passeio à Fazendinha">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>Levar as crian&ccedil;as para uma fazendinha &eacute; uma experi&ecirc;ncia encantadora e educativa. Al&eacute;m de permitir o contato direto com a natureza, esse tipo de passeio oferece a oportunidade &uacute;nica de conhecer animais fascinantes, despertando a curiosidade e o respeito pelos seres vivos. Entre as v&aacute;rias esp&eacute;cies que podem ser encontradas, <a href="https://oinque.com.br/lhama" target="_blank" rel="noopener">lhamas</a> se destacam por sua apar&ecirc;ncia ex&oacute;tica, comportamento d&oacute;cil e caracter&iacute;sticas surpreendentes que encantam os pequenos visitantes.</p>
+<p>Se a ideia &eacute; tornar o passeio mais proveitoso e divertido, compartilhar curiosidades sobre esses animais &eacute; uma excelente forma de prender a aten&ccedil;&atilde;o dos pequenos e incentivar o aprendizado. Conhecer detalhes sobre como vivem, o que comem e como se comunicam ajuda a criar uma conex&atilde;o afetiva e a despertar um olhar mais atento para o meio ambiente.</p>
+<h2>Origem E Habitat: De Onde V&ecirc;m Esses Animais Simp&aacute;ticos?</h2>
+<p>Esses animais t&ecirc;m suas ra&iacute;zes na regi&atilde;o dos Andes, na Am&eacute;rica do Sul, principalmente em pa&iacute;ses como Peru, Bol&iacute;via e Chile. Adaptados a ambientes de alta altitude, eles vivem em &aacute;reas montanhosas e frias, onde a vegeta&ccedil;&atilde;o &eacute; escassa e o clima rigoroso. Apesar de sua apar&ecirc;ncia robusta, s&atilde;o animais muito resistentes, capazes de suportar temperaturas baixas e terrenos dif&iacute;ceis.</p>
+<p>Na fazendinha, eles s&atilde;o criados em ambientes que simulam, na medida do poss&iacute;vel, suas condi&ccedil;&otilde;es naturais, garantindo seu bem-estar e facilitando a intera&ccedil;&atilde;o com os visitantes, especialmente as crian&ccedil;as.</p>
+<h2>Caracter&iacute;sticas F&iacute;sicas: O Que Torna Esses Animais T&atilde;o Especiais?</h2>
+<p>De tamanho m&eacute;dio, esses animais possuem um corpo robusto coberto por uma <strong>pelagem macia e densa</strong>, que pode variar de cores como branco, marrom, cinza e at&eacute; tons mesclados. Essa pelagem ajuda a proteg&ecirc;-los do frio intenso das montanhas.</p>
+<p>Uma das caracter&iacute;sticas mais marcantes &eacute; o pesco&ccedil;o longo e elegante, que contribui para sua postura altiva e amig&aacute;vel. Al&eacute;m disso, possuem orelhas longas e ligeiramente curvadas para dentro, o que lhes confere uma express&atilde;o curiosa e carism&aacute;tica.</p>
+<h2>Comportamento E Temperamento: Por Que S&atilde;o Considerados T&atilde;o Amig&aacute;veis?</h2>
+<p>Apesar de sua apar&ecirc;ncia ex&oacute;tica, esses animais s&atilde;o conhecidos por seu temperamento calmo e soci&aacute;vel. Eles s&atilde;o <strong>extremamente curiosos e gostam de interagir com pessoas</strong>, especialmente quando se sentem seguros e confort&aacute;veis. Essa caracter&iacute;stica os torna ideais para ambientes educativos, onde crian&ccedil;as podem aprender de forma l&uacute;dica e pr&oacute;xima.</p>
+<p>Quando se sentem amea&ccedil;ados, podem reagir com pequenos sons ou movimentos, mas geralmente evitam confrontos, preferindo se afastar. Essa postura pac&iacute;fica &eacute; um grande diferencial em rela&ccedil;&atilde;o a outros animais de fazenda.</p>
+<h2>Comunica&ccedil;&atilde;o: Como Esses Animais "Conversam" Entre Si?</h2>
+<p>A comunica&ccedil;&atilde;o entre esses animais &eacute; feita atrav&eacute;s de uma variedade de sons e posturas corporais. Eles emitem um som caracter&iacute;stico conhecido como "<strong>hum</strong>", que pode variar em intensidade e frequ&ecirc;ncia, servindo para expressar diferentes sentimentos, como contentamento, alerta ou curiosidade.</p>
+<p>Al&eacute;m dos sons, utilizam a linguagem corporal para transmitir mensagens. Por exemplo, o movimento das orelhas, a posi&ccedil;&atilde;o do corpo e o olhar podem indicar se est&atilde;o relaxados, atentos ou desconfort&aacute;veis. Ensinar as crian&ccedil;as a observar esses sinais ajuda a desenvolver a empatia e o respeito pelos animais.</p>
+<h2>Alimenta&ccedil;&atilde;o: O Que Esses Animais Gostam De Comer?</h2>
+<p>Esses herb&iacute;voros t&ecirc;m uma dieta baseada em gram&iacute;neas, folhas e vegeta&ccedil;&atilde;o dispon&iacute;vel em seu habitat. Na fazendinha, recebem uma alimenta&ccedil;&atilde;o balanceada que inclui feno, capim e alguns suplementos naturais para garantir a sa&uacute;de e o vigor.</p>
+<p>&Eacute; interessante destacar que sua forma de mastigar &eacute; diferente da de outros animais. Eles t&ecirc;m dentes adaptados para triturar plantas fibrosas, o que os torna eficientes na digest&atilde;o de alimentos mais dif&iacute;ceis. Explicar essa curiosidade ajuda as crian&ccedil;as a entenderem melhor a diversidade da natureza.</p>
+<h2>Utilidade Para Os Humanos: Como Esses Animais Ajudam As Pessoas?</h2>
+<p>Desde tempos antigos, esses animais s&atilde;o usados pelas comunidades ind&iacute;genas dos Andes para transporte de cargas leves, produ&ccedil;&atilde;o de l&atilde; e at&eacute; como fonte de alimento. Sua l&atilde; &eacute; valorizada por ser macia, quente e resistente, ideal para confec&ccedil;&atilde;o de roupas e acess&oacute;rios.</p>
+<p>Al&eacute;m do aspecto pr&aacute;tico, esses animais t&ecirc;m um papel importante no turismo rural e na educa&ccedil;&atilde;o ambiental. Sua presen&ccedil;a em fazendinhas contribui para o desenvolvimento do conhecimento sobre sustentabilidade, cuidado com os animais e preserva&ccedil;&atilde;o da biodiversidade.</p>
+<h2>Cuidados E Manejo: Como Garantir O Bem-Estar Desses Animais Na Fazendinha?</h2>
+<p>Para que esses animais se mantenham saud&aacute;veis e felizes, &eacute; fundamental oferecer um ambiente adequado, com espa&ccedil;o suficiente para se movimentar e descanso em &aacute;reas protegidas do sol e da chuva. A alimenta&ccedil;&atilde;o deve ser equilibrada e o fornecimento de &aacute;gua limpa, constante.</p>
+<p>Outro ponto importante &eacute; o cuidado com a higiene, que inclui a escova&ccedil;&atilde;o da pelagem e o controle de parasitas. Esses cuidados ajudam a prevenir doen&ccedil;as e permitem que as crian&ccedil;as tenham uma experi&ecirc;ncia segura e agrad&aacute;vel ao interagir com os animais.</p>
+<h2>Atividades Educativas: Como Estimular O Aprendizado Das Crian&ccedil;as Durante O Passeio?</h2>
+<p>Incluir atividades l&uacute;dicas e interativas pode transformar o passeio em uma verdadeira aula ao ar livre. Algumas ideias interessantes s&atilde;o:</p>
+<p>- <strong>Jogos de observa&ccedil;&atilde;o</strong>: pedir para que as crian&ccedil;as identifiquem cores, sons e comportamentos do animal.</p>
+<p>- <strong>Conta&ccedil;&atilde;o de hist&oacute;rias</strong>: narrar lendas e curiosidades sobre a vida desses animais nas montanhas.</p>
+<p>- <strong>Oficinas de artesanato</strong>: utilizar l&atilde; para fazer pequenos trabalhos manuais, aprendendo sobre o processo e a import&acirc;ncia da mat&eacute;ria-prima.</p>
+<p>- <strong>Sess&otilde;es de alimenta&ccedil;&atilde;o</strong>: com supervis&atilde;o, permitir que as crian&ccedil;as alimentem os animais, desenvolvendo o senso de responsabilidade.</p>
+<p>Essas atividades ajudam a fixar o conhecimento e tornam a experi&ecirc;ncia mais rica e divertida.</p>
+<h2>Curiosidades Divertidas: Fatos Que V&atilde;o Surpreender A Crian&ccedil;ada</h2>
+<p>- Esses animais t&ecirc;m um sistema digestivo muito eficiente, com tr&ecirc;s est&ocirc;magos, que lhes permite aproveitar nutrientes de plantas que outros animais n&atilde;o conseguem digerir.</p>
+<p>- S&atilde;o parentes pr&oacute;ximos dos camelos, embora n&atilde;o possuam corcovas.</p>
+<p>- Podem cuspir para se defender ou demonstrar descontentamento, mas isso acontece raramente e, geralmente, entre eles mesmos.</p>
+<p>- Gostam de viver em grupos, onde existe uma hierarquia social definida, com l&iacute;deres que orientam o comportamento do bando.</p>
+<p>- A l&atilde; deles &eacute; hipoalerg&ecirc;nica, ideal para pessoas sens&iacute;veis a outros tipos de fibras.</p>
+<p>Compartilhar esses fatos com as crian&ccedil;as ajuda a despertar o interesse pela ci&ecirc;ncia e a natureza.</p>
+<h2>Benef&iacute;cios Do Contato Direto Com Os Animais Para As Crian&ccedil;as</h2>
+<p>Estar perto desses animais promove o desenvolvimento emocional e social das crian&ccedil;as. O contato com a natureza estimula a curiosidade, o respeito pelos seres vivos e a responsabilidade. Al&eacute;m disso, o ambiente ao ar livre favorece a sa&uacute;de f&iacute;sica e mental, aliviando o estresse e aumentando o bem-estar.</p>
+<p>Interagir com animais d&oacute;ceis e amig&aacute;veis tamb&eacute;m ajuda a reduzir o medo e a ansiedade, contribuindo para a forma&ccedil;&atilde;o de uma personalidade mais equilibrada e confiante.</p>
+<h2>Como Preparar A Visita Para Que Seja Segura E Proveitosa?</h2>
+<p>Antes de visitar a fazendinha, &eacute; importante orientar as crian&ccedil;as sobre o comportamento adequado perto dos animais. Algumas dicas essenciais incluem:</p>
+<p>- Aproximar-se lentamente e com calma.</p>
+<p>- Evitar movimentos bruscos ou barulhos altos.</p>
+<p>- N&atilde;o tocar nos animais sem a supervis&atilde;o do respons&aacute;vel.</p>
+<p>- Lavar as m&atilde;os ap&oacute;s o contato.</p>
+<p>- Respeitar o espa&ccedil;o dos bichos, n&atilde;o os assustar ou incomodar.</p>
+<p>Seguindo essas recomenda&ccedil;&otilde;es, o passeio ser&aacute; seguro, respeitoso e prazeroso para todos.</p>
+<h2>Impacto Ambiental E Import&acirc;ncia Da Conserva&ccedil;&atilde;o</h2>
+<p>Compreender o papel desses animais na cadeia ecol&oacute;gica &eacute; fundamental para valorizar a biodiversidade e promover a conserva&ccedil;&atilde;o. Eles ajudam a manter o equil&iacute;brio dos ecossistemas montanhosos, contribuindo para a regenera&ccedil;&atilde;o da vegeta&ccedil;&atilde;o e a sa&uacute;de do solo.</p>
+<p>Ensinar as crian&ccedil;as sobre a import&acirc;ncia de preservar esses animais e seus habitats desperta a consci&ecirc;ncia ambiental desde cedo, formando cidad&atilde;os mais respons&aacute;veis e comprometidos com o futuro do planeta.</p>
+<p>---</p>
+<p>Levar as crian&ccedil;as para um passeio &agrave; fazendinha onde possam conhecer animais t&atilde;o especiais &eacute; uma oportunidade &uacute;nica de aprendizado e divers&atilde;o. Compartilhar curiosidades e incentivar a intera&ccedil;&atilde;o respeitosa ajuda a construir uma conex&atilde;o afetiva com a natureza, despertando valores essenciais para o desenvolvimento humano e a preserva&ccedil;&atilde;o do meio ambiente. Aproveitar essas experi&ecirc;ncias para educar de forma leve e envolvente &eacute; um presente que ficar&aacute; na mem&oacute;ria dos pequenos para sempre.</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

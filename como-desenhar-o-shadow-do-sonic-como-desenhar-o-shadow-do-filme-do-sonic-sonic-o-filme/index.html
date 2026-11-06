@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Desenhar o Shadow do Sonic | Como desenhar o Shadow do Filme do Sonic - Sonic: O Filme - Yamato Corp</title>
+    <meta name="description" content="Como Desenhar o Shadow do Filme do Sonic - Sonic The Hedgehog
+O Shadow é um dos personagens mais icônicos da franquia Sonic The Hedgehog. Com sua personalidade ">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/como-desenhar-o-shadow-do-sonic-como-desenhar-o-shadow-do-filme-do-sonic-sonic-o-filme/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como Desenhar o Shadow do Sonic | Como desenhar o Shadow do Filme do Sonic - Sonic: O Filme</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Como Desenhar o Shadow do Filme do Sonic - Sonic The Hedgehog
+O Shadow é um dos personagens mais icônicos da franquia Sonic The Hedgehog. Com sua personalidade </p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 05:42
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Como-Desenhar-o-Shadow-do-Sonic-Como-desenhar-o.jpg" alt="Como Desenhar o Shadow do Sonic | Como desenhar o Shadow do Filme do Sonic - Sonic: O Filme">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Como Desenhar o Shadow do Filme do Sonic - Sonic The Hedgehog</h1>
+<p>O Shadow é um dos personagens mais icônicos da franquia Sonic The Hedgehog. Com sua personalidade misteriosa e habilidades únicas, ele conquistou o coração dos fãs desde sua primeira aparição. Neste artigo, vamos te mostrar como desenhar o Shadow do filme Sonic The Hedgehog de uma forma fácil e divertida. Siga o passo a passo e surpreenda-se com o resultado!</p>
+<h2>Materiais necessários para desenhar o Shadow do Sonic</h2>
+<p>Antes de começar a desenhar, certifique-se de que tem todos os materiais necessários. Você vai precisar de:</p>
+<ul>
+<li>Papel de desenho</li>
+<li>Lápis HB, 2B e 4B</li>
+<li>Borracha</li>
+<li>Marcadores pretos</li>
+</ul>
+<p>Com esses materiais em mãos, você está pronto para começar a desenhar o Shadow do Sonic!</p>
+<h2>Passo a passo para desenhar o Shadow do Sonic</h2>
+<h3>Passo 1: Esboço inicial</h3>
+<p>Comece fazendo um esboço básico do corpo do Shadow. Desenhe um círculo para a cabeça, um oval para o corpo e linhas guias para os braços e pernas. Não se preocupe com os detalhes nesse momento, o importante é ter a estrutura básica do personagem.</p>
+<h3>Passo 2: Definição do rosto</h3>
+<p>Agora, adicione os detalhes do rosto do Shadow. Desenhe os olhos, o nariz e a boca com cuidado, seguindo o modelo do personagem do filme Sonic The Hedgehog. Não se esqueça de adicionar as orelhas pontudas características do Shadow.</p>
+<h3>Passo 3: Adição de roupas e acessórios</h3>
+<p>Em seguida, desenhe as roupas e acessórios do Shadow, como as luvas vermelhas e os sapatos vermelhos com detalhes brancos. Não se esqueça da icônica joia que ele carrega no peito.</p>
+<h3>Passo 4: Detalhes finais e sombreamento</h3>
+<p>Por fim, adicione os detalhes finais ao desenho, como as listras brancas no cabelo do Shadow e as marcas características em suas luvas e sapatos. Utilize os marcadores pretos para fazer o contorno do desenho e realçar os detalhes. Não se esqueça de fazer o sombreamento para dar profundidade ao desenho.</p>
+<p>Agora que você seguiu todos os passos, seu desenho do Shadow do filme Sonic The Hedgehog está pronto! Mostre para seus amigos e se divirta desenhando esse personagem tão querido pelos fãs.</p>
+<p>Fique atento às novidades sobre o universo do Sonic The Hedgehog e continue praticando suas habilidades de desenho. Com dedicação e paciência, você pode se tornar um verdadeiro mestre na <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> de desenhar personagens de videogame. Parabéns pelo seu trabalho e boa sorte em suas próximas criações!</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/ELm_3z2yM8s?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Passo a passo para desenhar o Shadow do Sonic</h2>
+</p>
+<p>Primeiramente, é importante ter em mãos um lápis e papel de qualidade para começar a desenhar o Shadow do Sonic. Comece pelo contorno do personagem, destacando suas características principais, como suas orelhas pontudas e olhos expressivos. Em seguida, adicione os detalhes do pelo e da roupa do personagem, buscando manter a fidelidade ao design original.</p>
+</p>
+<h2>Dicas e técnicas para aprimorar seu desenho do Shadow</h2>
+</p>
+<p>Para deixar seu desenho do Shadow ainda mais realista, experimente variar a pressão do lápis para criar sombras e texturas. Além disso, utilize referências visuais do personagem para se inspirar e aprimorar sua técnica. Não tenha medo de errar e de praticar constantemente, pois a prática leva à perfeição.</p>
+</p>
+<h2>Conclusão</h2>
+</p>
+<p>Desenhar o Shadow do Sonic pode ser um <a href="https://yamatocorp.com.br/category/desafios-e-jogos/">desafio</a>, mas com dedicação e paciência é possível criar um resultado incrível. Utilize as dicas e técnicas mencionadas acima para aprimorar seu desenho e se inspirar no personagem. Lembre-se de que a prática constante é essencial para aprimorar sua habilidade de desenho. Continue se desafiando e explorando novas técnicas para criar desenhos cada vez mais impressionantes do Shadow do Sonic.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=ELm_3z2yM8s">Rec Desenhos</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

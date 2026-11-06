@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Open+Sans:wght@400;600;700&family=Inter:wght@400;700;900&display=swap');
+
+:root {
+    --bg-color: #f7f7f7;
+    --bg-card: #ffffff;
+    --text-main: #222222;
+    --text-muted: #555555;
+    --accent-color: #e9007f; /* Globo Cultura Pop Pink */
+    --accent-dark: #c8006e; /* Darker Pink for Sub-bar */
+    --border-color: #e0e0e0;
+    
+    --font-ui: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --font-heading-display: 'Inter', sans-serif; /* A Fonte Grossa Sem-Serifa */
+    
+    --border-radius: 4px;
+    --transition: all 0.2s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header Navbar - Rosa Forte */
+.gs-header {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.gs-header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Lado Esquerdo: Menu Hamburguer + Texto + Logo */
+.gs-header__left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.gs-header__menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gs-header__menu-text {
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    display: none;
+}
+@media (min-width: 768px) {
+    .gs-header__menu-text { display: block; }
+}
+
+.gs-header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.gs-header__logo img {
+    max-height: 30px;
+    filter: brightness(0) invert(1); /* Torna a logo branca se for preta */
+}
+
+/* Centro: Título do Site / Cultura Pop (Fonte Fina) */
+.gs-header__center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-ui);
+    font-weight: 300;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+    .gs-header__center { font-size: 1.2rem; }
+}
+
+/* Lado Direito: Busca e Usuário */
+.gs-header__right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.gs-header__right-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* Sub-barra de Categoria - Rosa Escuro */
+.gs-header__subbar {
+    background-color: var(--accent-dark);
+    text-align: center;
+    padding: 0.4rem 0;
+}
+
+.gs-header__subbar span {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Offcanvas Menu */
+.gs-nav-offcanvas {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--bg-card);
+    z-index: 2000;
+    padding: 2rem 1.5rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.gs-nav-offcanvas.open {
+    left: 0;
+}
+
+.gs-nav-offcanvas__close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+.gs-nav-offcanvas a {
+    display: block;
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Overlay do Menu */
+.gs-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 1500;
+    display: none;
+}
+.gs-overlay.open { display: block; }
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* =======================================================================
+   NOVA HOME GSHOW: CARROSSEL INFINITO
+   ======================================================================= */
+.gs-hero-carousel-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+}
+
+.gs-hero-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0;
+    scrollbar-width: none; /* Firefox */
+}
+.gs-hero-carousel::-webkit-scrollbar { display: none; } /* Chrome */
+
+/* Botões do Carrossel */
+.gs-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background 0.3s ease;
+}
+.gs-carousel-btn:hover { background: var(--accent-color); }
+.gs-carousel-prev { left: 10px; }
+.gs-carousel-next { right: 10px; }
+@media(min-width: 768px) {
+    .gs-carousel-prev { left: 20px; }
+    .gs-carousel-next { right: 20px; }
+}
+
+.gs-hero-slide {
+    position: relative;
+    flex: 0 0 95%; /* Quase a tela toda no celular */
+    scroll-snap-align: center;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 16px; /* Borda redonda da Globo */
+    margin: 0 5px; /* Espacinho entre eles */
+}
+
+@media (min-width: 768px) {
+    .gs-hero-slide {
+        flex: 0 0 65%;
+    }
+}
+
+.gs-hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gs-hero-slide:hover img {
+    transform: scale(1.02);
+}
+
+.gs-hero-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.gs-hero-slide__content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.gs-category-pill {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 767px) {
+    .gs-category-pill {
+        display: none !important;
+    }
+}
+
+.hero-title-box {
+    display: inline;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-family: var(--font-heading-display);
+    font-weight: 900;
+    font-size: 1.25rem; /* Menor no mobile */
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+    padding: 0.3rem 0.6rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+@media (min-width: 768px) {
+    .hero-title-box { font-size: 2.2rem; }
+}
+
+/* =======================================================================
+   NOVA HOME GSHOW: FEED VERTICAL
+   ======================================================================= */
+.gs-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.gs-feed-item {
+    display: flex;
+    flex-direction: row; /* FORÇA LADO A LADO SEMPRE */
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gs-feed-item__img {
+    width: 35%; /* Ocupa 35% do espaço */
+    max-width: 180px; /* Não cresce mais que isso no PC */
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 12px; /* Borda bem redonda */
+    flex-shrink: 0;
+}
+
+.gs-feed-item__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gs-feed-item:hover .gs-feed-item__img img {
+    transform: scale(1.05);
+}
+
+.gs-feed-item__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1; /* Ocupa o restante do espaço */
+    min-width: 0; /* Previne overflow do texto */
+}
+
+.gs-feed-item__title {
+    font-family: var(--font-heading-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    margin: 0.3rem 0;
+}
+
+@media (min-width: 768px) {
+    .gs-feed-item__title { font-size: 1.4rem; margin: 0.5rem 0; }
+}
+
+.gs-feed-item:hover .gs-feed-item__title { color: var(--accent-color); }
+
+.gs-feed-item__excerpt {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Container de Sessões Destaques */
+.gs-highlight-section {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.gs-highlight-header {
+    font-family: var(--font-ui);
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    border-left: 6px solid var(--accent-color);
+    padding-left: 1rem;
+    text-transform: uppercase;
+}
+
+/* Post Interno */
+.post-header {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+/* A FONTE DO TÍTULO SEM-SERIFA PESADA (Inter 900) */
+.post-title {
+    font-family: var(--font-heading-display);
+    font-size: 3.5rem; /* Colossal */
+    font-weight: 900; /* Extra bold */
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -2px; /* Deixa as letras bem juntinhas como no Gshow */
+    color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+    .post-title { font-size: 2.5rem; }
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-ui);
+}
+
+.post-author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-featured-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.post-featured-image img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.post-content {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.post-content h2, .post-content h3 {
+    font-family: var(--font-heading-serif);
+    margin: 2rem 0 1rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.post-content p { margin-bottom: 1.5rem; }
+.post-content img { border-radius: var(--border-radius); margin: 2rem 0; }
+
+/* Footer */
+.gs-footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 4rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.gs-footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.gs-footer__menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.gs-footer__menu a { font-weight: 700; font-family: var(--font-ui); }
+.gs-footer__copyright { color: var(--text-muted); font-size: 0.9rem; font-family: var(--font-ui); }

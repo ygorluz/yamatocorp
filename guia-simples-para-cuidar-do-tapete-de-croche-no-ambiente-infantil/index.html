@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia simples para cuidar do tapete de crochê no ambiente infantil - Yamato Corp</title>
+    <meta name="description" content="Descubra dicas práticas para cuidar do tapete de crochê no quarto infantil e manter a segurança e beleza do ambiente. Fácil e rápido!">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/guia-simples-para-cuidar-do-tapete-de-croche-no-ambiente-infantil/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/mercado-de-arte/" style="color:#ffffff;">Mercado de Arte</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Guia simples para cuidar do tapete de crochê no ambiente infantil</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Descubra dicas práticas para cuidar do tapete de crochê no quarto infantil e manter a segurança e beleza do ambiente. Fácil e rápido!</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-06-02" style="color: var(--text-muted);">
+                        02/06/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/guia-simples-para-cuidar-do-tapete-de-croche-no-ambiente-infantil.jpg" alt="Guia simples para cuidar do tapete de crochê no ambiente infantil">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>O <strong>tapete de croch&ecirc;</strong> &eacute; um item encantador e funcional para o quarto ou espa&ccedil;o de brincadeiras das crian&ccedil;as. Al&eacute;m de trazer aconchego e um toque artesanal, ele oferece uma superf&iacute;cie macia e confort&aacute;vel para os pequenos brincarem e aprenderem. Por&eacute;m, para garantir que o tapete mantenha sua beleza, durabilidade e higiene, &eacute; fundamental saber como cuidar adequadamente desse tipo de pe&ccedil;a, especialmente em ambientes infantis, onde a sujeira e o uso intenso s&atilde;o comuns.</p>
+<p>Este guia completo traz dicas pr&aacute;ticas e orienta&ccedil;&otilde;es para manter o <strong>tapete de croch&ecirc;</strong> sempre limpo, seguro e bonito, preservando sua textura e cores vibrantes, aprenda&nbsp;<strong><a href="https://mkhigienizacao.com.br/como-lavar-tapete-de-croche/" target="_blank" rel="noopener">Como Lavar Tapete De Croch&ecirc;? Passo A Passo Completo!</a></strong></p>
+<p>---</p>
+<h2>Por Que Escolher O Tapete De Croch&ecirc; Para Ambientes Infantis?</h2>
+<p>Antes de falar sobre os cuidados, &eacute; importante entender as vantagens do <strong>tapete de croch&ecirc;</strong> no quarto das crian&ccedil;as:</p>
+<p>- <strong>Conforto e seguran&ccedil;a:</strong> O croch&ecirc; oferece uma superf&iacute;cie acolchoada e antiderrapante, ideal para crian&ccedil;as que engatinham ou aprendem a andar.</p>
+<p>- <strong>Est&iacute;mulo sensorial:</strong> A textura artesanal ajuda no desenvolvimento t&aacute;til das crian&ccedil;as, incentivando o toque e o reconhecimento de diferentes superf&iacute;cies.</p>
+<p>- <strong>Decora&ccedil;&atilde;o personalizada:</strong> Como o croch&ecirc; permite uma infinidade de padr&otilde;es e cores, &eacute; poss&iacute;vel criar um ambiente l&uacute;dico e acolhedor para os pequenos.</p>
+<p>- <strong>Sustentabilidade:</strong> Muitos tapetes de croch&ecirc; s&atilde;o feitos com fios naturais e dur&aacute;veis, contribuindo para um consumo mais consciente.</p>
+<p>---</p>
+<h2>Principais Desafios No Cuidado Do Tapete De Croch&ecirc; No Ambiente Infantil</h2>
+<p>O uso infantil apresenta algumas particularidades que tornam os cuidados com o tapete essenciais:</p>
+<p>- <strong>Sujeira frequente:</strong> Poeira, restos de comida, l&iacute;quidos e sujeiras do dia a dia podem se acumular.</p>
+<p>- <strong>Manchas dif&iacute;ceis:</strong> Crian&ccedil;as tendem a derrubar sucos, tintas e outros materiais que podem manchar o tapete.</p>
+<p>- <strong>Desgaste natural:</strong> O uso constante pode desgastar os fios, causar pux&otilde;es e deforma&ccedil;&otilde;es.</p>
+<p>- <strong>Risco de alergias:</strong> Ac&uacute;mulo de poeira e &aacute;caros pode causar desconforto respirat&oacute;rio.</p>
+<p>Diante disso, manter o tapete de croch&ecirc; limpo e bem cuidado &eacute; fundamental para garantir a sa&uacute;de e o conforto da crian&ccedil;a.</p>
+<p>---</p>
+<h2>Como Escolher O Tapete De Croch&ecirc; Ideal Para O Ambiente Infantil</h2>
+<p>A escolha do tapete certo facilita a manuten&ccedil;&atilde;o e aumenta a durabilidade do produto. Veja alguns pontos importantes:</p>
+<h3>Tipo de fio</h3>
+<p>Prefira fios naturais, como algod&atilde;o e l&atilde;, que s&atilde;o mais suaves, hipoalerg&ecirc;nicos e confort&aacute;veis para a pele delicada das crian&ccedil;as. Fios sint&eacute;ticos podem ser mais resistentes, por&eacute;m menos respir&aacute;veis.</p>
+<h3>Tamanho e formato</h3>
+<p>Para quartos infantis, o ideal &eacute; escolher tapetes que cubram &aacute;reas estrat&eacute;gicas, como perto da cama, da mesa de atividades ou do espa&ccedil;o de brincadeiras, evitando que sejam muito grandes e dif&iacute;ceis de limpar.</p>
+<h3>Cores e padr&otilde;es</h3>
+<p>Opte por cores que harmonizem com a decora&ccedil;&atilde;o, mas que tamb&eacute;m sejam capazes de disfar&ccedil;ar pequenas manchas e sujeiras do dia a dia.</p>
+<h3>Acabamento e resist&ecirc;ncia</h3>
+<p>Verifique se o tapete possui um acabamento refor&ccedil;ado e se os pontos est&atilde;o bem firmes para evitar desmanchamentos com o uso cont&iacute;nuo.</p>
+<p>---</p>
+<h2>Cuidados Di&aacute;rios Para Manter O Tapete De Croch&ecirc; Limpo E Conservado</h2>
+<p>A rotina de cuidados ajuda a evitar o ac&uacute;mulo de sujeira e o desgaste precoce.</p>
+<h3>Aspirar regularmente</h3>
+<p>Utilize um aspirador de p&oacute; com escova macia para remover poeira e detritos do tapete. Essa a&ccedil;&atilde;o deve ser feita pelo menos duas vezes por semana para manter a limpeza.</p>
+<h3>Arejar o tapete</h3>
+<p>Sempre que poss&iacute;vel, leve o tapete para um local arejado e deixe-o exposto &agrave; luz indireta do sol por algumas horas. Isso ajuda a eliminar odores e umidade.</p>
+<h3>Evitar contato com l&iacute;quidos</h3>
+<p>Oriente as crian&ccedil;as a evitar comer e beber diretamente sobre o tapete para minimizar manchas e deteriora&ccedil;&atilde;o dos fios.</p>
+<h3>Usar protetores de piso</h3>
+<p>Se o tapete for colocado sobre superf&iacute;cies lisas, como madeira ou cer&acirc;mica, utilize protetores antiderrapantes para evitar deslocamentos e quedas.</p>
+<p>---</p>
+<h2>Como Lavar Tapete De Croch&ecirc;? Passo A Passo Completo!</h2>
+<p>A lavagem correta &eacute; essencial para manter o tapete de croch&ecirc; limpo e conservado, especialmente em ambientes infantis onde a higiene deve ser rigorosa.</p>
+<h3>Materiais necess&aacute;rios:</h3>
+<p>- Detergente neutro ou sab&atilde;o de coco</p>
+<p>- &Aacute;gua fria ou morna (n&atilde;o quente)</p>
+<p>- Balde ou bacia grande</p>
+<p>- Escova de cerdas macias ou pano limpo</p>
+<p>- Toalha para secagem</p>
+<h3>Passo 1: Prepara&ccedil;&atilde;o</h3>
+<p>Remova o excesso de poeira e sujeira com o aspirador ou sacudindo o tapete delicadamente.</p>
+<h3>Passo 2: Molhar o tapete</h3>
+<p>Mergulhe o tapete em um balde com &aacute;gua fria ou morna. Evite &aacute;gua quente para n&atilde;o encolher ou deformar os fios.</p>
+<h3>Passo 3: Aplicar detergente</h3>
+<p>Adicione uma pequena quantidade de detergente neutro e espalhe suavemente com as m&atilde;os ou com uma escova macia, focando nas manchas e &aacute;reas mais sujas.</p>
+<h3>Passo 4: Enx&aacute;gue</h3>
+<p>Enx&aacute;gue o tapete em &aacute;gua limpa at&eacute; remover todo o sab&atilde;o. Certifique-se de que n&atilde;o fique nenhum res&iacute;duo para evitar irrita&ccedil;&otilde;es na pele da crian&ccedil;a.</p>
+<h3>Passo 5: Retirar o excesso de &aacute;gua</h3>
+<p>Pressione suavemente o tapete para eliminar o excesso de &aacute;gua. Evite torcer para n&atilde;o danificar a estrutura dos pontos.</p>
+<h3>Passo 6: Secagem</h3>
+<p>Coloque o tapete sobre uma toalha seca, enrole para absorver a &aacute;gua, e depois estenda-o em uma superf&iacute;cie plana, &agrave; sombra e em local ventilado. Evite a luz direta do sol para preservar as cores.</p>
+<p>---</p>
+<h2>Dicas Para Remo&ccedil;&atilde;o De Manchas Espec&iacute;ficas</h2>
+<p>Algumas manchas comuns em ambientes infantis requerem cuidados especiais:</p>
+<h3>Manchas de alimentos e bebidas</h3>
+<p>Limpe o mais r&aacute;pido poss&iacute;vel com um pano &uacute;mido e detergente neutro. Evite esfregar com for&ccedil;a para n&atilde;o danificar o croch&ecirc;.</p>
+<h3>Manchas de tinta ou canetinha</h3>
+<p>Use um pouco de &aacute;lcool isoprop&iacute;lico aplicado em um pano e teste em uma &aacute;rea pequena antes de aplicar na mancha para evitar desbotamento.</p>
+<h3>Manchas de graxa ou &oacute;leo</h3>
+<p>Polvilhe bicarbonato de s&oacute;dio ou amido de milho sobre a mancha, deixe agir por algumas horas e depois aspire. Em seguida, lave conforme o passo a passo indicado.</p>
+<p>---</p>
+<h2>Armazenamento Correto Do Tapete De Croch&ecirc; Infantil</h2>
+<p>Quando for necess&aacute;rio guardar o tapete, alguns cuidados garantem que ele permane&ccedil;a intacto:</p>
+<p>- Limpe e lave o tapete antes de guardar para evitar mofo e odores.</p>
+<p>- Enrole o tapete, evitando dobr&aacute;-lo para n&atilde;o marcar ou danificar os pontos.</p>
+<p>- Armazene em local seco, arejado e protegido de luz solar direta.</p>
+<p>- Utilize saquinhos de tecido para proteger contra poeira, evitando pl&aacute;sticos que ret&ecirc;m umidade.</p>
+<p>---</p>
+<h2>Evitando O Desgaste Do Tapete De Croch&ecirc;</h2>
+<p>Algumas atitudes simples prolongam a vida &uacute;til do tapete:</p>
+<p>- Incentive as crian&ccedil;as a n&atilde;o puxar os fios ou brincar com objetos pontiagudos sobre o tapete.</p>
+<p>- Fa&ccedil;a inspe&ccedil;&otilde;es peri&oacute;dicas para identificar e reparar pequenos danos, como fios soltos.</p>
+<p>- Intercale o uso do tapete com outros tapetes ou pisos macios para distribuir o desgaste.</p>
+<p>---</p>
+<h2>Benef&iacute;cios De Manter O Tapete De Croch&ecirc; Sempre Limpo E Bem Cuidado</h2>
+<p>Cuidar bem do tapete de croch&ecirc; vai al&eacute;m da est&eacute;tica:</p>
+<p>- <strong>Higiene:</strong> Evita o ac&uacute;mulo de poeira, &aacute;caros e bact&eacute;rias, prevenindo alergias e doen&ccedil;as respirat&oacute;rias em crian&ccedil;as.</p>
+<p>- <strong>Durabilidade:</strong> Preserva a qualidade dos fios e do acabamento, garantindo que o tapete dure por muitos anos.</p>
+<p>- <strong>Conforto:</strong> Mant&eacute;m a maciez e a apar&ecirc;ncia acolhedora, proporcionando um ambiente agrad&aacute;vel para os pequenos.</p>
+<p>- <strong>Valoriza&ccedil;&atilde;o artesanal:</strong> O croch&ecirc; &eacute; uma arte manual que merece ser preservada e valorizada com cuidados adequados.</p>
+<p>---</p>
+<h2>Considera&ccedil;&otilde;es Finais</h2>
+<p>O <strong>tapete de croch&ecirc;</strong> &eacute; uma pe&ccedil;a que alia beleza, conforto e funcionalidade no ambiente infantil. Saber como cuidar dele corretamente &eacute; fundamental para manter sua qualidade e garantir um espa&ccedil;o seguro e agrad&aacute;vel para as crian&ccedil;as. Com cuidados simples e regulares, &eacute; poss&iacute;vel conservar as cores, a textura e a higiene do tapete, transformando-o em um item duradouro e cheio de significado para o dia a dia da fam&iacute;lia.</p>
+<p>Invista em produtos de qualidade, siga as orienta&ccedil;&otilde;es de limpeza e aproveite todos os benef&iacute;cios que o croch&ecirc; pode oferecer ao ambiente dos pequenos!</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

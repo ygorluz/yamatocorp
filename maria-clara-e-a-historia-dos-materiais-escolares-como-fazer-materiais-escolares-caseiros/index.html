@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Clara e a história dos materiais escolares | Como fazer materiais escolares caseiros! - Yamato Corp</title>
+    <meta name="description" content="A história de Maria Clara e sua paixão pelos materiais escolares
+Introdução
+Maria Clara sempre foi uma pessoa apaixonada por materiais escolares. Desde pequena,">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/maria-clara-e-a-historia-dos-materiais-escolares-como-fazer-materiais-escolares-caseiros/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Maria Clara e a história dos materiais escolares | Como fazer materiais escolares caseiros!</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">A história de Maria Clara e sua paixão pelos materiais escolares
+Introdução
+Maria Clara sempre foi uma pessoa apaixonada por materiais escolares. Desde pequena,</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 02:16
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Maria-Clara-e-a-historia-dos-materiais-escolares-Como.jpg" alt="Maria Clara e a história dos materiais escolares | Como fazer materiais escolares caseiros!">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>A história de Maria Clara e sua paixão pelos materiais escolares</h1>
+<h2>Introdução</h2>
+<p>Maria Clara sempre foi uma pessoa apaixonada por materiais escolares. Desde pequena, adorava passar horas escolhendo cadernos coloridos, canetas e lápis diferentes para utilizar na escola. Essa paixão só cresceu ao longo dos anos e, atualmente, ela decidiu levar esse hobby adiante e criar seus próprios materiais escolares DIY (Do It Yourself). Neste artigo, vamos acompanhar a jornada de Maria Clara e aprender como fazer seus próprios materiais escolares.</p>
+<h2>A paixão pelos materiais escolares</h2>
+<p>Desde a infância, Maria Clara sempre foi fascinada por materiais escolares. Ela adorava explorar papelarias, escolhendo os itens mais coloridos e diferentes para decorar seu material escolar. Com o tempo, essa paixão se transformou em um hobby e, atualmente, ela é conhecida entre seus amigos por sua coleção única de materiais escolares.</p>
+<h3>A importância dos materiais escolares</h3>
+<p>Os materiais escolares são fundamentais para o aprendizado dos alunos. Eles auxiliam na organização, facilitam a escrita e tornam o estudo mais agradável. Além disso, ter um material escolar personalizado pode aumentar a motivação e o interesse dos estudantes nas atividades escolares.</p>
+<h3>A influência dos materiais escolares na aprendizagem</h3>
+<p>Estudos mostram que a escolha dos materiais escolares pode influenciar diretamente no desempenho acadêmico dos alunos. Materiais organizados, coloridos e personalizados podem estimular a criatividade, a concentração e o foco durante as atividades escolares.</p>
+<h2>Como fazer materiais escolares DIY</h2>
+<p>Maria Clara decidiu levar sua paixão pelos materiais escolares um passo adiante e começou a criar seus próprios itens personalizados. Utilizando materiais simples e criatividade, ela consegue desenvolver cadernos, estojos, marcadores e outros materiais escolares únicos e cheios de personalidade.</p>
+<h3>Passo a passo para fazer materiais escolares DIY</h3>
+<p>Para criar seus próprios materiais escolares, Maria Clara utiliza materiais como papel colorido, cola, tesoura, canetas coloridas e adesivos. Ela segue um passo a passo simples e prático, que envolve desde a escolha dos materiais até a finalização dos itens. Com um pouco de paciência e criatividade, qualquer pessoa pode criar seus próprios materiais escolares DIY.</p>
+<h3>Benefícios de fazer seus próprios materiais escolares</h3>
+<p>Além de ser uma atividade divertida e relaxante, fazer seus próprios materiais escolares DIY traz diversos benefícios. Você pode personalizar seus itens de acordo com suas preferências, economizar dinheiro e ainda exercitar sua criatividade. Além disso, ao fazer seus próprios materiais escolares, você contribui para a redução do consumo de materiais descartáveis.</p>
+<h2>Conclusão</h2>
+<p>Ao acompanhar a história de Maria Clara e aprender como fazer seus próprios materiais escolares DIY, podemos perceber a importância e a influência dos materiais escolares no processo de aprendizagem. Personalizar seus itens escolares e criar materiais únicos, além de ser divertido, pode ser uma forma de estimular a criatividade, a concentração e o interesse dos estudantes nas atividades escolares. Que tal se inspirar em Maria Clara e começar a fazer seus próprios materiais escolares DIY?</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/wIvfhYguT6s?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Maria Clara e a história do material escolar</h2>
+<p>Maria Clara sempre foi apaixonada por desenhos e artes desde pequena. Ela se lembra de quando ganhou seus primeiros materiais escolares e como ficava ansiosa para usá-los em seus desenhos. Essa paixão pela <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> a levou a se dedicar cada vez mais aos seus estudos e aperfeiçoar suas habilidades como desenhista.</p>
+</p>
+<h2>How to make DIY School Supplies!</h2>
+<p>Criar seus próprios materiais escolares pode ser uma atividade divertida e econômica. Maria Clara aprendeu a fazer seus próprios materiais como estojos, cadernos e até mesmo lápis de cor. Com um pouco de criatividade e materiais simples, é possível transformar itens do dia a dia em peças únicas e personalizadas para utilização na escola.</p>
+</p>
+<h2>Conclusão</h2>
+<p>Em um mundo cada vez mais tecnológico, a arte dos desenhos e a história do material escolar continuam sendo valorizadas. Maria Clara é um exemplo de como a dedicação e a paixão pela arte podem transformar simples materiais em verdadeiras obras de arte. Criar seus próprios materiais escolares não só estimula a criatividade, mas também proporciona experiências únicas e personalizadas. Através de DIY School Supplies, podemos resgatar a essência do material escolar e tornar a volta às aulas mais divertida e especial.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=wIvfhYguT6s">Maria Clara & JP</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

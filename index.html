@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamato Corp</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <span>Yamato Corp</span>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main style="max-width: 1400px; margin: 0 auto; overflow: hidden; padding-bottom: 3rem;">
+    
+        
+        <div class="gs-hero-carousel-wrapper">
+            <button class="gs-carousel-btn gs-carousel-prev" onclick="document.getElementById('main-carousel').scrollBy({left: -window.innerWidth * 0.7, behavior: 'smooth'})" aria-label="Anterior">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="gs-carousel-btn gs-carousel-next" onclick="document.getElementById('main-carousel').scrollBy({left: window.innerWidth * 0.7, behavior: 'smooth'})" aria-label="Próximo">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="gs-hero-carousel" id="main-carousel">
+                
+                <article class="gs-hero-slide">
+                    <a href="/lhamas-amigaveis-curiosidades-divertidas-para-ensinar-a-criancada-no-passeio-a-fazendinha/">
+                        
+                            <img src="/static/uploads/lhamas-amigaveis-curiosidades-divertidas-para-ensinar-a-criancada-no-passeio-a-fazendinha.jpg" alt="Lhamas Amigáveis: Curiosidades Divertidas para Ensinar a Criançada no Passeio à Fazendinha">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Dicas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Lhamas Amigáveis: Curiosidades Divertidas para Ensinar a Criançada no Passeio à Fazendinha</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/reptil-legalizado-no-lar-dicas-educativas-para-ensinar-as-criancas-a-respeitar-animais-silvestres/">
+                        
+                            <img src="/static/uploads/reptil-legalizado-no-lar-dicas-educativas-para-ensinar-as-criancas-a-respeitar-animais-silvestres.jpg" alt="Réptil Legalizado no Lar: Dicas Educativas para Ensinar as Crianças a Respeitar Animais Silvestres">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Presentes</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Réptil Legalizado no Lar: Dicas Educativas para Ensinar as Crianças a Respeitar Animais Silvestres</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/como-deixar-a-comemoração-do-seu-filho-inesquecível/">
+                        
+                            <img src="/static/uploads/como-deixar-a-comemoracao-do-seu-filho-inesquecivel-thumb.webp?v=1792025482" alt="Como Deixar a Comemoração do Seu Filho Inesquecível?">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Dicas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Como Deixar a Comemoração do Seu Filho Inesquecível?</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/como-proteger-a-familia-com-cobertura-veicular-em-cajamar/">
+                        
+                            <img src="/static/uploads/como-proteger-a-familia-com-cobertura-veicular-em-cajamar.jpg" alt="Como proteger a família com cobertura veicular em Cajamar">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Como proteger a família com cobertura veicular em Cajamar</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/aluguel-de-futebol-de-sabão-dicas-de-instalação-no-gramado-shampoo-neutro-e-monitoria-para-a-garotada/">
+                        
+                            <img src="/static/uploads/aluguel-de-futebol-de-sabao-dicas-de-instalacao-no-gramado-shampoo-neutro-e-monitoria-para-a-garotada-thumb.webp?v=1791900192" alt="Aluguel de Futebol de Sabão: Dicas de Instalação no Gramado, Shampoo Neutro e Monitoria para a Garotada">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Public</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Aluguel de Futebol de Sabão: Dicas de Instalação no Gramado, Shampoo Neutro e Monitoria para a Garotada</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+            </div>
+        </div>
+
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            
+            
+
+            
+            
+            
+                <h3 class="gs-highlight-header" style="border-left-color: #555; margin-top: 3rem;">Últimas Notícias</h3>
+                <div class="gs-feed-list">
+                    
+                    <article class="gs-feed-item">
+                        <a href="/empresa-de-recrutamento-e-seleção-em-goiânia-redução-de-custos-operacionais-com-contratações-precisas/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/empresa-de-recrutamento-e-selecao-em-goiania-reducao-de-custos-operacionais-com-contratacoes-precisas-thumb.webp?v=1791554545" alt="Empresa de Recrutamento e Seleção em Goiânia: Redução de Custos Operacionais com Contratações Precisas" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Empresa de Recrutamento e Seleção em Goiânia: Redução de Custos Operacionais com Contratações Precisas</h3>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/limpeza-de-caixa-de-gordura-em-juiz-de-fora-como-evitar-mau-cheiro-pragas-e-transbordamentos-no-imovel/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/limpeza-de-caixa-de-gordura-em-juiz-de-fora-como-evitar-mau-cheiro-pragas-e-transbordamentos-no-imovel.jpg" alt="Limpeza de Caixa de Gordura em Juiz de Fora: Como Evitar Mau Cheiro, Pragas e Transbordamentos no Imóvel" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Desafios e Jogos</span>
+                                
+                                <h3 class="gs-feed-item__title">Limpeza de Caixa de Gordura em Juiz de Fora: Como Evitar Mau Cheiro, Pragas e Transbordamentos no Imóvel</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Limpeza de caixa de gordura em Juiz de Fora: evite mau cheiro, pragas e transbordamentos com dicas práticas e eficientes para seu imóvel.</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/cupom-kidy-calcados-ativo-como-economizar-em-tenis-infantis-e-sapatos-anatomicos/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/cupom-kidy-calcados-ativo-como-economizar-em-tenis-infantis-e-sapatos-anatomicos.jpg" alt="Cupom Kidy Calçados Ativo: Como Economizar em Tênis Infantis e Sapatos Anatômicos" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Cultura Pop e Mangá</span>
+                                
+                                <h3 class="gs-feed-item__title">Cupom Kidy Calçados Ativo: Como Economizar em Tênis Infantis e Sapatos Anatômicos</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Economize em tênis infantis e sapatos anatômicos com o cupom Kidy Calçados ativo. Aproveite descontos exclusivos e conforto para os pequenos!</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/como-os-simbolos-do-zodiaco-podem-ajudar-no-desenvolvimento-infantil/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/como-os-simbolos-do-zodiaco-podem-ajudar-no-desenvolvimento-infantil.jpg" alt="Como os Símbolos do Zodíaco Podem Ajudar no Desenvolvimento Infantil" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Desafios e Jogos</span>
+                                
+                                <h3 class="gs-feed-item__title">Como os Símbolos do Zodíaco Podem Ajudar no Desenvolvimento Infantil</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Descubra como os símbolos do zodíaco podem apoiar o desenvolvimento infantil, promovendo autoconhecimento e aprendizado desde cedo.</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/melhores-aventuras-para-criancas-em-punta-cana-e-arredores/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/melhores-aventuras-para-criancas-em-punta-cana-e-arredores.jpg" alt="Melhores aventuras para crianças em Punta Cana e arredores" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Desafios e Jogos</span>
+                                
+                                <h3 class="gs-feed-item__title">Melhores aventuras para crianças em Punta Cana e arredores</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">Descubra as melhores aventuras para crianças em Punta Cana e arredores. Diversão, segurança e atrações incríveis para toda a família!</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                </div>
+            
+        </div>
+    
+
+    
+    <nav class="pagination" style="margin-top: 4rem; text-align: center;">
+        
+        
+            <a href="/page/2/" style="padding: 0.8rem 1.5rem; background: var(--accent-color); color: #fff; border-radius: 4px; font-weight: 700; text-decoration: none;">Próxima</a>
+        
+    </nav>
+    
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

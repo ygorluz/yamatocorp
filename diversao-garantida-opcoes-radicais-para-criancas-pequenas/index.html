@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversão Garantida: Opções Radicais Para Crianças Pequenas - Yamato Corp</title>
+    <meta name="description" content="Descubra opções radicais e seguras para garantir diversão e aventura para crianças pequenas. Atividades emocionantes que encantam toda a família!">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/diversao-garantida-opcoes-radicais-para-criancas-pequenas/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/desafios-e-jogos/" style="color:#ffffff;">Desafios e Jogos</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Diversão Garantida: Opções Radicais Para Crianças Pequenas</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Descubra opções radicais e seguras para garantir diversão e aventura para crianças pequenas. Atividades emocionantes que encantam toda a família!</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-06-18" style="color: var(--text-muted);">
+                        18/06/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/diversao-garantida-opcoes-radicais-para-criancas-pequenas.jpg" alt="Diversão Garantida: Opções Radicais Para Crianças Pequenas">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>Quando se trata de entreter <strong>crian&ccedil;as pequenas</strong>, a palavra "radical" pode parecer um desafio. Afinal, a seguran&ccedil;a e o conforto dos pequenos s&atilde;o sempre prioridades m&aacute;ximas para os pais e respons&aacute;veis. Por&eacute;m, a divers&atilde;o de alta energia e atividades vibrantes n&atilde;o precisa ser deixada para as crian&ccedil;as mais velhas ou adolescentes.</p>
+<p>Existem diversas op&ccedil;&otilde;es radicais adaptadas para os pequenos, que combinam emo&ccedil;&atilde;o e seguran&ccedil;a para garantir momentos inesquec&iacute;veis.</p>
+<p>Este conte&uacute;do apresenta uma lista completa de atividades e brinquedos radicais indicados para <strong>crian&ccedil;as pequenas</strong>, proporcionando experi&ecirc;ncias intensas e muito divertidas, sem abrir m&atilde;o dos cuidados necess&aacute;rios. Seja para um passeio em fam&iacute;lia, uma festa de anivers&aacute;rio ou um dia no parque, as op&ccedil;&otilde;es a seguir s&atilde;o ideais para quem busca <strong>divers&atilde;o garantida</strong>.</p>
+<h2>Por Que Escolher Op&ccedil;&otilde;es Radicais Para Crian&ccedil;as Pequenas?</h2>
+<p>Muitos pais t&ecirc;m receio de permitir que seus filhos participem de atividades consideradas radicais. No entanto, as experi&ecirc;ncias que envolvem desafios f&iacute;sicos, movimentos r&aacute;pidos ou sensa&ccedil;&otilde;es de adrenalina controlada t&ecirc;m diversos benef&iacute;cios para o desenvolvimento infantil.</p>
+<h3>Benef&iacute;cios das atividades radicais para os pequenos</h3>
+<p>- <strong>Desenvolvimento motor:</strong> Atividades que envolvem equil&iacute;brio, coordena&ccedil;&atilde;o e for&ccedil;a ajudam no crescimento f&iacute;sico saud&aacute;vel.</p>
+<p>- <strong>Est&iacute;mulo da confian&ccedil;a:</strong> Superar desafios faz com que as crian&ccedil;as ganhem autoestima e autoconfian&ccedil;a.</p>
+<p>- <strong>Socializa&ccedil;&atilde;o:</strong> Jogos e brinquedos radicais geralmente s&atilde;o em grupo, facilitando a intera&ccedil;&atilde;o social e trabalho em equipe.</p>
+<p>- <strong>Controle do medo:</strong> Expor-se a situa&ccedil;&otilde;es de leve adrenalina ajuda a lidar com o medo e a ansiedade.</p>
+<p>A chave para o sucesso est&aacute; na escolha de atividades adequadas &agrave; idade e capacidade da crian&ccedil;a, sempre com supervis&atilde;o e equipamentos de seguran&ccedil;a apropriados.</p>
+<p>---</p>
+<h2>Op&ccedil;&otilde;es Radicais Seguras Para Crian&ccedil;as Pequenas</h2>
+<h3>1. Mini escalada indoor</h3>
+<p>A escalada &eacute; uma atividade que pode ser adaptada para todas as idades. Para os pequenos, existem paredes de escalada com altura reduzida e estrutura acolchoada, garantindo seguran&ccedil;a total.</p>
+<p>- <strong>Benef&iacute;cios:</strong> Melhora o equil&iacute;brio, a coordena&ccedil;&atilde;o motora e a for&ccedil;a muscular.</p>
+<p>- <strong>Dica:</strong> Procure centros com instrutores especializados para crian&ccedil;as, que saibam como incentivar sem for&ccedil;ar.</p>
+<h3>2. Circuito de obst&aacute;culos infl&aacute;veis</h3>
+<p>Os parques de infl&aacute;veis oferecem uma variedade de circuitos com tobog&atilde;s, t&uacute;neis e obst&aacute;culos para os pequenos correrem e pularem com seguran&ccedil;a.</p>
+<p>- <strong>Por que &eacute; radical?</strong> A velocidade nas descidas e a necessidade de superar obst&aacute;culos proporcionam uma sensa&ccedil;&atilde;o de aventura.</p>
+<p>- <strong>Vantagens:</strong> Desenvolve agilidade e resist&ecirc;ncia, al&eacute;m de ser uma atividade social divertida.</p>
+<h3>3. Trampolins com prote&ccedil;&atilde;o</h3>
+<p>Pular em trampolins &eacute; uma atividade que nunca sai de moda, e atualmente existem modelos com redes de prote&ccedil;&atilde;o especialmente desenhadas para crian&ccedil;as pequenas.</p>
+<p>- <strong>Import&acirc;ncia da seguran&ccedil;a:</strong> A rede evita quedas perigosas, enquanto a &aacute;rea delimitada mant&eacute;m a brincadeira organizada.</p>
+<p>- <strong>Efeito radical:</strong> A sensa&ccedil;&atilde;o de voar no ar e realizar pequenos saltos garante emo&ccedil;&atilde;o e alegria.</p>
+<h3>4. Passeios de mini quadriciclo el&eacute;trico</h3>
+<p>Um dos brinquedos mais divertidos para os pequenos &eacute; o mini quadriciclo el&eacute;trico, que permite dirigir em circuitos controlados e seguros.</p>
+<p>- <strong>Sensa&ccedil;&atilde;o de liberdade:</strong> Conduzir o ve&iacute;culo, mesmo em baixa velocidade, traz uma experi&ecirc;ncia radical adaptada &agrave; idade.</p>
+<p>- <strong>Supervis&atilde;o:</strong> Fundamental garantir que o percurso esteja livre de obst&aacute;culos e que a crian&ccedil;a use capacete.</p>
+<h3>5. Aluguel de Giro Radical para festas infantis</h3>
+<p>Uma op&ccedil;&atilde;o inovadora e cheia de emo&ccedil;&atilde;o &eacute; o <a href="https://www.tontonlocacoes.com.br/giro-radical" target="_blank" rel="noopener">aluguel de Giro Radical</a>, um brinquedo que gira em alta velocidade, mas com mecanismos de seguran&ccedil;a para crian&ccedil;as pequenas.</p>
+<p>- <strong>Por que escolher?</strong> &Eacute; uma atra&ccedil;&atilde;o que chama aten&ccedil;&atilde;o pela adrenalina controlada, tornando a festa ainda mais especial.</p>
+<p>- <strong>Dica:</strong> Sempre certifique-se de que o equipamento esteja certificado e monitorado por profissionais durante o uso.</p>
+<h2>Atividades Radicais Ao Ar Livre Para Crian&ccedil;as Pequenas</h2>
+<h3>1. Passeio de bicicleta com rodinhas</h3>
+<p>Iniciar o aprendizado da bicicleta com rodinhas &eacute; um cl&aacute;ssico que oferece muita emo&ccedil;&atilde;o para os pequenos.</p>
+<p>- <strong>O que torna radical?</strong> A sensa&ccedil;&atilde;o de velocidade e o equil&iacute;brio em movimento estimulam a coragem.</p>
+<p>- <strong>Benef&iacute;cios:</strong> Melhora o condicionamento f&iacute;sico e a coordena&ccedil;&atilde;o motora.</p>
+<h3>2. Mini tirolesa infantil</h3>
+<p>Alguns parques contam com tirolesas adaptadas para crian&ccedil;as pequenas, com cabos mais curtos e equipamentos de seguran&ccedil;a refor&ccedil;ados.</p>
+<p>- <strong>Sensa&ccedil;&atilde;o forte:</strong> A descida suspensa no ar provoca uma descarga de adrenalina leve, perfeita para os pequenos aventureiros.</p>
+<p>- <strong>Importante:</strong> A presen&ccedil;a de instrutores e uso de equipamentos certificados &eacute; indispens&aacute;vel.</p>
+<h3>3. Caminhada em trilhas curtas e seguras</h3>
+<p>Pequenas trilhas em parques ou &aacute;reas verdes, com caminhos bem demarcados, oferecem um contato com a natureza recheado de desafios e descobertas.</p>
+<p>- <strong>Por que radical?</strong> O terreno irregular e a necessidade de aten&ccedil;&atilde;o constante fazem da caminhada uma aventura.</p>
+<p>- <strong>Dica:</strong> Utilize cal&ccedil;ados apropriados e leve &aacute;gua e snacks para garantir o conforto das crian&ccedil;as.</p>
+<p>---</p>
+<h2>Brinquedos Radicais Para Usar Em Casa Ou No Quintal</h2>
+<h3>1. Skate infantil com capacete</h3>
+<p>O skate &eacute; um brinquedo radical por natureza, e vers&otilde;es adaptadas para crian&ccedil;as pequenas possuem tamanho reduzido e superf&iacute;cies antiderrapantes.</p>
+<p>- <strong>Seguran&ccedil;a:</strong> Uso obrigat&oacute;rio de capacete, joelheiras e cotoveleiras.</p>
+<p>- <strong>Desenvolvimento:</strong> Ajuda no equil&iacute;brio e na coordena&ccedil;&atilde;o motora.</p>
+<h3>2. Escorregador gigante infl&aacute;vel</h3>
+<p>Os escorregadores infl&aacute;veis s&atilde;o perfeitos para festas e momentos de lazer, oferecendo descidas r&aacute;pidas e muita emo&ccedil;&atilde;o.</p>
+<p>- <strong>Ideal para:</strong> Quintais espa&ccedil;osos ou &aacute;reas externas.</p>
+<p>- <strong>Dica:</strong> Sempre supervisionar para evitar acidentes.</p>
+<h3>3. Mini cama el&aacute;stica</h3>
+<p>A mini cama el&aacute;stica &eacute; uma alternativa para que a crian&ccedil;a tenha momentos de salto e divers&atilde;o dentro de casa, com estrutura segura e adaptada.</p>
+<p>- <strong>Radicalidade:</strong> Saltos e piruetas controladas proporcionam sensa&ccedil;&otilde;es parecidas com esportes radicais.</p>
+<p>- <strong>Cuidados:</strong> Supervis&atilde;o constante e evitar o uso por mais de uma crian&ccedil;a ao mesmo tempo.</p>
+<p>---</p>
+<h2>Como Garantir A Seguran&ccedil;a Durante Atividades Radicais Para Crian&ccedil;as Pequenas</h2>
+<p>A palavra-chave para qualquer atividade radical com crian&ccedil;as pequenas &eacute; <strong>seguran&ccedil;a</strong>. Para que a divers&atilde;o seja realmente garantida, &eacute; fundamental tomar algumas precau&ccedil;&otilde;es:</p>
+<p>- <strong>Equipamentos de prote&ccedil;&atilde;o:</strong> Capacetes, joelheiras, cotoveleiras e luvas s&atilde;o essenciais para proteger contra quedas e impactos.</p>
+<p>- <strong>Supervis&atilde;o constante:</strong> Um adulto respons&aacute;vel deve acompanhar as crian&ccedil;as durante toda a atividade.</p>
+<p>- <strong>Ambiente controlado:</strong> Certifique-se de que o local est&aacute; adequado para a idade e habilidades da crian&ccedil;a, sem obst&aacute;culos perigosos.</p>
+<p>- <strong>Respeito ao limite:</strong> Respeite o ritmo da crian&ccedil;a, sem for&ccedil;ar que participe de algo que a deixe desconfort&aacute;vel ou assustada.</p>
+<p>- <strong>Equipamentos certificados:</strong> Use brinquedos e equipamentos reconhecidos por &oacute;rg&atilde;os de seguran&ccedil;a e com manuten&ccedil;&atilde;o em dia.</p>
+<p>---</p>
+<h2>A Import&acirc;ncia Do Lazer Radical Para O Desenvolvimento Infantil</h2>
+<p>Incorporar momentos de lazer mais animados e com pitadas de adrenalina na rotina das crian&ccedil;as pequenas vai al&eacute;m da simples divers&atilde;o. Essas experi&ecirc;ncias contribuem para:</p>
+<p>- <strong>Sa&uacute;de f&iacute;sica:</strong> Atividades que envolvem movimento intenso ajudam a combater o sedentarismo.</p>
+<p>- <strong>Sa&uacute;de emocional:</strong> A adrenalina controlada libera endorfinas, promovendo sensa&ccedil;&atilde;o de bem-estar.</p>
+<p>- <strong>Aprendizado:</strong> Superar desafios potenciais ensina resili&ecirc;ncia e perseveran&ccedil;a.</p>
+<p>- <strong>Criatividade:</strong> Est&iacute;mulos diferentes incentivam a imagina&ccedil;&atilde;o e o pensamento cr&iacute;tico.</p>
+<p>---</p>
+<h2>Considera&ccedil;&otilde;es Finais Para Uma Divers&atilde;o Radical Segura E Inesquec&iacute;vel</h2>
+<p>Para garantir que as op&ccedil;&otilde;es radicais para crian&ccedil;as pequenas sejam realmente momentos de alegria e aprendizado, &eacute; essencial planejamento, escolha adequada da atividade e cuidados redobrados com a seguran&ccedil;a. Com o equil&iacute;brio certo entre emo&ccedil;&atilde;o e prote&ccedil;&atilde;o, os pequenos podem se beneficiar muito dessas experi&ecirc;ncias.</p>
+<p>Seja em parques, eventos ou na pr&oacute;pria casa, investir em op&ccedil;&otilde;es que proporcionem uma <strong>divers&atilde;o garantida</strong> com pitadas de radicalidade &eacute; um diferencial para o desenvolvimento e para o fortalecimento dos la&ccedil;os familiares e sociais.</p>
+<p>A inova&ccedil;&atilde;o no setor de entretenimento infantil tamb&eacute;m traz novidades como o aluguel de Giro Radical, que une emo&ccedil;&atilde;o e seguran&ccedil;a, ampliando as possibilidades para festas e eventos. Com essas op&ccedil;&otilde;es, o mundo das crian&ccedil;as pequenas se torna mais vibrante, estimulante e, claro, muito divertido.</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como NÃO pintar Anime! (Tutorial de Pintura) - Yamato Corp</title>
+    <meta name="description" content="Como pintar Anime: Tutorial de Pintura
+Introdução: A arte de pintar Anime
+Pintar personagens de Anime pode ser uma tarefa gratificante e terapêutica para muitos">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/como-nao-pintar-anime-tutorial-de-pintura/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como NÃO pintar Anime! (Tutorial de Pintura)</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Como pintar Anime: Tutorial de Pintura
+Introdução: A arte de pintar Anime
+Pintar personagens de Anime pode ser uma tarefa gratificante e terapêutica para muitos</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-15" style="color: var(--text-muted);">
+                        15/10/2024 22:11
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Como-NAO-pintar-Anime-Tutorial-de-Pintura.jpg" alt="Como NÃO pintar Anime! (Tutorial de Pintura)">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Como pintar Anime: Tutorial de Pintura</h1>
+<h2>Introdução: A <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> de pintar Anime</h2>
+<p>Pintar personagens de Anime pode ser uma tarefa gratificante e terapêutica para muitos artistas. No entanto, é importante ter em mente que existem técnicas erradas que podem comprometer a qualidade final da sua pintura. Neste artigo, vamos abordar como NÃO pintar Anime, evitando erros comuns e garantindo um resultado final satisfatório.</p>
+<h2>Erro 1: Não usar referências adequadas</h2>
+<p>Um dos erros mais comuns ao pintar Anime é não utilizar referências adequadas. É essencial estudar bem o estilo e as características dos personagens que você deseja pintar. Caso contrário, o resultado final pode não ser fiel ao Anime original, perdendo sua essência.</p>
+<h2>Erro 2: Ignorar a proporção e anatomia</h2>
+<p>Outro erro comum é ignorar a proporção e anatomia dos personagens de Anime. É importante manter as características físicas e proporções típicas desse estilo, garantindo que o resultado final seja reconhecível como um personagem de Anime.</p>
+<h2>Erro 3: Não dominar a técnica de pintura</h2>
+<p>Dominar a técnica de pintura é essencial para obter um resultado final satisfatório. Erros como falta de controle nas pinceladas, cores mal escolhidas e falta de textura podem comprometer a qualidade da pintura de Anime. É importante praticar regularmente e estudar técnicas de pintura específicas para esse estilo.</p>
+<h2>Erro 4: Não prestar atenção aos detalhes</h2>
+<p>Detalhes são essenciais ao pintar Anime. Não prestar atenção aos detalhes pode resultar em uma pintura sem vida e sem personalidade. É importante dedicar tempo para garantir que cada elemento do personagem esteja bem trabalhado, desde os olhos e expressões faciais até os detalhes dos cabelos e roupas.</p>
+<h2>Conclusão</h2>
+<p>Pintar Anime pode ser uma atividade prazerosa e relaxante, desde que seja feita com cuidado e atenção aos detalhes. Evitar os erros comuns mencionados neste artigo é essencial para garantir um resultado final de qualidade. Lembre-se de sempre utilizar referências adequadas, respeitar a proporção e anatomia dos personagens, dominar a técnica de pintura e prestar atenção aos detalhes. Com prática e dedicação, você poderá criar pinturas de Anime incríveis e cheias de vida.</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/t93kA052Yxc?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Erros comuns ao pintar anime</h2>
+<p>Ao tentar pintar anime, muitas pessoas cometem erros que comprometem o resultado final. É importante prestar atenção na escolha das cores, na técnica de pintura e na proporção dos elementos. Evite utilizar cores muito saturadas, pois isso pode deixar o desenho com aspecto artificial. Além disso, é fundamental ter cuidado com os sombreados, para evitar que o desenho fique plano e sem profundidade.</p>
+</p>
+<h2>Utilização incorreta de texturas</h2>
+<p>Outro erro comum ao pintar anime é a utilização incorreta de texturas. Muitas pessoas acabam exagerando na quantidade de texturas, o que pode deixar o desenho poluído e confuso. É importante escolher texturas que combinem com o estilo do anime e utilizá-las de forma equilibrada. Além disso, é essencial prestar atenção na união das texturas, para que o desenho não fique desconexo.</p>
+</p>
+<h2>Falta de atenção aos detalhes</h2>
+<p>Por fim, um erro bastante comum ao pintar anime é a falta de atenção aos detalhes. Muitas vezes, as pessoas se concentram apenas nas partes principais do desenho, deixando de lado pequenos detalhes que fazem toda a diferença. É importante dedicar tempo para os detalhes, como expressões faciais, cabelos e acessórios, para que o desenho fique mais realista e interessante.</p>
+</p>
+<h3>Erros a evitar ao pintar anime</h3>
+<p>Ao tentar pintar anime, é fundamental evitar erros comuns que podem comprometer o resultado final. Prestar atenção na escolha das cores, na utilização de texturas e nos detalhes do desenho são aspectos essenciais para obter um resultado satisfatório. Com atenção e prática, é possível evitar esses erros e aprimorar suas habilidades de pintura em anime. Lembre-se sempre de buscar referências e praticar constantemente para alcançar bons resultados em seus desenhos.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=t93kA052Yxc">LeoMK</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

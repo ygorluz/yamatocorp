@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Desenhar um Olho Realista com Lápis de Cor de Forma Fácil! - Yamato Corp</title>
+    <meta name="description" content="Como pintar olho realista com lápis de cor FÁCIL!
+Introdução
+Pintar olhos realistas pode parecer uma tarefa difícil, mas com a técnica certa e um pouco de práti">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/o-gato-galactico-decidiu-passar-o-dia-desenhando-seus-amigos-ele-pegou-seus-lapis-coloridos-e-sua-folha-em-branco-e-comecou-a-retratar-/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como Desenhar um Olho Realista com Lápis de Cor de Forma Fácil!</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Como pintar olho realista com lápis de cor FÁCIL!
+Introdução
+Pintar olhos realistas pode parecer uma tarefa difícil, mas com a técnica certa e um pouco de práti</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 09:59
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Como-Desenhar-um-Olho-Realista-com-Lapis-de-Cor-de.jpg" alt="Como Desenhar um Olho Realista com Lápis de Cor de Forma Fácil!">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Como pintar olho realista com lápis de cor FÁCIL!</h1>
+<h2>Introdução</h2>
+<p>Pintar olhos realistas pode parecer uma tarefa difícil, mas com a técnica certa e um pouco de prática, é possível alcançar resultados surpreendentes. Neste artigo, vamos te ensinar como pintar olhos realistas utilizando apenas lápis de cor, de forma fácil e acessível.</p>
+<h2>Materiais necessários</h2>
+<p>Antes de começar a pintar, é importante ter os materiais corretos em mãos. Para pintar olhos realistas com lápis de cor, você vai precisar de:</p>
+<ul>
+<li>Um conjunto de lápis de cor de boa qualidade</li>
+<li>Papel de alta gramatura</li>
+<li>Um apontador</li>
+<li>Um esfuminho ou cotonete</li>
+<li>Borracha para apagar</li>
+</ul>
+<h2>Passo a passo</h2>
+<ol>
+<li>
+<p><strong>Esboço inicial</strong>: Comece desenhando o contorno básico do olho com um lápis de cor claro. Não se preocupe em ser perfeito neste estágio, o objetivo é apenas ter uma ideia geral da forma do olho.</p>
+</li>
+<li>
+<p><strong>Preenchimento da íris</strong>: Escolha a cor base para a íris do olho e preencha a área de forma uniforme. Depois, adicione camadas de cores mais escuras para criar profundidade e realismo.</p>
+</li>
+<li>
+<p><strong>Detalhes do olho</strong>: Com um lápis mais fino, adicione os detalhes do olho, como as pupilas, reflexos e cílios. Utilize tons mais escuros para as áreas de sombra e tons mais claros para os destaques.</p>
+</li>
+<li>
+<p><strong>Esfumado</strong>: Utilize um esfuminho ou cotonete para suavizar as transições de cor e criar um efeito mais realista. Tenha cuidado para não esfumar demais e perder os detalhes do desenho.</p>
+</li>
+<li><strong>Acabamento</strong>: Por fim, revise o desenho, faça ajustes necessários e adicione pequenos detalhes para finalizar o olho de forma realista.</li>
+</ol>
+<h2>Dicas adicionais</h2>
+<ul>
+<li>Experimente misturar cores para criar tonalidades únicas e mais realistas.</li>
+<li>Estude a anatomia dos olhos para compreender melhor como as sombras e reflexos se comportam.</li>
+<li>Pratique regularmente para aprimorar suas habilidades e se tornar um mestre na <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> de pintar olhos realistas.</li>
+</ul>
+<p>Com essas dicas e técnicas simples, você será capaz de pintar olhos realistas com lápis de cor de forma fácil e surpreendente. Não tenha medo de errar e lembre-se de que a prática leva à perfeição. Divirta-se pintando e explore sua criatividade neste maravilhoso mundo da arte!</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/KnzClA1fddA?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Passo a passo para pintar olhos realistas com lápis de cor</h2>
+</p>
+<p>Neste tutorial, vamos te ensinar a técnica para pintar olhos realistas utilizando lápis de cor. Comece traçando o contorno do olho com um lápis claro e vá adicionando camadas de cor aos poucos para criar profundidade e detalhes. Utilize tons mais escuros para a íris e crie reflexos brilhantes com lápis branco.</p>
+</p>
+<h2>Dicas para aprimorar sua técnica de pintura com lápis de cor</h2>
+</p>
+<p>Para obter um resultado mais realista, experimente misturar cores e fazer sobreposições com os lápis. Não tenha medo de testar diferentes técnicas de sombreamento e texturização para dar mais vida ao olho. Lembre-se de sempre observar a luz e sombra ao redor do olho para garantir um aspecto natural na sua pintura.</p>
+</p>
+<h2>Finalizando seu desenho de olho realista</h2>
+</p>
+<p>Após finalizar a pintura do olho, você pode adicionar mais detalhes, como cílios, pálpebras e rugas ao redor dos olhos para dar mais realismo à sua obra de arte. Não se esqueça de assinar sua criação e compartilhar com amigos e familiares para receber feedbacks e melhorar ainda mais suas habilidades artísticas.</p>
+</p>
+<h3>Como pintar um olho realista com lápis de cor: dicas e técnicas para aprimorar sua arte</h3>
+</p>
+<p>Neste artigo, aprendemos a técnica de pintura de olhos realistas com lápis de cor, passando por dicas importantes para aprimorar sua habilidade artística. Ao seguir o passo a passo e experimentar diferentes técnicas, você poderá criar obras de arte incríveis repletas de detalhes e realismo. Lembre-se sempre de praticar e explorar novas possibilidades para se tornar um mestre na arte da pintura de olhos realistas com lápis de cor.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=KnzClA1fddA">Johnsaniarts</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

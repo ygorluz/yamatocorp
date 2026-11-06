@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamato Corp</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <span>Yamato Corp</span>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main style="max-width: 1400px; margin: 0 auto; overflow: hidden; padding-bottom: 3rem;">
+    
+        
+        <div class="gs-hero-carousel-wrapper">
+            <button class="gs-carousel-btn gs-carousel-prev" onclick="document.getElementById('main-carousel').scrollBy({left: -window.innerWidth * 0.7, behavior: 'smooth'})" aria-label="Anterior">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="gs-carousel-btn gs-carousel-next" onclick="document.getElementById('main-carousel').scrollBy({left: window.innerWidth * 0.7, behavior: 'smooth'})" aria-label="Próximo">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="gs-hero-carousel" id="main-carousel">
+                
+                <article class="gs-hero-slide">
+                    <a href="/o-melhor-robo-aspirador-uma-solucao-tecnologica-para-deixar-as-criancas-longe-da-sujeira/">
+                        
+                            <img src="/static/uploads/s-1-image1.png" alt="O Melhor Robô Aspirador: Uma Solução Tecnológica para Deixar as Crianças Longe da Sujeira">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>O Melhor Robô Aspirador: Uma Solução Tecnológica para Deixar as Crianças Longe da Sujeira</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/presente-para-bebe-ideias-encantadoras-para-surpreender-com-carinho/">
+                        
+                            <img src="/static/uploads/Presente-para-Bebe.jpg" alt="Presente para Bebê: Ideias Encantadoras para Surpreender com Carinho">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Presentes</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Presente para Bebê: Ideias Encantadoras para Surpreender com Carinho</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/rotina-matinal-infantil-como-comecar-o-dia-com-organizacao-e-leveza/">
+                        
+                            <img src="/static/uploads/rotina-matinal-infantil.jpg" alt="Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Dicas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/5-dicas-para-criancas-usarem-apps-de-mensagens-de-forma-segura/">
+                        
+                            <div style="width: 100%; height: 100%; background: #333;"></div>
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>5 Dicas para Crianças Usarem Apps de Mensagens de Forma Segura</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+                <article class="gs-hero-slide">
+                    <a href="/entendendo-os-morfemas-na-formacao-das-palavras-o-desafio-cativante-de-decifrar-a-lingua-para-criancas/">
+                        
+                            <img src="/static/uploads/jovem-fazendo-terapia-da-fala-com-criancas_23-21491102851.jpg" alt="Entendendo Os Morfemas Na Formação Das Palavras: O Desafio Cativante de Decifrar a Língua para Crianças">
+                        
+                        <div class="gs-hero-slide__content">
+                            
+                                <span class="gs-category-pill">Tutoriais e Aulas</span>
+                            
+                            <br>
+                            <h2 class="hero-title-box">
+                                <span>Entendendo Os Morfemas Na Formação Das Palavras: O Desafio Cativante de Decifrar a Língua para Crianças</span>
+                            </h2>
+                        </div>
+                    </a>
+                </article>
+                
+            </div>
+        </div>
+
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            
+            
+
+            
+            
+            
+                <h3 class="gs-highlight-header" style="border-left-color: #555; margin-top: 3rem;">Últimas Notícias</h3>
+                <div class="gs-feed-list">
+                    
+                    <article class="gs-feed-item">
+                        <a href="/lightning-lane-multi-pass-como-funciona-a-tecnologia-que-otimiza-sua-visita-aos-parques-disney/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/DLR_LL_Explainer21.jpg" alt="Lightning Lane Multi Pass: Como Funciona a Tecnologia que Otimiza Sua Visita aos Parques Disney" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Lightning Lane Multi Pass: Como Funciona a Tecnologia que Otimiza Sua Visita aos Parques Disney</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">
+
+
+
+
+
+
+
+A busca por otimizar o tempo e maximizar a diversão nos parques da Disney é uma prioridade para qualquer viajante. Longe das longas filas, o Lightning L</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/conheca-a-maquina-de-costura-singer-m2505-um-processo-e-intuitivo-e-profissional/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/maquina-de-costura-371.jpg" alt="Conheça a Máquina de Costura Singer M2505, Um Processo e Intuitivo e Profissional" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Conheça a Máquina de Costura Singer M2505, Um Processo e Intuitivo e Profissional</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">
+A Máquina de Costura Singer M2505 é um modelo mecânico, portátil e que se destaca por ser uma ótima opção para iniciantes na costura e para quem busca uma máqu</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/joias-em-ouro-para-criancas-e-bebes-a-fantasia-dos-animes-na-realidade-de-um-presente/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Sec215f18354247969e7a5c4b63bea843R.jpg_640x640q901.webp" alt="Joias em Ouro para Crianças e Bebês: A Fantasia dos Animes na Realidade de um Presente" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Joias em Ouro para Crianças e Bebês: A Fantasia dos Animes na Realidade de um Presente</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">
+
+
+
+
+
+
+
+A tradição de presentear crianças e bebês com joias em ouro é um gesto que transcende o valor material; é um símbolo de afeto, proteção e um desejo de p</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/mamadeiras-philips-avent-qualidade-e-conforto-para-o-seu-bebe/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Mamadeiras-Philips-Avent-1.jpg" alt="Mamadeiras Philips Avent: Qualidade e Conforto para o Seu Bebê" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tutoriais e Aulas</span>
+                                
+                                <h3 class="gs-feed-item__title">Mamadeiras Philips Avent: Qualidade e Conforto para o Seu Bebê</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">
+Quando falamos em cuidar de um bebê, cada detalhe importa. Desde o carinho até a escolha dos produtos usados no dia a dia, tudo pode fazer diferença. E quando </p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gs-feed-item">
+                        <a href="/plano-de-saude-e-tecnologias-inovacao-que-transforma-a-saude-suplementar/" style="display: flex; gap: 1rem; width: 100%; text-decoration: none; color: inherit;">
+                            <div class="gs-feed-item__img">
+                                
+                                    <img src="/static/uploads/Plano-de-Saude-tecnologia.jpg" alt="Plano de Saúde e Tecnologias: Inovação que Transforma a Saúde Suplementar" loading="lazy">
+                                
+                            </div>
+                            <div class="gs-feed-item__content">
+                                
+                                    <span style="color: var(--accent-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 0.3rem; display: block;">Tecnologia e Ferramentas</span>
+                                
+                                <h3 class="gs-feed-item__title">Plano de Saúde e Tecnologias: Inovação que Transforma a Saúde Suplementar</h3>
+                                
+                                    <p class="gs-feed-item__excerpt">
+
+
+
+
+Nos últimos anos, a tecnologia tem revolucionado todos os setores da sociedade, e a área da saúde não ficou de fora dessa transformação.
+
+
+
+Com o avanço da</p>
+                                
+                            </div>
+                        </a>
+                    </article>
+                    
+                </div>
+            
+        </div>
+    
+
+    
+    <nav class="pagination" style="margin-top: 4rem; text-align: center;">
+        
+            <a href="/page/3/" style="padding: 0.8rem 1.5rem; background: #eee; border-radius: 4px; font-weight: 700; margin-right: 1rem; color: #333; text-decoration: none;">Anterior</a>
+        
+        
+            <a href="/page/5/" style="padding: 0.8rem 1.5rem; background: var(--accent-color); color: #fff; border-radius: 4px; font-weight: 700; text-decoration: none;">Próxima</a>
+        
+    </nav>
+    
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

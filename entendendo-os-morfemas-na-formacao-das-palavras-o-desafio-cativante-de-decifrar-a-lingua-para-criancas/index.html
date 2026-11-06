@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo Os Morfemas Na Formação Das Palavras: O Desafio Cativante de Decifrar a Língua para Crianças - Yamato Corp</title>
+    <meta name="description" content="
+A formação das palavras é um dos pilares mais complexos e fascinantes da educação linguística, e a chave para desvendar essa estrutura é a compreensão dos morf">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/entendendo-os-morfemas-na-formacao-das-palavras-o-desafio-cativante-de-decifrar-a-lingua-para-criancas/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Entendendo Os Morfemas Na Formação Das Palavras: O Desafio Cativante de Decifrar a Língua para Crianças</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">
+A formação das palavras é um dos pilares mais complexos e fascinantes da educação linguística, e a chave para desvendar essa estrutura é a compreensão dos morf</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2025-12-02" style="color: var(--text-muted);">
+                        02/12/2025 14:06
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/jovem-fazendo-terapia-da-fala-com-criancas_23-21491102851.jpg" alt="Entendendo Os Morfemas Na Formação Das Palavras: O Desafio Cativante de Decifrar a Língua para Crianças">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p><!-- wp:paragraph --></p>
+<p>A <strong>formação das palavras</strong> é um dos pilares mais complexos e fascinantes da <strong>educação</strong> linguística, e a chave para desvendar essa <strong>estrutura</strong> é a compreensão dos <strong>morfemas</strong>. Para <strong>crianças</strong>, essa introdução à morfologia não deve ser uma lista abstrata de regras, mas sim uma <strong>abordagem</strong> lúdica e cativante, que transforma a análise gramatical em um divertido jogo de "blocos de montar" da linguagem. O <strong>mecanismo</strong> dos <strong>morfemas</strong> revela que cada palavra é um quebra-cabeça com significado próprio, composto por partes menores.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Aprender sobre <strong>morfemas</strong> (raízes, prefixos, sufixos) no contexto da <strong>educação</strong> infantil e fundamental é crucial para expandir o vocabulário, aprimorar a ortografia e, principalmente, desenvolver a competência de <strong>interpretação</strong> textual. Este artigo detalha a <strong>metodologia</strong> de ensino, as <strong>táticas</strong> lúdicas e a <strong>estrutura</strong> conceitual necessária para que as <strong>crianças</strong> dominem a <strong>formação das palavras</strong> e vejam a língua portuguesa como um sistema lógico e coerente.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">1. O Conceito Base: Por Que as Crianças Precisam Entender Os Morfemas</h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A compreensão dos <strong>morfemas</strong> é a fundação para o avanço da <strong>educação</strong> linguística, oferecendo ferramentas para a autonomia na leitura e na escrita. <strong><a href="https://volitivo.com.br/support-material/entendendo-os-morfemas-na-formacao-das-palavras">Entendendo Os Morfemas Na Formação Das Palavras</a></strong></p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">A. Morfemas como Unidades Mínimas de Significado</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>O <strong>mecanismo</strong> da morfologia é simples: o <strong>morfema</strong> é a menor unidade que possui significado.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Exemplo Simples:</strong> A palavra <em>gato</em> possui o <strong>morfema</strong> <strong>gat-</strong> (raiz, que carrega o significado animal) e o <strong>morfema</strong> <strong>-o</strong> (desinência, que indica o gênero masculino).</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Benefício para Crianças:</strong> Esse entendimento permite que, ao encontrarem uma palavra desconhecida (Ex: <em>desfazer</em>), as <strong>crianças</strong> possam inferir o significado ao isolar a parte conhecida (<em>fazer</em>) e a parte de negação (<em>des-</em>).</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">B. O Roteiro de Construção: A Estrutura Básica da Palavra</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>O ensino de <strong>morfemas</strong> para <strong>crianças</strong> deve seguir uma <strong>estrutura</strong> clara de identificação.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Radical (Raiz):</strong> O núcleo da palavra, onde reside o significado principal (Ex: <strong>flor</strong>es, <strong>flor</strong>ista).</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Afixos (Prefixos e Sufixos):</strong> Morfemas que se adicionam ao radical para modificar ou expandir o significado (Ex: <strong>in</strong>feliz, felizi<strong>mente</strong>).</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Desinências:</strong> Morfemas que indicam variações gramaticais (gênero, número, tempo verbal).</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">2. Metodologia de Ensino: Táticas Cativantes para Crianças</h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong>educação</strong> sobre a <strong>formação das palavras</strong> deve ser prática e visual para <strong>crianças</strong> na fase de transição para o Ensino Fundamental.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">A. A Tática do "Bloco de Montar" (Visualização Lúdica)</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>O <strong>mecanismo</strong> de ensino mais eficaz é o uso de metáforas lúdicas.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Visualização:</strong> Apresentar a palavra como um <strong>"bloco de montar"</strong> ou um <strong>"lego da língua"</strong>. O radical é a peça central, e os afixos são as peças que se encaixam nas laterais.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Atividade:</strong> Utilizar <strong>atividades</strong> de cartões com os <strong>morfemas</strong> escritos separadamente (Ex: <em>des-</em> | <em>leal</em> | <em>-dade</em>). As <strong>crianças</strong> são desafiadas a montar o maior número de palavras válidas (Ex: <em>lealdade</em>, <em>desleal</em>), praticando a <strong>formação das palavras</strong>.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">B. A Abordagem da Família de Palavras</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>O <strong>teste de temperamento</strong> de um <strong>morfema</strong> é feito ao observar sua "família" de palavras.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Exemplo:</strong> Trabalhar o radical <strong>livr-</strong>. A <strong>metodologia</strong> pede que as <strong>crianças</strong> identifiquem a raiz e as variações: <em>livraria</em>, <em>livreiro</em>, <em>livrinho</em>. Isso consolida o entendimento de que o significado principal (livro) é mantido, apesar das mudanças de função ou tamanho.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">3. Aplicação na Educação: Aprimorando a Leitura e a Escrita</h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A compreensão dos <strong>morfemas</strong> é uma <strong>estrutura</strong> que melhora diretamente a proficiência linguística das <strong>crianças</strong>.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">A. Expansão do Vocabulário e Interpretação</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Morfema de Negação:</strong> Ensinar o significado de prefixos comuns de negação (Ex: <strong>in-</strong>, <strong>des-</strong>, <strong>a-</strong>). Ao entender que <strong>in</strong>visível significa "não visível," as <strong>crianças</strong> podem inferir o significado de centenas de palavras novas, acelerando a <strong>interpretação</strong> textual.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Morfema de Ação:</strong> Focar em sufixos que indicam a ação ou o resultado de uma ação (Ex: <strong>-ção</strong>, <strong>-mento</strong>).</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">B. Ortografia e Coerência Gramatical</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Desinências de Gênero e Número:</strong> A identificação das desinências <strong>-s</strong> (plural), <strong>-o/-a</strong> (gênero) nas <strong>atividades</strong> de <strong>formação das palavras</strong> ajuda as <strong>crianças</strong> a evitar <strong>erros que atrapalham vender</strong> a ideia de texto coeso, garantindo a concordância nominal e verbal.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Conclusão</h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong>formação das palavras</strong> é a espinha dorsal da <strong>educação</strong> linguística no 5º ano. A introdução dos <strong>morfemas</strong> através de uma <strong>abordagem</strong> lúdica e visual (o "bloco de montar") capacita as <strong>crianças</strong> a decodificar o significado de novas palavras e a aprimorar a ortografia e a <strong>interpretação</strong>. O <strong>mecanismo</strong> de identificação do radical, afixos e desinências é a <strong>estrutura</strong> técnica que permite aos alunos verem a língua portuguesa não como um conjunto de regras arbitrárias, mas como um sistema lógico e coerente de construção de sentido.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading">Perguntas Frequentes Sobre Morfemas e Formação das Palavras</h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">1. O que é um <strong>morfema</strong> e por que ele é importante na <strong>educação</strong> de <strong>crianças</strong>?</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Um <strong>morfema</strong> é a menor unidade da língua que possui significado ou função gramatical. É importante na <strong>educação</strong> porque, ao entendê-lo, as <strong>crianças</strong> podem <strong>inferir o significado</strong> de palavras desconhecidas (análise morfológica), o que expande o vocabulário e melhora a <strong>interpretação</strong>.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">2. Qual a <strong>metodologia</strong> mais eficaz para ensinar o conceito de radical (raiz) para <strong>crianças</strong>?</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong>metodologia</strong> mais eficaz é a <strong>abordagem da "família de palavras"</strong>. O <strong>plano de ação</strong> consiste em apresentar uma série de palavras derivadas (Ex: <em>pedreiro</em>, <em>pedraria</em>, <em>pedregulho</em>) e pedir às <strong>crianças</strong> que identifiquem a parte comum que carrega o significado central (<strong>pedr-</strong>).</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">3. Como os <strong>morfemas</strong> de prefixos ajudam na <strong>interpretação</strong> textual?</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Os <strong>morfemas</strong> de prefixos (Ex: <strong>des-</strong>, <strong>in-</strong>, <strong>re-</strong>) ajudam na <strong>interpretação</strong> ao carregar significados de negação, repetição ou oposição. As <strong>crianças</strong> aprendem que, ao adicionar <strong>in-</strong> a <em>feliz</em>, o significado se transforma em "não feliz", permitindo a decodificação de novas palavras.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">4. O que é o <strong>mecanismo</strong> de desinência e como ele se diferencia de um afixo?</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong>desinência</strong> é um <strong>morfema</strong> que indica uma variação gramatical da palavra (Ex: número, gênero, tempo verbal: <em>gato<strong>s</strong></em>, <em>canta<strong>va</strong></em>). O <strong>afixo</strong> (prefixo ou sufixo) se adiciona ao radical para <strong>modificar ou expandir o significado</strong> lexical da palavra (Ex: <em>feliz**mente</em>).</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">5. Cite uma <strong>atividade</strong> lúdica para praticar a <strong>formação das palavras</strong> com <strong>crianças</strong>?</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Uma <strong>atividade</strong> eficaz é a <strong>tática do "bloco de montar"</strong>. Utilizar cartões com <strong>morfemas</strong> escritos separadamente (Ex: <em>re-</em> | <em>fazer</em> | <em>-mos</em>). As <strong>crianças</strong> montam as palavras e identificam quais <strong>combinações</strong> formam palavras válidas na língua.</p>
+<p>
+<!-- /wp:paragraph --></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

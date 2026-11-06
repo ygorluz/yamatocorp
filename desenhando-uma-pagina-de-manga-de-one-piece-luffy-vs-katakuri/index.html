@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhando uma página de mangá de One Piece - Luffy vs Katakuri - Yamato Corp</title>
+    <meta name="description" content="Criando uma Página de mangá do One Piece: Luffy vs Katakuri
+O mundo dos mangás é vasto e cheio de histórias incríveis, e uma das mais populares é One Piece, cri">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/desenhando-uma-pagina-de-manga-de-one-piece-luffy-vs-katakuri/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Desenhando uma página de mangá de One Piece - Luffy vs Katakuri</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Criando uma Página de mangá do One Piece: Luffy vs Katakuri
+O mundo dos mangás é vasto e cheio de histórias incríveis, e uma das mais populares é One Piece, cri</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-15" style="color: var(--text-muted);">
+                        15/10/2024 06:57
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Desenhando-uma-pagina-de-manga-de-One-Piece-Luffy.jpg" alt="Desenhando uma página de mangá de One Piece - Luffy vs Katakuri">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Criando uma Página de <a href="https://yamatocorp.com.br/category/cultura-pop-e-manga/">mangá</a> do One Piece: Luffy vs Katakuri</h1>
+<p>O mundo dos mangás é vasto e cheio de histórias incríveis, e uma das mais populares é One Piece, criada por Eiichiro Oda. Nessa série tão amada pelos fãs, acompanhamos as aventuras do Capitão Luffy e sua tripulação em busca do tesouro conhecido como One Piece. Um dos arcos mais emocionantes da história é o confronto entre Luffy e Katakuri, um dos mais poderosos membros da família Charlotte. Neste artigo, vamos explorar como desenhar uma página de mangá baseada nesse eletrizante embate, com dicas de composição, expressões faciais e dinâmica de ação.</p>
+<h2>Preparando o Cenário: Luffy vs Katakuri</h2>
+<p>Antes de começar a desenhar a página, é importante ter uma ideia clara do que queremos transmitir. Nesse caso, a cena será o momento em que Luffy e Katakuri estão frente a frente, prontos para o confronto final. O cenário pode ser uma ilha devastada pelos ataques intensos dos dois guerreiros, com destroços voando ao redor e uma atmosfera carregada de tensão.</p>
+<h3>Escolhendo a Pose dos Personagens</h3>
+<p>A pose dos personagens é fundamental para transmitir a emoção e a dinâmica da cena. Luffy deve estar em uma posição de ataque, com os punhos cerrados e uma expressão determinada no rosto. Já Katakuri, como um adversário mais calmo e calculista, pode estar em uma postura defensiva, com os braços cruzados e um olhar sério.</p>
+<h3>Expressões Faciais e Gestos</h3>
+<p>As expressões faciais dos personagens são essenciais para dar vida à página. Luffy deve transmitir determinação e coragem, com os olhos brilhando de determinação. Já Katakuri pode ter um olhar mais frio e calculista, demonstrando sua confiança em suas habilidades de combate. Além disso, os gestos dos personagens, como o movimento dos braços e pernas, ajudam a criar uma sensação de movimento e ação na cena.</p>
+<h2>Criando Dinâmica e Movimento</h2>
+<p>Para tornar a página mais dinâmica e emocionante, é importante pensar na composição dos elementos. Por exemplo, é possível criar linhas de movimento que guiam o olhar do leitor através da página, levando-o de uma ação para a próxima. Além disso, o uso de hachuras e sombreamento pode ajudar a dar volume e profundidade aos personagens, tornando a cena mais realista e impactante.</p>
+<h3>Utilizando Efeitos Especiais</h3>
+<p>Para destacar momentos de impacto e ação na página, é interessante adicionar efeitos especiais, como explosões, raios, efeitos de distorção e outros elementos visuais que ajudam a enfatizar a intensidade do confronto entre Luffy e Katakuri. Esses detalhes adicionais podem tornar a página mais dinâmica e emocionante, prendendo a atenção do leitor ao longo da história.</p>
+<p>Com essas dicas em mente, é hora de colocar as mãos na massa e começar a desenhar sua própria página de mangá do One Piece, retratando o épico confronto entre Luffy e Katakuri. Lembre-se de se divertir durante o processo criativo e experimentar diferentes técnicas e estilos para dar vida a essa emocionante batalha. E não se esqueça de sempre prestar atenção aos detalhes e à composição da página, garantindo que sua história seja contada de forma clara e envolvente.</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/nMhVu0d21DY?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Desenhando uma página de mangá do One Piece - Luffy vs Katakuri</h2>
+</p>
+<p>Quem são os fãs de mangá e anime com certeza já ouviu falar do famoso One Piece, criado por Eiichiro Oda. Neste artigo, vamos falar sobre como desenhar uma página épica de uma das lutas mais marcantes da série: Luffy vs Katakuri. Essa batalha emocionante e cheia de reviravoltas merece ser eternizada em um belo desenho.</p>
+</p>
+<p>Para começar, é importante estudar bem os traços dos personagens, suas expressões faciais e movimentações durante a luta. Luffy e Katakuri possuem estilos de luta bem distintos, e isso deve ser refletido em seus desenhos. Não se esqueça dos detalhes das roupas e dos efeitos especiais que dão vida às cenas de ação.</p>
+</p>
+<p>Além disso, é fundamental usar referências visuais para garantir a fidelidade ao estilo original do mangá. Procure por imagens das cenas da luta entre Luffy e Katakuri, estude a anatomia dos personagens e pratique bastante para aprimorar suas habilidades de desenho. Com dedicação e paciência, você será capaz de criar uma página de mangá incrível.</p>
+</p>
+<h3>Conclusão sobre Desenhando uma página de mangá do One Piece - Luffy vs Katakuri</h3>
+</p>
+<p>Neste artigo, você aprendeu dicas valiosas sobre como desenhar uma página de mangá inspirada na luta entre Luffy e Katakuri em One Piece. Lembre-se da importância de estudar os personagens, buscar referências visuais e praticar constantemente para aprimorar suas habilidades. Com dedicação e paixão pelo desenho, você será capaz de criar obras incríveis e emocionantes, assim como as aventuras de Luffy no mundo dos piratas.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=nMhVu0d21DY">Geane Argenton desenhos</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

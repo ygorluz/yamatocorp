@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupom Kidy Calçados Ativo: Como Economizar em Tênis Infantis e Sapatos Anatômicos - Yamato Corp</title>
+    <meta name="description" content="Economize em tênis infantis e sapatos anatômicos com o cupom Kidy Calçados ativo. Aproveite descontos exclusivos e conforto para os pequenos!">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/cupom-kidy-calcados-ativo-como-economizar-em-tenis-infantis-e-sapatos-anatomicos/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/cultura-pop-e-manga/" style="color:#ffffff;">Cultura Pop e Mangá</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Cupom Kidy Calçados Ativo: Como Economizar em Tênis Infantis e Sapatos Anatômicos</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Economize em tênis infantis e sapatos anatômicos com o cupom Kidy Calçados ativo. Aproveite descontos exclusivos e conforto para os pequenos!</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-10-02" style="color: var(--text-muted);">
+                        02/10/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/cupom-kidy-calcados-ativo-como-economizar-em-tenis-infantis-e-sapatos-anatomicos.jpg" alt="Cupom Kidy Calçados Ativo: Como Economizar em Tênis Infantis e Sapatos Anatômicos">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>Comprar cal&ccedil;ados para crian&ccedil;as pode ser um desafio. Al&eacute;m de escolher modelos confort&aacute;veis e que garantam um bom desenvolvimento dos p&eacute;s, os pais precisam lidar com o or&ccedil;amento familiar, que muitas vezes &eacute; apertado. Felizmente, existem formas inteligentes de economizar ao adquirir t&ecirc;nis infantis e sapatos anat&ocirc;micos, sem abrir m&atilde;o da qualidade e do estilo. A Kidy Cal&ccedil;ados &eacute; uma das marcas mais renomadas no segmento infantil, reconhecida pela durabilidade, conforto e design atraente.</p>
+<p>Sabendo da import&acirc;ncia de investir em cal&ccedil;ados adequados para os pequenos, muitos consumidores buscam maneiras de obter descontos e aproveitar ofertas especiais. Um dos recursos mais vantajosos para isso &eacute; o uso de <strong>cupons de desconto</strong>. Eles permitem que voc&ecirc; adquira produtos com pre&ccedil;os mais acess&iacute;veis, tornando a experi&ecirc;ncia de compra ainda mais satisfat&oacute;ria. Em lojas como a Kidy, que oferecem uma ampla gama de modelos, aproveitar essa possibilidade pode fazer toda a diferen&ccedil;a na hora de montar o guarda-roupa dos filhos.</p>
+<p>A palavra-chave fundamental para quem deseja comprar com vantagens &eacute; "<a href="https://cupons2u.com.br/store/cupom-kidy-calcados/" target="_blank" rel="noopener">cupom Kidy Cal&ccedil;ados</a>". Esse recurso oferece descontos exclusivos e facilita o acesso aos melhores produtos da marca, como os t&ecirc;nis infantis que combinam conforto e resist&ecirc;ncia, ou os sapatos anat&ocirc;micos, desenvolvidos para respeitar a biomec&acirc;nica dos p&eacute;s em crescimento. Usar um cupom ativo pode garantir pre&ccedil;os mais baixos, tornando poss&iacute;vel investir em cal&ccedil;ados de alta qualidade sem comprometer o or&ccedil;amento.</p>
+<h2>Por Que Escolher T&ecirc;nis Infantis E Sapatos Anat&ocirc;micos?</h2>
+<h3>A Import&acirc;ncia do Cal&ccedil;ado Infantil Adequado</h3>
+<p>Os p&eacute;s das crian&ccedil;as est&atilde;o em constante desenvolvimento at&eacute; a adolesc&ecirc;ncia, passando por fases que exigem aten&ccedil;&atilde;o especial. Um cal&ccedil;ado inadequado pode causar desconforto, dores e at&eacute; problemas posturais no futuro. Por isso, optar por produtos que ofere&ccedil;am suporte, flexibilidade e material de qualidade &eacute; essencial.</p>
+<p>A Kidy Cal&ccedil;ados foca exatamente nisso, desenvolvendo t&ecirc;nis infantis e sapatos anat&ocirc;micos que acompanham o crescimento saud&aacute;vel dos p&eacute;s. Os modelos s&atilde;o pensados para proporcionar estabilidade, absor&ccedil;&atilde;o de impactos e liberdade de movimento, o que &eacute; fundamental para crian&ccedil;as ativas.</p>
+<h3>Benef&iacute;cios dos Sapatos Anat&ocirc;micos</h3>
+<p>Sapatos anat&ocirc;micos s&atilde;o projetados para seguir o formato natural dos p&eacute;s, promovendo uma melhor distribui&ccedil;&atilde;o do peso e prevenindo deformidades. Eles possuem solados flex&iacute;veis, palmilhas acolchoadas e estruturas refor&ccedil;adas que garantem conforto prolongado, mesmo ap&oacute;s horas de uso.</p>
+<p>Esse tipo de cal&ccedil;ado &eacute; especialmente recomendado para crian&ccedil;as que est&atilde;o aprendendo a andar, pois ajuda a fortalecer a musculatura dos p&eacute;s e melhora o equil&iacute;brio. Al&eacute;m disso, o uso de sapatos anat&ocirc;micos pode evitar problemas futuros, como joanetes e fascite plantar.</p>
+<h2>Como Identificar Um T&ecirc;nis Infantil De Qualidade</h2>
+<h3>Materiais Utilizados</h3>
+<p>Um t&ecirc;nis infantil de qualidade deve ser confeccionado com materiais que combinam resist&ecirc;ncia e conforto. Couro leg&iacute;timo, tecidos respir&aacute;veis e solados antiderrapantes s&atilde;o caracter&iacute;sticas essenciais para garantir a durabilidade e seguran&ccedil;a do cal&ccedil;ado.</p>
+<p>Al&eacute;m disso, materiais hipoalerg&ecirc;nicos ajudam a prevenir irrita&ccedil;&otilde;es e alergias, que s&atilde;o comuns na pele sens&iacute;vel das crian&ccedil;as.</p>
+<h3>Ajuste e Tamanho</h3>
+<p>O ajuste correto &eacute; outro ponto crucial. Cal&ccedil;ados muito apertados podem causar bolhas e desconforto, enquanto os muito largos comprometem o suporte necess&aacute;rio para os p&eacute;s. A Kidy oferece tamanhos que acompanham o crescimento, com op&ccedil;&otilde;es que permitem ajustes, como velcros e cadar&ccedil;os el&aacute;sticos, facilitando o calce e a fixa&ccedil;&atilde;o.</p>
+<h3>Design e Estilo</h3>
+<p>Embora o conforto seja prioridade, o design tamb&eacute;m importa para as crian&ccedil;as, que gostam de modelos coloridos e com personagens ou temas divertidos. A Kidy Cal&ccedil;ados combina funcionalidade com estilo, oferecendo op&ccedil;&otilde;es que agradam tanto os pequenos quanto os pais.</p>
+<h2>Dicas Para Economizar Na Compra De Cal&ccedil;ados Infantis</h2>
+<h3>Utilize Cupons de Desconto</h3>
+<p>A forma mais pr&aacute;tica e eficaz de economizar &eacute; aproveitar os cupons de desconto dispon&iacute;veis nas lojas. Muitos sites e plataformas oferecem c&oacute;digos promocionais que garantem descontos significativos na compra de t&ecirc;nis infantis e sapatos anat&ocirc;micos.</p>
+<p>A busca por um <strong>cupom Kidy Cal&ccedil;ados</strong> ativo &eacute; uma estrat&eacute;gia inteligente para quem deseja comprar produtos da marca pagando menos. Com esses cupons, &eacute; poss&iacute;vel obter descontos percentuais, frete gr&aacute;tis ou at&eacute; brindes exclusivos.</p>
+<h3>Compre em Per&iacute;odos de Promo&ccedil;&atilde;o</h3>
+<p>Fique atento &agrave;s datas comemorativas, como Dia das Crian&ccedil;as, Black Friday e Natal. Nesses per&iacute;odos, as lojas costumam oferecer promo&ccedil;&otilde;es especiais em cal&ccedil;ados infantis, facilitando a compra com pre&ccedil;os ainda mais atrativos.</p>
+<p>Al&eacute;m disso, acompanhar o site oficial da Kidy e suas redes sociais pode garantir acesso antecipado a campanhas e ofertas rel&acirc;mpago.</p>
+<h3>Avalie o Custo-Benef&iacute;cio</h3>
+<p>Nem sempre o modelo mais barato &eacute; a melhor escolha. Avaliar o custo-benef&iacute;cio significa considerar a durabilidade, o conforto e a necessidade da crian&ccedil;a. Um t&ecirc;nis ou sapato anat&ocirc;mico que dure mais tempo e proporcione sa&uacute;de aos p&eacute;s pode representar uma economia a longo prazo.</p>
+<h3>Opte por Compras Online</h3>
+<p>As compras pela internet costumam oferecer pre&ccedil;os mais competitivos e uma variedade maior de modelos. Al&eacute;m disso, o uso de cupons promocionais &eacute; mais frequente nas plataformas digitais. Comprar online tamb&eacute;m permite comparar pre&ccedil;os em diferentes lojas, facilitando a escolha do melhor neg&oacute;cio.</p>
+<h2>Passo A Passo Para Usar Um Cupom Ativo Na Kidy</h2>
+<h3>Encontre o C&oacute;digo Promocional</h3>
+<p>Procure em sites confi&aacute;veis, blogs especializados e plataformas de cupons que divulgam c&oacute;digos atualizados. Verifique a validade e as condi&ccedil;&otilde;es de uso para garantir que o desconto poder&aacute; ser aplicado no momento da compra.</p>
+<h3>Escolha os Produtos</h3>
+<p>Selecione os t&ecirc;nis infantis ou sapatos anat&ocirc;micos desejados no site da Kidy. Preste aten&ccedil;&atilde;o &agrave;s op&ccedil;&otilde;es de tamanho, cor e modelo para garantir que o cal&ccedil;ado seja ideal para a crian&ccedil;a.</p>
+<h3>Insira o C&oacute;digo Durante a Compra</h3>
+<p>No carrinho de compras, antes de finalizar, haver&aacute; um campo espec&iacute;fico para inserir o c&oacute;digo promocional. Digite o cupom com aten&ccedil;&atilde;o, respeitando letras mai&uacute;sculas e min&uacute;sculas, e aplique o desconto.</p>
+<h3>Finalize o Pedido</h3>
+<p>Confira o valor com o desconto aplicado e escolha a forma de pagamento. Algumas lojas oferecem facilidades como parcelamento sem juros, tornando a compra ainda mais acess&iacute;vel.</p>
+<h2>Cuidados Ao Comprar Cal&ccedil;ados Infant&eacute;is Online</h2>
+<h3>Verifique a Pol&iacute;tica de Troca e Devolu&ccedil;&atilde;o</h3>
+<p>&Eacute; fundamental garantir que a loja tenha uma pol&iacute;tica clara e flex&iacute;vel para troca e devolu&ccedil;&atilde;o, especialmente quando a compra &eacute; feita online e n&atilde;o h&aacute; como experimentar o produto antes.</p>
+<h3>Consulte Avalia&ccedil;&otilde;es de Outros Clientes</h3>
+<p>Ler opini&otilde;es e avalia&ccedil;&otilde;es de quem j&aacute; comprou pode ajudar a evitar surpresas desagrad&aacute;veis. Coment&aacute;rios sobre o conforto, tamanho e qualidade do produto s&atilde;o valiosos para a decis&atilde;o de compra.</p>
+<h3>Aten&ccedil;&atilde;o ao Tamanho</h3>
+<p>Cada fabricante pode ter varia&ccedil;&otilde;es nas medidas. Utilize a tabela de tamanhos dispon&iacute;vel no site da Kidy e, se poss&iacute;vel, me&ccedil;a os p&eacute;s da crian&ccedil;a para escolher o tamanho correto.</p>
+<h2>Modelos Destaque Da Kidy Cal&ccedil;ados Para Crian&ccedil;as</h2>
+<h3>T&ecirc;nis Infantil Casual</h3>
+<p>Os t&ecirc;nis casuais da Kidy s&atilde;o ideais para o dia a dia, combinando conforto com estilo. S&atilde;o perfeitos para escolas, passeios e atividades recreativas, oferecendo solados flex&iacute;veis que acompanham o movimento natural dos p&eacute;s.</p>
+<h3>Sapatos Anat&ocirc;micos para Primeiros Passos</h3>
+<p>Para os beb&ecirc;s e crian&ccedil;as que est&atilde;o come&ccedil;ando a andar, os sapatos anat&ocirc;micos s&atilde;o essenciais. A Kidy desenvolve modelos com palmilhas macias e solados antiderrapantes, garantindo seguran&ccedil;a e estabilidade.</p>
+<h3>Modelos esportivos</h3>
+<p>Para crian&ccedil;as que praticam esportes ou t&ecirc;m uma rotina mais ativa, os t&ecirc;nis esportivos da Kidy oferecem suporte refor&ccedil;ado, respirabilidade e amortecimento, prevenindo les&otilde;es e proporcionando liberdade de movimento.</p>
+<h2>Considera&ccedil;&otilde;es Finais</h2>
+<p>Investir em cal&ccedil;ados de qualidade para crian&ccedil;as &eacute; fundamental para garantir o desenvolvimento saud&aacute;vel dos p&eacute;s e o bem-estar no dia a dia. Utilizar estrat&eacute;gias de economia, como o uso de cupons promocionais, permite que os pais adquiram produtos de marcas renomadas sem comprometer o or&ccedil;amento familiar.</p>
+<p>A Kidy Cal&ccedil;ados se destaca como uma excelente op&ccedil;&atilde;o para quem busca t&ecirc;nis infantis e sapatos anat&ocirc;micos que aliam tecnologia, conforto e design. Aproveitar os recursos dispon&iacute;veis para obter descontos e promo&ccedil;&otilde;es faz toda a diferen&ccedil;a na hora da compra, possibilitando uma experi&ecirc;ncia mais acess&iacute;vel e satisfat&oacute;ria.</p>
+<p>Com aten&ccedil;&atilde;o aos detalhes na escolha do modelo, tamanho e material, e com o aux&iacute;lio de descontos, &eacute; poss&iacute;vel garantir que as crian&ccedil;as tenham cal&ccedil;ados que realmente cuidem dos seus p&eacute;s, incentivando a liberdade para brincar, correr e crescer com sa&uacute;de.</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

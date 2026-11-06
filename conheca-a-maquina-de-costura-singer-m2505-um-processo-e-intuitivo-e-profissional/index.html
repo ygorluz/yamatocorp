@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça a Máquina de Costura Singer M2505, Um Processo e Intuitivo e Profissional - Yamato Corp</title>
+    <meta name="description" content="
+A Máquina de Costura Singer M2505 é um modelo mecânico, portátil e que se destaca por ser uma ótima opção para iniciantes na costura e para quem busca uma máqu">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/conheca-a-maquina-de-costura-singer-m2505-um-processo-e-intuitivo-e-profissional/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Conheça a Máquina de Costura Singer M2505, Um Processo e Intuitivo e Profissional</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">
+A Máquina de Costura Singer M2505 é um modelo mecânico, portátil e que se destaca por ser uma ótima opção para iniciantes na costura e para quem busca uma máqu</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2025-10-21" style="color: var(--text-muted);">
+                        21/10/2025 11:34
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/maquina-de-costura-371.jpg" alt="Conheça a Máquina de Costura Singer M2505, Um Processo e Intuitivo e Profissional">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p><!-- wp:paragraph --></p>
+<p>A <strong>Máquina de Costura Singer M2505</strong> é um modelo mecânico, portátil e que se destaca por ser uma ótima opção para <strong>iniciantes</strong> na costura e para quem busca uma máquina <strong>fácil de usar</strong> para projetos domésticos. Ela oferece os pontos básicos e utilitários essenciais para começar a costurar roupas, itens de cama, mesa e banho, ou pequenos artesanatos.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Vamos explorar os detalhes que fazem da Singer M2505 uma escolha popular:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Principais Características da Singer M2505</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong>Singer M2505</strong> é projetada para ser <strong>intuitiva e funcional</strong>, ideal para quem está dando os primeiros passos no mundo da costura ou precisa de uma máquina confiável para reparos e criações simples:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Número de Pontos:</strong> A M2505 geralmente oferece <strong>10 pontos</strong> (algumas fontes citam 9, mas a informação da Singer é 10), incluindo os básicos e utilitários mais necessários. Isso se traduz em cerca de <strong>70 aplicações de pontos</strong> diferentes. Entre eles, você encontra:<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Ponto Reto:</strong> Para costuras de união e acabamentos.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Ponto Ziguezague:</strong> Ideal para acabamento de bordas de tecido, evitando desfiamento.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Pontos Elásticos:</strong> Para trabalhar com malhas e tecidos que esticam, garantindo que a costura não arrebente.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Ponto para Bainha Invisível:</strong> Para acabamentos discretos.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Pontos Decorativos Simples:</strong> Para dar um toque a mais aos seus projetos.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Casa de Botão em 4 Passos:</strong> Permite criar casas de botão de forma padronizada, o que é um recurso muito útil para confecção de roupas.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Velocidade de Costura:</strong> A máquina atinge até <strong>750 pontos por minuto (ppm)</strong>, o que é uma velocidade adequada para uso doméstico, permitindo que os projetos sejam realizados de forma eficiente sem sobrecarregar o iniciante.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Estrutura Interna de Metal:</strong> Embora seja uma máquina doméstica de entrada, a M2505 possui uma <strong>estrutura interna de metal</strong>, o que confere maior <strong>estabilidade</strong> durante a costura e contribui para a <strong>durabilidade</strong> do equipamento. Isso minimiza a vibração e garante uma costura mais firme.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Braço Livre:</strong> Este recurso é essencial para costurar peças tubulares e áreas de difícil acesso, como mangas, punhos, barras de calças, golas e costuras circulares. Basta remover parte da base para ter acesso ao braço livre.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Alavanca de Retrocesso:</strong> Permite reforçar o início e o final das costuras, tornando-as mais resistentes e duráveis.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Ajuste de Comprimento e Largura do Ponto:</strong> Oferece a flexibilidade para personalizar o tamanho do ponto de acordo com o tipo de tecido e a finalidade da costura (comprimento de até 4mm e largura de até 5mm para o ziguezague).</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Luz LED:</strong> A área da costura é iluminada por uma luz LED, proporcionando maior clareza e conforto visual, especialmente em ambientes com pouca luz.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Portabilidade:</strong> Com um peso líquido de aproximadamente 5,43 kg, a M2505 é uma máquina leve e fácil de transportar, ideal para quem tem pouco espaço ou precisa levá-la para aulas de costura.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Acessórios Inclusos:</strong> Geralmente, a máquina vem com um kit básico de acessórios, incluindo sapatilhas para uso geral, para pregar botão e para fazer casa de botão, chaves de fenda, pincel de limpeza, abridor de casas e prendedores de carretel.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Para Quem a Singer M2505 é Indicada?</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong>Máquina de Costura Singer M2505</strong> é altamente recomendada para:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Iniciantes em Costura:</strong> Sua simplicidade de operação, o pedal preciso e o manual claro e didático a tornam uma excelente porta de entrada para o universo da costura. Usuários iniciantes elogiam a facilidade de manuseio.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Costureiros Domésticos e Hobbistas:</strong> Ideal para quem busca uma máquina confiável para realizar pequenos reparos em roupas, criar peças infantis, customizar itens de cama, mesa e banho, ou desenvolver projetos de artesanato e costura criativa.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Quem Costura Tecidos Variados (com ressalvas):</strong> A máquina é capaz de costurar diversos tipos de tecido, incluindo malha e, segundo relatos de usuários, até algumas camadas de jeans grosso, o que a torna versátil para o uso doméstico.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Considerações Importantes ao Comprar e Usar</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>Voltagem:</strong> A Singer M2505 é comercializada em versões de <strong>127V ou 220V</strong>. É <strong>fundamental verificar a voltagem</strong> compatível com sua residência, pois ela <strong>não é bivolt</strong>.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Manutenção:</strong> Como toda máquina de costura, a M2505 exige <strong>limpeza e lubrificação</strong> regulares, conforme as instruções do manual, para manter seu bom funcionamento e prolongar a vida útil. Alguns usuários iniciantes relataram que a máquina pode vir sem lubrificação, exigindo que o usuário faça a primeira lubrificação seguindo o manual.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Uso Doméstico:</strong> É importante ressaltar que a M2505 é um produto desenvolvido <strong>apenas para utilização doméstica</strong>, não sendo adequada para uso profissional intensivo, como em ateliês com alta demanda ou confecções. Para isso, máquinas da linha Heavy Duty (como a 4423) ou industriais seriam mais indicadas.</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>Material:</strong> Embora tenha estrutura interna de metal, algumas partes podem ser de plástico, o que é comum em máquinas domésticas de entrada.</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading">Conclusão: Uma Escolha Sólida para Começar a Costurar</h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A <strong><a href="https://www.maquinadecosturatech.com.br/post/maquina-de-costura-singer-m2505-review">Máquina de Costura Singer M2505</a></strong> se destaca no mercado por sua <strong>simplicidade</strong>, <strong>robustez interna</strong> e <strong>versatilidade</strong> para projetos domésticos. As avaliações de clientes são amplamente positivas, com muitos destacando a facilidade de uso e o bom custo-benefício.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Se você está procurando uma máquina de costura mecânica que seja fácil de aprender, confiável para o dia a dia e capaz de dar vida a uma variedade de projetos, a <strong>Singer M2505</strong> é, sem dúvida, uma excelente opção para iniciar ou aprimorar sua jornada na costura.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Você está pensando em comprar sua primeira máquina de costura ou busca um upgrade? Que tipo de projetos você tem em mente para a M2505?</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>
