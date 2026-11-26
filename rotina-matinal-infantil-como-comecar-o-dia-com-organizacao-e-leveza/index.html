@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza - Yamato Corp</title>
+    <meta name="description" content="
+Introdução
+
+
+
+Começar o dia com tranquilidade parece um sonho distante para muitas famílias, mas uma Rotina Matinal Infantil bem estruturada pode transformar m">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/rotina-matinal-infantil-como-comecar-o-dia-com-organizacao-e-leveza/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/dicas/" style="color:#ffffff;">Dicas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">
+Introdução
+
+
+
+Começar o dia com tranquilidade parece um sonho distante para muitas famílias, mas uma Rotina Matinal Infantil bem estruturada pode transformar m</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/yuri-kawasaki/" style="color: var(--accent-color);">Yuri Kawasaki</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2025-12-15" style="color: var(--text-muted);">
+                        15/12/2025 12:16
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/rotina-matinal-infantil.jpg" alt="Rotina Matinal Infantil: Como Começar o Dia com Organização e Leveza">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>Introdução</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Começar o dia com tranquilidade parece um sonho distante para muitas famílias, mas uma <strong><a href="https://planetadosbaixinhos.com/rotina-matinal-infantil/" data-type="link" data-id="https://planetadosbaixinhos.com/rotina-matinal-infantil/" target="_blank" rel="noreferrer noopener">Rotina Matinal Infantil</a></strong> bem estruturada pode transformar manhãs caóticas em momentos leves e agradáveis. Afinal, quando as crianças aprendem a organizar seus primeiros passos do dia, tudo flui melhor — como um rio que segue seu curso naturalmente.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Neste guia, você vai encontrar estratégias simples e eficazes para ajudar os pequenos a despertarem com mais disposição e harmonia.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>Tabela de Conteúdos</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:table --></p>
+<figure class="wp-block-table">
+<table class="has-fixed-layout">
+<thead>
+<tr>
+<th><strong>Sr#</strong></th>
+<th><strong>Headings</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A Importância da Rotina Matinal Infantil</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Por Que a Manhã É um Momento Tão Decisivo?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Preparação na Noite Anterior</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hora de Acordar: Um Despertar Suave</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Higiene Matinal e Autonomia</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Café da Manhã Nutritivo e Prático</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Organização do Material Escolar</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Atividades Leves para Acordar o Corpo</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Ritual de Conexão Familiar</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Como Criar uma Rotina Visual para Crianças</td>
+</tr>
+<tr>
+<td>11</td>
+<td>O Papel da Autonomia Infantil nas Manhãs</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Dicas para Dias Apressados</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Adaptando a Rotina a Diferentes Idades</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Erros Comuns e Como Evitá-los</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Mantendo a Consistência Sem Rigidez</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<p>
+<!-- /wp:table --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>1. A Importância da Rotina Matinal Infantil</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Uma boa rotina matinal cria segurança, previsibilidade e autonomia. As crianças entendem a ordem das coisas e se sentem mais tranquilas e confiantes para iniciar o dia.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>2. Por Que a Manhã É um Momento Tão Decisivo?</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A forma como começamos o dia influencia humor, produtividade e disposição. Para os pequenos, isso é ainda mais forte. Uma manhã organizada reduz estresse e melhora o comportamento ao longo do dia.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>3. Preparação na Noite Anterior</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Uma rotina eficiente começa antes do sono. Algumas ações práticas:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Separar roupas</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Verificar mochila</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Organizar lancheira</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Conversar sobre o dia seguinte</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Isso evita correria e esquecimentos pela manhã.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>4. Hora de Acordar: Um Despertar Suave</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Acordar de forma brusca pode deixar a criança irritada. Prefira:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Música suave</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Luz natural</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Toque leve</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Tempo para o corpo despertar</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>É como regar uma plantinha: com calma, ela floresce.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>5. Higiene Matinal e Autonomia</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Escovar os dentes, lavar o rosto e arrumar o cabelo são passos importantes. Incentivar a autonomia, dentro da capacidade da idade, aumenta autoestima e responsabilidade.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>6. Café da Manhã Nutritivo e Prático</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>O café da manhã é combustível para o corpo. Priorize alimentos simples:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Frutas</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Pães integrais</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Ovos</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Iogurte</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Evite refeições complexas para não perder tempo — praticidade é a chave.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>7. Organização do Material Escolar</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>A mochila deve estar pronta desde a noite anterior, mas revisá-la rapidamente de manhã ajuda a reforçar responsabilidade. A criança pode conferir:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Cadernos</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Lápis</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Agenda</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Lanche</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>8. Atividades Leves para Acordar o Corpo</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Alongamentos simples, uma música animada ou uma dança rápida podem ajudar a despertar energia e bom humor.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>9. Ritual de Conexão Familiar</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Um abraço, uma frase positiva ou uma troca rápida sobre algo bom do dia fortalece o vínculo e traz aconchego emocional.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>10. Como Criar uma Rotina Visual para Crianças</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Rotinas visuais tornam tudo mais claro. Use:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Quadros</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Figuras</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Cores</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Cartazes ilustrados</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Isso facilita a compreensão e mantém a criança engajada.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>11. O Papel da Autonomia Infantil nas Manhãs</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Permitir que a criança execute pequenas tarefas sozinha ajuda no desenvolvimento. Tarefas adequadas:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Colocar os sapatos</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Arrumar a cama</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Guardar objetos</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>Autonomia nasce de pequenas ações repetidas.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>12. Dicas para Dias Apressados</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Nem todos os dias serão perfeitos. Para manhãs corridas:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Tenha roupas extras separadas</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Prepare o lanche na noite anterior</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Use lembretes visuais</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Evite telas ao acordar</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>13. Adaptando a Rotina a Diferentes Idades</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Cada fase exige ajustes:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li><strong>2 a 3 anos:</strong> rotinas mais lúdicas e visuais</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>4 a 5 anos:</strong> mais autonomia</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li><strong>6 anos ou mais:</strong> maior responsabilidade</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>14. Erros Comuns E Como Evitá-los</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Alguns erros que atrapalham a rotina:</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:list --></p>
+<ul class="wp-block-list"><!-- wp:list-item --></p>
+<li>Excesso de atividades</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Falta de preparo na noite anterior</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Rigidez excessiva</li>
+<p>
+<!-- /wp:list-item --></p>
+<p><!-- wp:list-item --></p>
+<li>Uso de telas ao acordar</li>
+<p>
+<!-- /wp:list-item --></ul>
+<p>
+<!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>O segredo é equilíbrio.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>15. Mantendo a Consistência Sem Rigidez</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Ser consistente é importante, mas a rotina não precisa ser inflexível. Ajustes são bem-vindos quando feitos com leveza e coerência.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>Conclusão</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Criar uma <strong>Rotina Matinal Infantil</strong> organizada e tranquila não é apenas uma questão prática — é uma forma de cuidar do bem-estar emocional e físico da criança. Com passos simples, constância e uma boa dose de paciência, as manhãs podem deixar de ser corridas e se transformar em momentos gostosos, cheios de leveza e conexão familiar.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:separator --></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<!-- /wp:separator -->
+</p>
+<p><!-- wp:heading --></p>
+<h2 class="wp-block-heading"><strong>FAQs</strong></h2>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading"><strong>1. Como criar uma rotina matinal infantil eficiente?</strong></h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Com organização, constância e passos simples que a criança consegue acompanhar.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading"><strong>2. Qual o melhor horário para acordar uma criança?</strong></h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>O ideal é que ela tenha de 9 a 11 horas de sono, ajustando o despertar a essa necessidade.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading"><strong>3. Como tornar a rotina matinal mais leve?</strong></h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Evite correria, prepare itens na noite anterior e crie um despertar suave.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading"><strong>4. É importante usar rotinas visuais?</strong></h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Sim! Elas ajudam a criança a entender e seguir as etapas com mais facilidade.</p>
+<p>
+<!-- /wp:paragraph --></p>
+<p><!-- wp:heading {"level":3} --></p>
+<h3 class="wp-block-heading"><strong>5. O que fazer quando a criança resiste a acordar?</strong></h3>
+<p>
+<!-- /wp:heading --></p>
+<p><!-- wp:paragraph --></p>
+<p>Use acordar gradual, música suave e ajuste o horário de dormir, se necessário.</p>
+<p>
+<!-- /wp:paragraph --></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

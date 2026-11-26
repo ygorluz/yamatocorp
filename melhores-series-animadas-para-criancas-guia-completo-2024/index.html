@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhores séries animadas para crianças: guia completo 2024 - Yamato Corp</title>
+    <meta name="description" content="Descubra as melhores séries animadas para crianças em 2024! Guia completo com opções divertidas, educativas e seguras para toda a família.">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/melhores-series-animadas-para-criancas-guia-completo-2024/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/mercado-de-arte/" style="color:#ffffff;">Mercado de Arte</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Melhores séries animadas para crianças: guia completo 2024</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Descubra as melhores séries animadas para crianças em 2024! Guia completo com opções divertidas, educativas e seguras para toda a família.</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/brandon-bloose/" style="color: var(--accent-color);">Brandon Bloose</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2026-07-26" style="color: var(--text-muted);">
+                        26/07/2026 00:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/melhores-series-animadas-para-criancas-guia-completo-2024.jpg" alt="Melhores séries animadas para crianças: guia completo 2024">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p>A <strong>anima&ccedil;&atilde;o infantil</strong> continua sendo uma das formas mais eficazes de entretenimento e aprendizado para as crian&ccedil;as. Em 2024, o universo das s&eacute;ries animadas est&aacute; mais diversificado do que nunca, oferecendo op&ccedil;&otilde;es que combinam divers&atilde;o, valores educativos e personagens cativantes. Este guia completo apresenta as <strong>melhores s&eacute;ries animadas para crian&ccedil;as</strong> que garantem momentos de alegria, criatividade e aprendizado para os pequenos.</p>
+<h2>Por Que Escolher S&eacute;ries Animadas Para Crian&ccedil;as?</h2>
+<p>As s&eacute;ries animadas desempenham um papel fundamental no desenvolvimento infantil. Elas n&atilde;o apenas entret&ecirc;m, mas tamb&eacute;m ensinam importantes li&ccedil;&otilde;es sociais, emocionais e cognitivas. Al&eacute;m disso, a qualidade da anima&ccedil;&atilde;o, o enredo e as mensagens transmitidas s&atilde;o essenciais para garantir que o conte&uacute;do seja apropriado e enriquecedor.</p>
+<h3>Benef&iacute;cios das s&eacute;ries animadas</h3>
+<p style="text-align: left;">- <strong>Desenvolvimento da linguagem:</strong> Muitos <a href="https://loucosporfilmeseseries.com.br/categorias/animes/"><strong>animes</strong></a> estimulam o vocabul&aacute;rio e a estrutura&ccedil;&atilde;o de frases, ajudando no aprendizado da l&iacute;ngua.</p>
+<p>- <strong>Aprendizado emocional:</strong> Personagens enfrentam desafios e situa&ccedil;&otilde;es que ensinam sobre empatia, amizade e resolu&ccedil;&atilde;o de conflitos.</p>
+<p>- <strong>Est&iacute;mulo &agrave; criatividade:</strong> Hist&oacute;rias inventivas e mundos fant&aacute;sticos incentivam a imagina&ccedil;&atilde;o dos pequenos.</p>
+<p>- <strong>Valores importantes:</strong> Temas como respeito, diversidade e coopera&ccedil;&atilde;o s&atilde;o frequentemente abordados.</p>
+<h2>Crit&eacute;rios Para Escolher As Melhores S&eacute;ries Animadas Para Crian&ccedil;as</h2>
+<p>Para selecionar as s&eacute;ries ideais, &eacute; importante considerar alguns aspectos que garantem a qualidade e a adequa&ccedil;&atilde;o do conte&uacute;do.</p>
+<h3>Faixa et&aacute;ria</h3>
+<p>Cada s&eacute;rie animada &eacute; voltada para uma faixa et&aacute;ria espec&iacute;fica, garantindo que o conte&uacute;do seja compreens&iacute;vel e atraente para aquela idade. Por exemplo, s&eacute;ries para crian&ccedil;as pequenas costumam ter hist&oacute;rias simples e personagens coloridos, enquanto s&eacute;ries para crian&ccedil;as mais velhas podem abordar temas mais complexos.</p>
+<h3>Conte&uacute;do educativo</h3>
+<p>Al&eacute;m do entretenimento, &eacute; fundamental que a s&eacute;rie ofere&ccedil;a algum tipo de aprendizado, seja por meio de li&ccedil;&otilde;es de moral, est&iacute;mulo ao racioc&iacute;nio ou conhecimento geral.</p>
+<h3>Representatividade e diversidade</h3>
+<p>S&eacute;ries que apresentam personagens diversos ajudam a promover a inclus&atilde;o e o respeito &agrave;s diferen&ccedil;as desde cedo.</p>
+<h3>Qualidade da anima&ccedil;&atilde;o e do roteiro</h3>
+<p>Anima&ccedil;&atilde;o bem feita e roteiros inteligentes fazem toda a diferen&ccedil;a na experi&ecirc;ncia da crian&ccedil;a, mantendo seu interesse e garantindo uma boa mensagem.</p>
+<h2>Top 10 Melhores S&eacute;ries Animadas Para Crian&ccedil;as Em 2024</h2>
+<h3>1. **Peppa Pig**</h3>
+<p>Um sucesso consagrado, <strong>Peppa Pig</strong> continua conquistando crian&ccedil;as com suas hist&oacute;rias simples, divertidas e educativas. A s&eacute;rie aborda temas do cotidiano com uma linguagem acess&iacute;vel e personagens ador&aacute;veis, ideal para crian&ccedil;as de 2 a 6 anos.</p>
+<h3>2. **Bluey**</h3>
+<p>Produzida na Austr&aacute;lia, <strong>Bluey</strong> &eacute; uma s&eacute;rie que destaca a import&acirc;ncia da fam&iacute;lia, da criatividade e do brincar livre. Com epis&oacute;dios curtos e cheios de humor, cativa tanto crian&ccedil;as pequenas quanto pais, sendo perfeita para a faixa de 3 a 7 anos.</p>
+<h3>3. **Dora, a Aventureira**</h3>
+<p>Cl&aacute;ssica e interativa, <strong>Dora, a Aventureira</strong> estimula o aprendizado de l&iacute;nguas, resolu&ccedil;&atilde;o de problemas e descoberta do mundo. A protagonista incentiva a participa&ccedil;&atilde;o ativa das crian&ccedil;as, tornando o aprendizado mais din&acirc;mico.</p>
+<h3>4. **Masha e o Urso**</h3>
+<p>Com uma anima&ccedil;&atilde;o encantadora e personagens carism&aacute;ticos, <strong>Masha e o Urso</strong> aborda valores como amizade, respeito e responsabilidade. Suas aventuras engra&ccedil;adas s&atilde;o indicadas para crian&ccedil;as de 4 a 8 anos.</p>
+<h3>5. **PJ Masks &ndash; Her&oacute;is de Pijama**</h3>
+<p>Para crian&ccedil;as que adoram super-her&oacute;is, <strong>PJ Masks</strong> oferece a&ccedil;&atilde;o, trabalho em equipe e resolu&ccedil;&atilde;o de problemas em hist&oacute;rias que acontecem no per&iacute;odo noturno. &Eacute; ideal para crian&ccedil;as de 3 a 6 anos.</p>
+<h3>6. **Cleo &amp; Cuquin**</h3>
+<p>Esta s&eacute;rie espanhola combina humor e aprendizado, mostrando a import&acirc;ncia do trabalho em equipe e da curiosidade. Al&eacute;m disso, suas hist&oacute;rias estimulam habilidades cognitivas e sociais.</p>
+<h3>7. **Miraculous: As Aventuras de Ladybug**</h3>
+<p>Com uma mistura de a&ccedil;&atilde;o, mist&eacute;rio e romance adolescente, <strong>Miraculous</strong> encanta crian&ccedil;as e pr&eacute;-adolescentes. A s&eacute;rie apresenta personagens fortes e valores como coragem, responsabilidade e amizade, ideal para crian&ccedil;as a partir dos 7 anos.</p>
+<h3>8. **O Show da Luna**</h3>
+<p><strong>O Show da Luna</strong> &eacute; perfeito para estimular a curiosidade cient&iacute;fica das crian&ccedil;as. A personagem Luna aborda temas de ci&ecirc;ncia e natureza com uma linguagem simples e divertida, indicada para crian&ccedil;as de 4 a 8 anos.</p>
+<h3>9. **Drag&otilde;es: Corrida at&eacute; o Limite**</h3>
+<p>Inspirada na franquia "Como Treinar o Seu Drag&atilde;o", esta s&eacute;rie combina aventura e fantasia, com li&ccedil;&otilde;es sobre coragem, respeito e amizade. Perfeita para crian&ccedil;as a partir de 6 anos.</p>
+<h3>10. **Turma da M&ocirc;nica**</h3>
+<p>Um cl&aacute;ssico brasileiro, a <strong>Turma da M&ocirc;nica</strong> encanta gera&ccedil;&otilde;es com suas hist&oacute;rias divertidas e personagens que refletem o cotidiano das crian&ccedil;as. As tramas s&atilde;o leves e educativas, recomendadas para todas as idades.</p>
+<h2>Novidades E Tend&ecirc;ncias Em S&eacute;ries Animadas Infantis Para 2024</h2>
+<h3>Tecnologia e interatividade</h3>
+<p>O avan&ccedil;o tecnol&oacute;gico tem permitido a cria&ccedil;&atilde;o de s&eacute;ries animadas mais interativas, onde as crian&ccedil;as podem participar das hist&oacute;rias, tomar decis&otilde;es e influenciar o desenrolar dos epis&oacute;dios. Essa interatividade aumenta o engajamento e o aprendizado.</p>
+<h3>Inclus&atilde;o e diversidade</h3>
+<p>2024 refor&ccedil;a a import&acirc;ncia de produzir conte&uacute;do que reflita a diversidade cultural, &eacute;tnica e social. S&eacute;ries com personagens de diferentes origens, com defici&ecirc;ncias ou que abordam quest&otilde;es de g&ecirc;nero est&atilde;o em alta, promovendo o respeito e a empatia.</p>
+<h3>Temas ecol&oacute;gicos e sustent&aacute;veis</h3>
+<p>Com a crescente preocupa&ccedil;&atilde;o ambiental, muitas s&eacute;ries animadas est&atilde;o incorporando temas relacionados &agrave; sustentabilidade, preserva&ccedil;&atilde;o da natureza e responsabilidade social. Isso ajuda a conscientizar as crian&ccedil;as desde cedo sobre a import&acirc;ncia de cuidar do planeta.</p>
+<h2>Como Aproveitar Ao M&aacute;ximo As S&eacute;ries Animadas Para O Desenvolvimento Infantil</h2>
+<h3>Estabele&ccedil;a hor&aacute;rios regulares</h3>
+<p>Criar uma rotina com hor&aacute;rios espec&iacute;ficos para assistir &agrave;s s&eacute;ries ajuda a manter o equil&iacute;brio entre o tempo de tela e outras atividades importantes, como brincadeiras ao ar livre e leitura.</p>
+<h3>Assista junto com as crian&ccedil;as</h3>
+<p>Participar do momento de assistir &agrave;s s&eacute;ries permite que os pais ou respons&aacute;veis possam explicar situa&ccedil;&otilde;es, refor&ccedil;ar valores e at&eacute; aprender junto com os pequenos.</p>
+<h3>Estimule o di&aacute;logo</h3>
+<p>Converse com as crian&ccedil;as sobre o que elas assistiram, pergunte o que acharam, quais personagens gostaram e o que aprenderam. Isso ajuda a fixar o conte&uacute;do e desenvolver habilidades comunicativas.</p>
+<h3>Combine com atividades complementares</h3>
+<p>Ap&oacute;s assistir &agrave;s s&eacute;ries, incentive atividades que reforcem os temas abordados, como desenhos, jogos educativos ou pequenas experi&ecirc;ncias relacionadas ao conte&uacute;do.</p>
+<h2>Onde Assistir &Agrave;s Melhores S&eacute;ries Animadas Para Crian&ccedil;as Em 2024</h2>
+<p>Com a populariza&ccedil;&atilde;o das plataformas de streaming, &eacute; poss&iacute;vel encontrar uma grande variedade de s&eacute;ries animadas para crian&ccedil;as em servi&ccedil;os como:</p>
+<p>- <strong>Netflix</strong></p>
+<p>- <strong>Disney+</strong></p>
+<p>- <strong>Amazon Prime Video</strong></p>
+<p>- <strong>YouTube Kids</strong></p>
+<p>- <strong>Globoplay</strong></p>
+<p>Cada plataforma oferece t&iacute;tulos exclusivos e op&ccedil;&otilde;es variadas para diferentes idades e interesses, facilitando o acesso a conte&uacute;dos de qualidade.</p>
+<h2>Cuidados Importantes Na Escolha Do Conte&uacute;do Para Crian&ccedil;as</h2>
+<h3>Verifique a classifica&ccedil;&atilde;o indicativa</h3>
+<p>Sempre confira a faixa et&aacute;ria recomendada para a s&eacute;rie, garantindo que o conte&uacute;do seja adequado ao desenvolvimento da crian&ccedil;a.</p>
+<h3>Avalie as mensagens transmitidas</h3>
+<p>Prefira s&eacute;ries que promovam valores positivos, respeito e aprendizado, evitando aquelas que contenham viol&ecirc;ncia excessiva ou temas inapropriados.</p>
+<h3>Limite o tempo de tela</h3>
+<p>Embora as s&eacute;ries animadas sejam ben&eacute;ficas, o tempo em frente &agrave;s telas deve ser controlado para evitar impactos negativos na sa&uacute;de, como problemas de sono ou sedentarismo.</p>
+<h2>Considera&ccedil;&otilde;es Finais</h2>
+<p>O universo das <strong>s&eacute;ries animadas para crian&ccedil;as</strong> em 2024 est&aacute; repleto de op&ccedil;&otilde;es que combinam entretenimento, aprendizado e valores essenciais para o desenvolvimento saud&aacute;vel dos pequenos. Seja para crian&ccedil;as pequenas ou pr&eacute;-adolescentes, h&aacute; sempre uma s&eacute;rie que pode contribuir positivamente para seu crescimento.</p>
+<p>Investir em conte&uacute;do de qualidade, acompanhando e participando desses momentos, &eacute; fundamental para aproveitar ao m&aacute;ximo os benef&iacute;cios que a anima&ccedil;&atilde;o pode proporcionar. Al&eacute;m disso, estar atento &agrave;s novidades e tend&ecirc;ncias garante que as crian&ccedil;as tenham acesso a hist&oacute;rias modernas, inclusivas e inspiradoras.</p>
+<p>---</p>
+<p>Com tantas op&ccedil;&otilde;es incr&iacute;veis, o desafio &eacute; escolher aquela que mais se encaixa no perfil e interesse da crian&ccedil;a, garantindo horas de divers&atilde;o e aprendizado. Aproveite para conhecer as s&eacute;ries indicadas e tornar o entretenimento infantil ainda mais rico e significativo em 2024.</p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

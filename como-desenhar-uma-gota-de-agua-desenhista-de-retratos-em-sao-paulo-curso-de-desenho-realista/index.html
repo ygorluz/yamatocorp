@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como desenhar uma gota de água - desenhista de retratos em São Paulo - curso de desenho realista - Yamato Corp</title>
+    <meta name="description" content="Como desenhar gota de água: desenhista de retrato em São Paulo - curso de desenho realista
+A arte de desenhar uma gota de água
+Desenhar uma gota de água pode pa">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/como-desenhar-uma-gota-de-agua-desenhista-de-retratos-em-sao-paulo-curso-de-desenho-realista/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como desenhar uma gota de água - desenhista de retratos em São Paulo - curso de desenho realista</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Como desenhar gota de água: desenhista de retrato em São Paulo - curso de desenho realista
+A arte de desenhar uma gota de água
+Desenhar uma gota de água pode pa</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 08:41
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Como-desenhar-uma-gota-de-agua-desenhista-de-retratos.jpg" alt="Como desenhar uma gota de água - desenhista de retratos em São Paulo - curso de desenho realista">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Como desenhar gota de água: desenhista de retrato em São Paulo - curso de desenho realista</h1>
+<h2>A <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> de desenhar uma gota de água</h2>
+<p>Desenhar uma gota de água pode parecer uma tarefa simples à primeira vista, mas na verdade requer habilidades específicas e técnicas de desenho realista. Para os desenhistas de retratos em São Paulo que desejam aprimorar suas habilidades, é essencial dominar a representação de gotas de água de forma realista. Neste artigo, exploraremos algumas dicas e técnicas para desenhar gotas de água com perfeição.</p>
+<h3>Compreendendo a anatomia da gota de água</h3>
+<p>Antes de começar a desenhar uma gota de água, é importante compreender a sua anatomia. Uma gota de água tem uma forma oval ou arredondada, com uma parte superior mais arredondada e uma base mais achatada. Além disso, uma gota de água reflete a luz de maneira única, criando um brilho característico. Ao desenhar uma gota de água, é essencial capturar essas características de forma precisa.</p>
+<h3>Dicas para desenhar gotas de água realistas</h3>
+<p>Para desenhar gotas de água de forma realista, é importante prestar atenção aos detalhes e texturas. Comece por definir o contorno da gota de água, criando a sua forma básica. Em seguida, adicione detalhes como reflexos de luz e sombras para dar profundidade ao desenho. Utilize lápis de diferentes tonalidades para criar contrastes e texturas realistas. Pratique a observação de gotas de água reais para capturar suas características de forma precisa.</p>
+<h3>Participando de um curso de desenho realista em São Paulo</h3>
+<p>Para aprimorar suas habilidades de desenho e aprender técnicas avançadas para representar gotas de água de forma realista, considere participar de um curso de desenho realista em São Paulo. Aulas práticas e orientações de profissionais qualificados podem ajudá-lo a desenvolver suas habilidades e a explorar novas técnicas artísticas. Além disso, a interação com outros artistas pode ser uma fonte de inspiração e motivação para aprimorar suas habilidades.</p>
+<h2>Conclusão</h2>
+<p>Desenhar gotas de água de forma realista requer prática, paciência e dedicação. Compreender a anatomia da gota de água, prestar atenção aos detalhes e participar de um curso de desenho realista em São Paulo são passos importantes para aprimorar suas habilidades artísticas. Aproveite cada oportunidade para praticar e experimentar novas técnicas para se tornar um desenhista de retratos de sucesso.</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/NtGITE9zLes?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Como desenhar gota de água</h2>
+<p>Desenhar uma gota de água pode parecer um <a href="https://yamatocorp.com.br/category/desafios-e-jogos/">desafio</a>, mas com as técnicas certas é possível reproduzir esse elemento de forma realista. O segredo está em estudar a forma e a textura da gota, além de prestar atenção aos reflexos e sombras que ela pode apresentar. Um bom curso de desenho realista pode ensinar as técnicas necessárias para retratar uma gota de água de forma impressionante.</p>
+</p>
+<h2>Desenhista de retrato em São Paulo</h2>
+<p>Em São Paulo, há diversos desenhistas de retrato talentosos que podem retratar pessoas com uma precisão incrível. Com técnicas de sombreamento e detalhamento, é possível criar retratos que se assemelham muito às pessoas de verdade. Se você busca um retrato feito por um profissional em São Paulo, não deixe de pesquisar e encontrar o desenhista ideal para retratar você ou alguém especial.</p>
+</p>
+<h2>Curso de desenho realista</h2>
+<p>Para aprimorar suas habilidades de desenho realista, um curso especializado pode ser a chave para o sucesso. Com aulas práticas e teóricas, você pode aprender técnicas avançadas de desenho que vão desde retratos até cenários e elementos como gotas de água. Procure por cursos de desenho realista em São Paulo e dê um passo adiante na sua jornada artística.</p>
+</p>
+<h3>Como desenhar gota de água - Desenhista de retrato em São Paulo - Curso de desenho realista</h3>
+<p>Neste artigo, exploramos a arte de desenhar uma gota de água, destacamos a habilidade dos desenhistas de retrato em São Paulo e ressaltamos a importância de um curso de desenho realista para aprimorar suas habilidades artísticas. Com as técnicas corretas e muito treinamento, é possível alcançar resultados incríveis e se destacar no mundo da arte. Não hesite em buscar conhecimento e prática para se tornar um mestre no desenho realista.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=NtGITE9zLes">Desenhista de retrato</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

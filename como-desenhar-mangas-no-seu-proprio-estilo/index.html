@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Desenhar Mangás no Seu Próprio Estilo! - Yamato Corp</title>
+    <meta name="description" content="Guia completo de como desenhar mangás no seu próprio estilo
+mangá é um estilo de desenho originário do Japão que tem conquistado fãs ao redor do mundo. É caract">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/como-desenhar-mangas-no-seu-proprio-estilo/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como Desenhar Mangás no Seu Próprio Estilo!</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Guia completo de como desenhar mangás no seu próprio estilo
+mangá é um estilo de desenho originário do Japão que tem conquistado fãs ao redor do mundo. É caract</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 07:35
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Como-Desenhar-Mangas-no-Seu-Proprio-Estilo.jpg" alt="Como Desenhar Mangás no Seu Próprio Estilo!">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Guia completo de como desenhar mangás no seu próprio estilo</h1>
+<p><a href="https://yamatocorp.com.br/category/cultura-pop-e-manga/">mangá</a> é um estilo de desenho originário do Japão que tem conquistado fãs ao redor do mundo. É caracterizado por traços marcantes, expressões exageradas e narrativas envolventes. Muitos artistas, amadores ou profissionais, se inspiram nesse estilo para criar suas próprias obras. Se você é um desses artistas e quer aprender a desenhar mangás no seu próprio estilo, este guia é para você!</p>
+<h2>O que é um mangá?</h2>
+<p>Antes de começarmos a falar sobre como desenhar mangás, é importante compreender o que exatamente é um mangá. Mangá é o termo utilizado para descrever as histórias em quadrinhos japonesas. Diferente dos quadrinhos ocidentais, os mangás possuem características únicas em relação à narrativa, estética e linguagem visual.</p>
+<h2>Encontre inspiração</h2>
+<p>Para desenvolver o seu próprio estilo de desenho de mangá, é fundamental encontrar inspiração em diversos artistas. Observe os traços, as composições e as expressões faciais presentes nos mangás que você mais gosta. Experimente misturar diferentes estilos e técnicas para criar algo novo e original.</p>
+<h2>Estude anatomia e proporções</h2>
+<p>Um dos aspectos mais importantes na criação de mangás é dominar a anatomia e as proporções do corpo humano. É essencial entender como os músculos se movem, como as articulações funcionam e como as diferentes partes do corpo se relacionam entre si. Estude a anatomia humana e pratique desenhando poses e expressões faciais diferentes.</p>
+<h2>Desenvolva seu próprio estilo</h2>
+<p>Ao desenhar mangás no seu próprio estilo, não tenha medo de experimentar e arriscar. Crie personagens únicos, explore novas formas de expressão e desenvolva um traço distintivo que seja reconhecido como seu. Lembre-se de que a prática constante é fundamental para aprimorar suas habilidades e encontrar sua identidade artística.</p>
+<h2>Utilize referências visuais</h2>
+<p>Para aprimorar a sua técnica de desenho de mangá, é importante utilizar referências visuais. Observe fotografias, vídeos e filmes para captar movimentos, expressões e poses diferentes. Além disso, estude o trabalho de outros artistas para se inspirar e aprender novas técnicas.</p>
+<h2>Experimente diferentes materiais</h2>
+<p>A escolha dos materiais de desenho também é um aspecto importante na criação de mangás. Experimente diferentes tipos de lápis, canetas, marcadores e papéis para descobrir quais são os mais adequados ao seu estilo. Não tenha medo de testar novos materiais e encontrar aqueles que melhor se adaptam às suas preferências.</p>
+<h2>Pratique, pratique, pratique</h2>
+<p>Como em qualquer outra forma de <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a>, a prática é a chave para aperfeiçoar suas habilidades de desenho de mangá. Dedique tempo diariamente para desenhar, experimentar novas técnicas e aprimorar sua técnica. Lembre-se de que a evolução é um processo contínuo e que cada desenho é uma oportunidade de aprendizado e crescimento.</p>
+<h2>Conclusão</h2>
+<p>Desenhar mangás no seu próprio estilo é uma jornada de autodescoberta e criatividade. Ao seguir as dicas deste guia e dedicar-se à prática constante, você estará se aproximando cada vez mais de desenvolver um estilo único e pessoal. Não tenha medo de arriscar, experimentar e evoluir como artista. Lembre-se de que a arte é uma forma de expressão e que o mais importante é se divertir no processo de criação. Dê asas à sua imaginação e crie mangás incríveis no seu próprio estilo!</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/Detpz979fN0?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>1. A importância de desenvolver seu estilo próprio ao desenhar mangás</h2>
+</p>
+<p>Ao buscar se aprimorar na arte de desenhar mangás, é essencial que você busque desenvolver um estilo próprio. Isso não significa desprezar as técnicas tradicionais, mas sim encontrar maneiras de expressar sua criatividade de forma única. Afinal, é a sua personalidade que irá tornar seus desenhos verdadeiramente originais e cativantes.</p>
+</p>
+<h2>2. Dicas para encontrar sua identidade visual ao desenhar mangás</h2>
+</p>
+<p>Para criar um estilo próprio ao desenhar mangás, é fundamental estudar referências, experimentar diferentes técnicas e observar artistas renomados. Não tenha medo de ousar e testar novas abordagens. Lembre-se também de se manter fiel a sua essência e não se comparar demasiadamente com outros desenhistas. A prática constante e a busca por sua identidade visual são os pilares para desenvolver um estilo único e autêntico.</p>
+</p>
+<h2>3. O poder de contar histórias através do seu próprio estilo de desenho</h2>
+</p>
+<p>Ao dominar técnicas de desenho de mangá e desenvolver um estilo próprio, você estará apto a contar histórias de forma ainda mais impactante. Seus personagens terão mais vida, suas cenas serão mais dinâmicas e seu público se sentirá ainda mais envolvido com suas narrativas. Não subestime o poder que um estilo único tem na hora de transmitir suas mensagens e emocionar seus leitores.</p>
+</p>
+<h3>Encontrando sua essência no mundo dos mangás: a importância de desenvolver um estilo único</h3>
+</p>
+<p>Desenvolver um estilo próprio ao desenhar mangás não apenas torna seus trabalhos mais marcantes, mas também reflete sua personalidade e criatividade. Ao buscar sua identidade visual e contar suas histórias de forma única, você destaca-se no mercado e conquista um público fiel. Portanto, não tenha medo de explorar novas técnicas, experimentar diferentes abordagens e apostar na sua originalidade. Encontre sua essência no mundo dos mangás e destaque-se entre os artistas do gênero. </p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=Detpz979fN0">Diêgo Silveira</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

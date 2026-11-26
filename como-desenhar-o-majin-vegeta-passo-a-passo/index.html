@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como desenhar o Majin Vegeta - Passo a passo - Yamato Corp</title>
+    <meta name="description" content="Aprenda a Desenhar Majin Vegeta Passo a Passo
+Majin Vegeta é um dos personagens mais icônicos do anime Dragon Ball Z, conhecido por sua personalidade complexa e">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/como-desenhar-o-majin-vegeta-passo-a-passo/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Como desenhar o Majin Vegeta - Passo a passo</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Aprenda a Desenhar Majin Vegeta Passo a Passo
+Majin Vegeta é um dos personagens mais icônicos do anime Dragon Ball Z, conhecido por sua personalidade complexa e</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 01:00
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Como-desenhar-o-Majin-Vegeta-Passo-a-passo.jpg" alt="Como desenhar o Majin Vegeta - Passo a passo">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Aprenda a Desenhar Majin Vegeta Passo a Passo</h1>
+<p>Majin Vegeta é um dos personagens mais icônicos do anime Dragon Ball Z, conhecido por sua personalidade complexa e poder de luta incomparável. Neste artigo, vamos te ensinar como desenhar Majin Vegeta de forma simples e fácil, passo a passo. Não é necessário ser um artista experiente para conseguir um resultado incrível, basta seguir nossas orientações e praticar. Vamos lá!</p>
+<h2>Materiais Necessários</h2>
+<p>Antes de começar a desenhar Majin Vegeta, é importante ter em mãos os materiais necessários para garantir um bom resultado. Você precisará de:</p>
+<ul>
+<li>Papel de desenho;</li>
+<li>Lápis HB e 6B;</li>
+<li>Borracha macia;</li>
+<li>Canetas de diferentes espessuras;</li>
+<li>Lápis de cor ou marcadores para colorir.</li>
+</ul>
+<p>Certifique-se de que todos os materiais estejam em boas condições e prontos para uso. Agora, vamos ao passo a passo para desenhar Majin Vegeta.</p>
+<h2>Passo 1: Esboço do Corpo</h2>
+<p>Comece desenhando o esboço básico do corpo de Majin Vegeta. Utilize o lápis HB para criar as formas principais, como a cabeça, o tronco e os membros. Não se preocupe com os detalhes neste momento, o objetivo é definir a pose do personagem de forma geral.</p>
+<h2>Passo 2: Detalhes do Rosto</h2>
+<p>Com o esboço do corpo pronto, é hora de adicionar os detalhes do rosto de Majin Vegeta. Destaque os olhos, sobrancelhas, nariz e boca com cuidado, lembrando-se das características únicas do personagem, como a cicatriz na testa e o sorriso confiante.</p>
+<h2>Passo 3: Traços Musculares e Vestimenta</h2>
+<p>Agora, acrescente os traços musculares e os detalhes da vestimenta de Majin Vegeta. Ele possui músculos bem definidos e veste um traje de guerreiro com o símbolo &quot;M&quot; de Majin estampado. Preste atenção aos detalhes e garanta que o desenho esteja fiel ao personagem original.</p>
+<h2>Passo 4: Finalização e Coloração</h2>
+<p>Por fim, finalize o desenho de Majin Vegeta, reforçando os traços principais e corrigindo possíveis erros. Em seguida, escolha as cores adequadas para colorir o desenho, destacando as características únicas do personagem, como sua pele morena, cabelos negros e traje azul e branco.</p>
+<h2>Dicas Extras</h2>
+<ul>
+<li>Pratique a anatomia do corpo humano para aprimorar seus desenhos de personagens;</li>
+<li>Estude referências visuais de Majin Vegeta para capturar sua essência e personalidade;</li>
+<li>Experimente técnicas de sombreamento e texturização para deixar seu desenho mais realista.</li>
+</ul>
+<p>Com essas dicas e orientações, você será capaz de desenhar Majin Vegeta com precisão e estilo. Lembre-se de praticar regularmente e se divertir durante o processo criativo. Aprecie cada etapa do desenho e sinta-se orgulhoso do resultado final. Boa sorte!</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/BvldaxzpFgI?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Passo a passo para desenhar Majin Vegeta</h2>
+</p>
+<p>Para começar a desenhar Majin Vegeta, primeiro é importante ter em mãos um lápis para esboçar o contorno do personagem. É recomendado utilizar linhas leves para fazer o desenho inicial, garantindo que seja mais fácil realizar correções e ajustes conforme necessário.</p>
+</p>
+<h2>Detalhes e sombreado de Majin Vegeta</h2>
+</p>
+<p>Após esboçar o contorno de Majin Vegeta, é hora de adicionar os detalhes característicos do personagem, como os símbolos em seu traje e os músculos bem definidos. Além disso, é importante prestar atenção ao sombreado para dar mais profundidade e realismo ao desenho de Majin Vegeta.</p>
+</p>
+<h2>Dicas e truques para um desenho perfeito de Majin Vegeta</h2>
+</p>
+<p>Para garantir um desenho perfeito de Majin Vegeta, é importante praticar constantemente as técnicas de desenho, prestando atenção aos detalhes e seguindo as orientações passo a passo. Além disso, é fundamental ter paciência e persistência, pois o processo de aprender a desenhar exige prática e dedicação.</p>
+</p>
+<h3>Conclusão sobre Como Desenhar Majin Vegeta - How to draw Majin Vegeta</h3>
+</p>
+<p>Neste artigo, discutimos o passo a passo para desenhar Majin Vegeta, detalhes e sombreado do personagem, além de dicas e truques para um desenho perfeito. Ao seguir essas orientações e praticar regularmente, será possível aprimorar suas habilidades de desenho e criar uma representação fiel e detalhada de Majin Vegeta. Lembre-se de ter paciência e persistência, pois o processo de aprendizagem exige dedicação e esforço.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=BvldaxzpFgI">Art Lucas</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

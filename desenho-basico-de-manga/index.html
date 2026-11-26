@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenho básico de mangá. - Yamato Corp</title>
+    <meta name="description" content="Desenho de mangá básico: Guia completo para iniciantes
+O desenho de mangá é uma forma de arte muito popular e apreciada em todo o mundo. Se você é um amante de ">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/desenho-basico-de-manga/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Desenho básico de mangá.</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Desenho de mangá básico: Guia completo para iniciantes
+O desenho de mangá é uma forma de arte muito popular e apreciada em todo o mundo. Se você é um amante de </p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 01:58
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Desenho-basico-de-manga.jpg" alt="Desenho básico de mangá.">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Desenho de <a href="https://yamatocorp.com.br/category/cultura-pop-e-manga/">mangá</a> básico: Guia completo para iniciantes</h1>
+<p>O desenho de mangá é uma forma de <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> muito popular e apreciada em todo o mundo. Se você é um amante de mangás e animes e gostaria de aprender a desenhar seus próprios personagens e histórias, este guia completo é para você. Neste artigo, vamos abordar os conceitos básicos do desenho de mangá, desde os materiais necessários até as técnicas fundamentais para criar seus próprios personagens.</p>
+<h2>Materiais necessários para desenho de mangá</h2>
+<p>Antes de começar a desenhar mangás, é importante ter os materiais certos. Aqui estão os materiais básicos que você vai precisar:</p>
+<ul>
+<li>Papel de desenho de qualidade</li>
+<li>Lápis e borracha</li>
+<li>Canetas para contorno</li>
+<li>Marcadores para colorir</li>
+<li>Réguas e compassos</li>
+<li>Computador com softwares de edição de imagem (opcional)</li>
+</ul>
+<p>Certifique-se de ter todos esses materiais à mão antes de começar a desenhar seu primeiro personagem de mangá.</p>
+<h2>Técnicas fundamentais de desenho de mangá</h2>
+<h3>1. Proporções dos personagens</h3>
+<p>Uma das características mais marcantes do estilo de desenho de mangá são as proporções dos personagens. Eles costumam ter olhos grandes, cabeças proporcionais ao corpo e poses dramáticas. Pratique desenhando diferentes proporções e estilos de personagens para encontrar o seu próprio estilo único.</p>
+<h3>2. Expressões faciais</h3>
+<p>As expressões faciais são essenciais para transmitir as emoções dos personagens de mangá. Pratique desenhando diferentes expressões, como alegria, tristeza, raiva e surpresa. Experimente também variar o tamanho e formato dos olhos e bocas para criar diferentes emoções.</p>
+<h3>3. Movimento e ação</h3>
+<p>Outra característica marcante dos mangás são as cenas de ação dinâmicas. Pratique desenhando poses de ação e movimentos fluidos para dar vida aos seus personagens. Use linhas dinâmicas e sombreamento para criar a ilusão de movimento e velocidade.</p>
+<h3>4. Cenários e fundos</h3>
+<p>Não se esqueça de incluir cenários e fundos em seus desenhos de mangá. Eles ajudam a dar contexto às suas histórias e personagens. Pratique desenhando diferentes ambientes, como cidades, florestas e interiores, para melhorar suas habilidades de ambientação.</p>
+<h2>Conclusão</h2>
+<p>Desenhar mangá pode ser uma atividade divertida e criativa para pessoas de todas as idades. Com os materiais certos e prática constante, você pode desenvolver suas habilidades e criar seus próprios personagens e histórias em estilo mangá. Experimente as técnicas apresentadas neste guia e divirta-se explorando o mundo fascinante do desenho de mangá.</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/4eBtXRFIY04?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Como desenhar mangá de forma básica</h2>
+<p>Para quem deseja aprender a desenhar mangá de maneira simples, é importante começar pelo básico. A estrutura dos personagens, os traços características e a expressão facial são elementos essenciais para criar um desenho de mangá autêntico. Comece praticando a anatomia básica dos personagens, como as proporções do corpo e a forma dos olhos e boca.</p>
+</p>
+<h2>Técnicas para desenhar mangá com perfeição</h2>
+<p>Além de dominar a anatomia básica dos personagens, é importante conhecer técnicas para dar vida aos desenhos de mangá. Utilize linhas fluidas e precisas para criar movimento nos personagens, explore diferentes ângulos de visão e trabalhe com sombras e luzes para dar profundidade às ilustrações. Pratique regularmente para aprimorar suas habilidades e criar desenhos de mangá cada vez mais refinados.</p>
+</p>
+<h2>Desenvolvendo seu estilo próprio no desenho de mangá</h2>
+<p>Ao dominar as técnicas básicas e avançadas de desenho de mangá, é hora de desenvolver seu estilo próprio. Experimente diferentes estilos de traço, explore novas formas de representar expressões faciais e crie personagens únicos e memoráveis. Lembre-se de que a prática constante é fundamental para evoluir como desenhista de mangá e encontrar sua identidade artística no mundo do desenho oriental.</p>
+</p>
+<h3>Domine as técnicas básicas e avançadas para se tornar um mestre no desenho de mangá</h3>
+<p>Aprender a desenhar mangá pode ser uma jornada desafiadora, mas recompensadora. Dominar as técnicas básicas e avançadas de desenho, praticar regularmente e desenvolver um estilo próprio são passos essenciais para se tornar um mestre no desenho de mangá. Com dedicação e paixão pela arte, você poderá criar ilustrações incríveis e cativar o público com seus personagens e histórias únicas.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=4eBtXRFIY04">kaique nunes</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

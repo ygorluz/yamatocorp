@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>É fácil colorir a ARGAMASSA AC3 | Peças de cimento para DECORAÇÃO. - Yamato Corp</title>
+    <meta name="description" content="Título:
+Descubra como é simples colorir a argamassa AC3 para peças de cimento na decoração
+
+Introdução:
+Em um mercado cada vez mais competitivo, a busca por dif">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/e-facil-colorir-a-argamassa-ac3-pecas-de-cimento-para-decoracao/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">É fácil colorir a ARGAMASSA AC3 | Peças de cimento para DECORAÇÃO.</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Título:
+Descubra como é simples colorir a argamassa AC3 para peças de cimento na decoração
+
+Introdução:
+Em um mercado cada vez mais competitivo, a busca por dif</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-15" style="color: var(--text-muted);">
+                        15/10/2024 17:44
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/E-facil-colorir-a-ARGAMASSA-AC3-Pecas-de-cimento.jpg" alt="É fácil colorir a ARGAMASSA AC3 | Peças de cimento para DECORAÇÃO.">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <p><strong>Título:</strong>
+Descubra como é simples colorir a argamassa AC3 para peças de cimento na decoração</p>
+<hr />
+<p><strong>Introdução:</strong></p>
+<p>Em um mercado cada vez mais competitivo, a busca por diferenciais na decoração de ambientes tem se tornado uma tendência cada vez mais forte. Nesse sentido, as peças de cimento têm se destacado como uma opção versátil e moderna para quem deseja inovar na decoração. E uma das maneiras mais práticas e eficientes de dar um toque especial a essas peças é utilizando a argamassa AC3, que pode ser colorida de acordo com a preferência do cliente.</p>
+<hr />
+<p><strong>Como colorir a argamassa AC3:</strong></p>
+<h3>Passo a passo para colorir a argamassa AC3</h3>
+<p>Muitas pessoas podem se perguntar como é possível colorir a argamassa AC3, afinal, essa é uma dúvida comum para aqueles que desejam dar um toque de personalidade às peças de cimento. No entanto, o processo é mais simples do que muitos imaginam. </p>
+<h4>Materiais necessários</h4>
+<p>Para começar, é importante ter em mãos os materiais necessários para colorir a argamassa AC3. Você irá precisar de:</p>
+<ul>
+<li>Argamassa AC3 branca</li>
+<li>Pigmento na cor desejada</li>
+<li>Água</li>
+<li>Recipiente para mistura</li>
+<li>Espátula ou desempenadeira</li>
+</ul>
+<h4>Passo a passo</h4>
+<ol>
+<li>Em um recipiente, faça uma mistura de argamassa AC3 branca com água, de acordo com as instruções do fabricante.</li>
+<li>Adicione o pigmento na cor desejada à mistura, mexendo bem para que fique uniforme.</li>
+<li>Aplique a argamassa colorida sobre a peça de cimento com o auxílio de uma espátula ou desempenadeira, garantindo uma cobertura homogênea.</li>
+<li>Deixe secar conforme as instruções do fabricante e pronto! Sua peça de cimento estará colorida e pronta para ser utilizada na decoração.</li>
+</ol>
+<hr />
+<p><strong>Vantagens de colorir a argamassa AC3:</strong></p>
+<h3>A importância de colorir a argamassa AC3 na decoração</h3>
+<p>Além de dar um toque personalizado às peças de cimento, colorir a argamassa AC3 apresenta uma série de vantagens para a decoração de ambientes. Algumas delas são:</p>
+<ul>
+<li>Maior durabilidade e resistência das peças coloridas</li>
+<li>Variedade de cores disponíveis para combinar com qualquer estilo de decoração</li>
+<li>Facilidade de aplicação e manutenção das peças decorativas</li>
+<li>Custo acessível em relação a outras opções de revestimento</li>
+</ul>
+<p>Com todas essas vantagens, fica evidente como é simples e vantajoso colorir a argamassa AC3 para peças de cimento na decoração. Seja para uma reforma em casa ou para um projeto de arquitetura, essa técnica pode fazer toda a diferença no resultado final.</p>
+<hr />
+<p><strong>Conclusão:</strong></p>
+<p>Por meio deste artigo, foi possível compreender como é fácil e vantajoso colorir a argamassa AC3 para peças de cimento na decoração. Com um processo simples e acessível, é possível dar um toque personalizado e moderno às peças, tornando-as ainda mais atrativas e duráveis. Portanto, não hesite em experimentar essa técnica em seus projetos de decoração e surpreenda-se com os resultados!</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/H9hNzXtIJ-8?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Benefícios de colorir a argamassa AC3 para peças de cimento</h2>
+<p>Colorir a argamassa AC3 para peças de cimento é uma excelente forma de personalizar e dar um toque especial à decoração. Com uma gama de cores disponíveis, é fácil encontrar a tonalidade perfeita para combinar com o ambiente desejado. Além disso, a argamassa AC3 é resistente e durável, garantindo que a cor se mantenha bonita por muito tempo.</p>
+</p>
+<h2>Como colorir a argamassa AC3 de forma prática e eficiente</h2>
+<p>Colorir a argamassa AC3 para peças de cimento é um processo simples e rápido. Basta adicionar o corante desejado à argamassa enquanto ela ainda está fresca e misturar bem. É importante seguir as instruções do fabricante para obter o resultado esperado. Com essa técnica, é possível criar peças únicas e personalizadas para a decoração.</p>
+</p>
+<h2>Cuidados e dicas para colorir a argamassa AC3 com sucesso</h2>
+<p>Para garantir um resultado impecável ao colorir a argamassa AC3, é importante tomar alguns cuidados. Certifique-se de utilizar corantes de qualidade e adequados para argamassa. Além disso, faça testes em pequenas quantidades antes de aplicar a cor definitiva. Com atenção aos detalhes e seguindo as orientações corretas, é fácil colorir a argamassa AC3 e transformar peças de cimento em verdadeiras obras de <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a>.</p>
+</p>
+<h3>Transforme e personalize sua decoração com a facilidade de colorir a argamassa AC3</h3>
+<p>Colorir a argamassa AC3 para peças de cimento é uma maneira simples e eficiente de personalizar a decoração. Com a diversidade de cores disponíveis e os cuidados necessários, é possível criar peças únicas e cheias de personalidade. Aproveite as dicas e informações deste artigo para transformar seu ambiente e deixá-lo ainda mais especial com a argamassa AC3 colorida.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=H9hNzXtIJ-8">Pati de Castro Ateliê</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

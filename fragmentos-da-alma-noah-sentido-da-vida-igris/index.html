@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragmentos da Alma | Noah (Sentido da Vida) | Igris - Yamato Corp</title>
+    <meta name="description" content="Fragmentos da Alma: A Profundidade de Noah (Sense Life) e Igris
+Os personagens Noah (Sense Life) e Igris são parte fundamental da trama de &quot;Fragmentos da A">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/fragmentos-da-alma-noah-sentido-da-vida-igris/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Fragmentos da Alma | Noah (Sentido da Vida) | Igris</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">Fragmentos da Alma: A Profundidade de Noah (Sense Life) e Igris
+Os personagens Noah (Sense Life) e Igris são parte fundamental da trama de &quot;Fragmentos da A</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 09:18
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Fragmentos-da-Alma-Noah-Sentido-da-Vida-Igris.jpg" alt="Fragmentos da Alma | Noah (Sentido da Vida) | Igris">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1>Fragmentos da Alma: A Profundidade de Noah (Sense Life) e Igris</h1>
+<p>Os personagens Noah (Sense Life) e Igris são parte fundamental da trama de &quot;Fragmentos da Alma&quot;. Suas histórias, habilidades e personalidades cativam os leitores, tornando-os peças essenciais no desenvolvimento da narrativa. Neste artigo, vamos explorar mais sobre esses dois personagens e como eles contribuem para a profundidade e complexidade da obra.</p>
+<h2>A Jornada de Noah (Sense Life)</h2>
+<p>Noah, mais conhecido como Sense Life, é um dos personagens mais misteriosos de &quot;Fragmentos da Alma&quot;. Sua habilidade de sentir a vida ao seu redor o torna uma peça-chave no grupo de protagonistas, proporcionando insights e perspectivas únicas sobre o mundo ao seu redor. Desde o início da história, sua presença silenciosa e observadora intriga os leitores, que se perguntam sobre seus verdadeiros sentimentos e motivações.</p>
+<h3>O Poder da Percepção</h3>
+<p>O dom de Sense Life de sentir a vida em todas as coisas o coloca em uma posição única dentro do grupo de protagonistas. Sua capacidade de perceber nuances e detalhes que passam despercebidos pelos outros personagens adiciona camadas de complexidade à narrativa, revelando segredos ocultos e possibilitando reviravoltas inesperadas. </p>
+<h3>A Solidão de um Observador</h3>
+<p>Apesar de sua capacidade de sentir a vida ao seu redor, Noah carrega consigo uma profunda solidão. Sua habilidade o isola dos outros personagens, tornando-o um espectador distante das emoções e experiências compartilhadas pelo grupo. Essa solidão é um fardo que Noah carrega consigo, moldando sua visão de mundo e suas interações com os demais.</p>
+<h2>A Força de Igris</h2>
+<p>Igris é outro personagem marcante em &quot;Fragmentos da Alma&quot;. Como um dos guerreiros mais habilidosos do grupo, sua força física e determinação o destacam nas batalhas contra as forças do mal. Sua lealdade aos companheiros e sua coragem diante dos desafios fazem dele um aliado valioso, pronto para lutar até o fim para proteger seus amigos e alcançar seus objetivos.</p>
+<h3>O Guerreiro Implacável</h3>
+<p>Igris é conhecido por sua determinação e coragem em combate. Sua força física e habilidades de combate fazem dele um adversário formidável para qualquer inimigo que ouse desafiá-lo. Sua postura firme e implacável diante das batalhas inspira confiança nos demais personagens, que sabem que podem contar com ele nos momentos mais difíceis.</p>
+<h3>O Coração de um Protetor</h3>
+<p>Por trás de sua fachada de guerreiro implacável, Igris esconde um coração generoso e leal. Sua dedicação aos amigos e sua vontade inabalável de protegê-los tornam-no um pilar de apoio dentro do grupo de protagonistas. Sua lealdade incondicional e seu sacrifício pessoal em nome daqueles que ama o tornam um personagem inesquecível e inspirador.</p>
+<p>Ao explorar as jornadas de Noah (Sense Life) e Igris em &quot;Fragmentos da Alma&quot;, podemos apreciar a complexidade e a profundidade desses personagens. Suas habilidades únicas, personalidades marcantes e relações com os demais protagonistas enriquecem a trama e proporcionam aos leitores uma experiência envolvente e cativante. A medida que a história se desenrola, ficamos cada vez mais intrigados pelas reviravoltas e desenvolvimentos dos destinos desses personagens fascinantes.</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/VTDiXP0_lfs?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Fragmentos da Alma</h2>
+<p>Os desenhos de Fragmentos da Alma são marcados pela profundidade emocional e pelo realismo das expressões dos personagens. Cada traço e sombreamento são cuidadosamente pensados para transmitir as emoções mais íntimas dos protagonistas, criando um verdadeiro vínculo emocional com o espectador.</p>
+</p>
+<h2>Noah (Sense Life)</h2>
+<p>Os desenhos de Noah (Sense Life) se destacam pela mistura entre o realismo e o surrealismo, criando um universo único e intrigante. A riqueza de detalhes nas paisagens e nos personagens transporta o espectador para um mundo de fantasia, repleto de mistérios e magia.</p>
+</p>
+<h2>Igris</h2>
+<p>Os desenhos de Igris são caracterizados pela ação e pelo dinamismo das cenas de batalha. Cada movimento dos personagens é cuidadosamente estudado para transmitir a intensidade e a adrenalina das lutas, criando uma experiência visual impactante e emocionante para o espectador.</p>
+</p>
+<h3>Explorando a profundidade emocional, o surrealismo e a ação nos desenhos de Fragmentos da Alma, Noah (Sense Life) e Igris</h3>
+<p>Os desenhos de Fragmentos da Alma, Noah (Sense Life) e Igris demonstram a diversidade e a riqueza da <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a> visual, explorando diferentes aspectos da experiência humana e criando universos únicos e inesquecíveis. Cada obra transmite emoções, mistérios e adrenalina, cativando o espectador e convidando-o a mergulhar em universos fantásticos e emocionantes.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=VTDiXP0_lfs">Igris</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

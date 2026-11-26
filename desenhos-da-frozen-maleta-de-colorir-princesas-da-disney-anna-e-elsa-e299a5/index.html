@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhos da Frozen - Maleta de Colorir Princesas da Disney Anna e Elsa ♥ - Yamato Corp</title>
+    <meta name="description" content="jogos da Frozen: Maleta de Colorir Princesas da Disney Anna e Elsa
+Introdução
+A Frozen é um dos filmes de maior sucesso da Disney, conquistando o coração de cri">
+    
+    
+    <link rel="canonical" href="https://yamatocorp.com.br/desenhos-da-frozen-maleta-de-colorir-princesas-da-disney-anna-e-elsa-e299a5/" />
+    
+    
+    
+
+    <link rel="stylesheet" href="/themes/gshow_pop_v2/assets/css/style.css?v=2.0">
+    <!-- Bootstrap Icons (Usado internamente pelo CMS e para redes sociais) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Algumas lógicas do CMS dependem de classes Bootstrap puras (RaioX). Injetamos a versão ultra-leve do bootstrap apenas para os blocos do CMS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Sistema de Paletas de Cores -->
+    
+    <style>
+        :root {
+            --accent-color: #c4170c !important;
+            --accent-hover: #9c1209 !important;
+            --accent-dark: #750d07 !important;
+        }
+    </style>
+    
+
+    
+</head>
+<body>
+<header class="gs-header">
+    <div class="gs-header__container">
+        <!-- Lado Esquerdo -->
+        <div class="gs-header__left">
+            <button class="gs-header__menu-btn" id="gs-menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+                <span class="gs-header__menu-text">MENU</span>
+            </button>
+
+            <a href="/" class="gs-header__logo">
+                
+                    <span style="font-family: var(--font-heading-serif); font-weight: 900; font-size: 1.5rem;">gshow</span>
+                
+            </a>
+        </div>
+
+        <!-- Centro: Nome do Site com fonte fina -->
+        <a href="/" class="gs-header__center">
+            Yamato Corp
+        </a>
+
+        <!-- Lado Direito: Buscar -->
+        <div class="gs-header__right">
+            <button class="gs-header__right-item" id="gs-search-toggle" aria-label="Pesquisar" style="background:none; border:none; color:#fff;">
+                <i class="bi bi-search"></i>
+                <span style="text-transform: uppercase;">Buscar</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Overlay de Busca (Search Modal) -->
+<div class="gs-search-overlay" id="gs-search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; padding:2rem;">
+    <button id="gs-search-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"><i class="bi bi-x-lg"></i></button>
+    <div style="max-width:600px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="gs-search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.5rem; border:none; border-bottom:2px solid var(--accent-color); background:transparent; color:#fff; outline:none; font-family:var(--font-ui);">
+        <div id="gs-search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:var(--font-ui);"></div>
+    </div>
+</div>
+
+<!-- Sub-Barra de Categoria (Rosa Escuro) -->
+<div class="gs-header__subbar">
+    
+        <a href="/categoria/tutoriais-e-aulas/" style="color:#ffffff;">Tutoriais e Aulas</a>
+    
+</div>
+
+<!-- Overlay Escuro do Menu -->
+<div class="gs-overlay" id="gs-overlay"></div>
+
+<!-- Menu Oculto (Offcanvas) -->
+<nav class="gs-nav-offcanvas" id="gs-offcanvas">
+    <button class="gs-nav-offcanvas__close" id="gs-menu-close" aria-label="Fechar Menu">
+        <i class="bi bi-x-lg"></i>
+    </button>
+    <br><br>
+    
+        <a href="/">INÍCIO</a>
+        
+            <a href="/categoria/cultura-pop-e-manga/">Cultura Pop e Mangá</a>
+        
+            <a href="/categoria/desafios-e-jogos/">Desafios e Jogos</a>
+        
+            <a href="/categoria/dicas/">Dicas</a>
+        
+            <a href="/categoria/mercado-de-arte/">Mercado de Arte</a>
+        
+            <a href="/categoria/presentes/">Presentes</a>
+        
+            <a href="/categoria/public/">Public</a>
+        
+            <a href="/categoria/tecnologia-e-ferramentas/">Tecnologia e Ferramentas</a>
+        
+            <a href="/categoria/tutoriais-e-aulas/">Tutoriais e Aulas</a>
+        
+    
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- MENU HAMBURGUER LOGIC ---
+        const toggleBtn = document.getElementById('gs-menu-toggle');
+        const closeBtn = document.getElementById('gs-menu-close');
+        const offcanvas = document.getElementById('gs-offcanvas');
+        const overlay = document.getElementById('gs-overlay');
+
+        function openMenu() {
+            offcanvas.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            offcanvas.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay) overlay.addEventListener('click', closeMenu);
+
+        // --- SEARCH LOGIC ---
+        const searchToggle = document.getElementById('gs-search-toggle');
+        const searchOverlay = document.getElementById('gs-search-overlay');
+        const searchClose = document.getElementById('gs-search-close');
+        const searchInput = document.getElementById('gs-search-input');
+        const searchResults = document.getElementById('gs-search-results');
+        let postsData = [];
+
+        if (searchToggle && searchOverlay) {
+            searchToggle.addEventListener('click', function() {
+                searchOverlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                searchInput.focus();
+                
+                // Fetch posts.json only once
+                if (postsData.length === 0) {
+                    fetch('/posts.json')
+                        .then(response => response.json())
+                        .then(data => { postsData = data; })
+                        .catch(err => console.error('Erro ao carregar pesquisa', err));
+                }
+            });
+            
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px;">` : `<div style="width:60px; height:60px; background:#444; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.8rem; color:#aaa;">${post.date || ''}</div><div style="font-weight:700;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+
+<main class="container" style="padding-top: 3rem;">
+    <article>
+        <header class="post-header">
+            
+            <h1 class="post-title">Desenhos da Frozen - Maleta de Colorir Princesas da Disney Anna e Elsa ♥</h1>
+            
+            
+                <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem; line-height: 1.5;">jogos da Frozen: Maleta de Colorir Princesas da Disney Anna e Elsa
+Introdução
+A Frozen é um dos filmes de maior sucesso da Disney, conquistando o coração de cri</p>
+            
+
+            <div class="post-meta" style="margin-top: 1rem; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; max-width: 760px; margin-left: auto; margin-right: auto;">
+                
+                    <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: var(--text-muted);"></i>
+                        
+                        <span style="font-weight: 700; color: var(--text-main);">Por <a href="/autor/braqueossauro/" style="color: var(--accent-color);">Braqueossáuro</a></span>
+                    </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; flex: 1 1 auto;">
+                    <time datetime="2024-10-16" style="color: var(--text-muted);">
+                        16/10/2024 01:24
+                    </time>
+                    <div style="display: flex; gap: 15px; font-size: 1.3rem; color: var(--accent-color);">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <figure class="post-featured-image">
+                <img src="/static/uploads/Desenhos-da-Frozen-Maleta-de-Colorir-Princesas-da-Disney.jpg" alt="Desenhos da Frozen - Maleta de Colorir Princesas da Disney Anna e Elsa ♥">
+            </figure>
+        
+
+        
+
+        <div class="post-content">
+            <h1><a href="https://yamatocorp.com.br/category/desafios-e-jogos/">jogos</a> da Frozen: Maleta de Colorir Princesas da Disney Anna e Elsa</h1>
+<h2>Introdução</h2>
+<p>A Frozen é um dos filmes de maior sucesso da Disney, conquistando o coração de crianças e adultos em todo o mundo. As princesas Anna e Elsa se tornaram icônicas e queridas pelo público, o que fez com que várias empresas lançassem produtos relacionados ao filme. Um desses produtos são os jogos da Frozen, como a Maleta de Colorir das Princesas da Disney Anna e Elsa. Neste artigo, vamos explorar mais sobre esse divertido jogo e suas principais características.</p>
+<h2>O que é a Maleta de Colorir Princesas da Disney Anna e Elsa?</h2>
+<p>A Maleta de Colorir Princesas da Disney Anna e Elsa é um jogo dedicado aos fãs de Frozen que adoram colorir e se divertir com as personagens do filme. A maleta inclui várias folhas de desenhos para colorir com cenas das princesas Anna e Elsa, além de contar com lápis de cor e gizes de cera para dar vida às ilustrações. O jogo é ideal para crianças que gostam de soltar a imaginação e criar suas próprias versões das princesas mais famosas da Disney.</p>
+<h3>Principais Características da Maleta de Colorir:</h3>
+<ul>
+<li>Contém folhas de desenhos das princesas Anna e Elsa</li>
+<li>Inclui lápis de cor e gizes de cera</li>
+<li>Estimula a criatividade das crianças</li>
+<li>Ideal para presentear fãs de Frozen</li>
+<li>Facilita o desenvolvimento da coordenação motora</li>
+</ul>
+<h2>Como Jogar a Maleta de Colorir Princesas da Disney Anna e Elsa?</h2>
+<p>Para jogar a Maleta de Colorir Princesas da Disney Anna e Elsa, basta abrir a maleta, escolher um dos desenhos disponíveis e começar a colorir. As crianças podem utilizar os lápis de cor e gizes de cera para preencher as ilustrações, seguindo as cores originais das personagens ou criando novas combinações. Além disso, o jogo também pode ser uma ótima atividade em família, onde pais e filhos podem colorir juntos e se divertir.</p>
+<h3>Passo a Passo para Jogar:</h3>
+<ol>
+<li>Escolha um desenho das princesas Anna e Elsa</li>
+<li>Pegue os lápis de cor e gizes de cera</li>
+<li>Comece a colorir o desenho, seguindo sua imaginação</li>
+<li>Experimente novas combinações de cores</li>
+<li>Divirta-se criando suas próprias obras de <a href="https://yamatocorp.com.br/category/mercado-de-arte/">arte</a></li>
+</ol>
+<h2>Benefícios da Maleta de Colorir Princesas da Disney Anna e Elsa</h2>
+<p>Além de proporcionar momentos de diversão e entretenimento, a Maleta de Colorir Princesas da Disney Anna e Elsa traz diversos benefícios para as crianças. A atividade de colorir estimula a criatividade, ajuda no desenvolvimento da coordenação motora e promove a concentração e foco. Além disso, o jogo também pode ser uma forma de relaxamento e expressão das emoções, permitindo que as crianças se expressem de forma artística e lúdica.</p>
+<h2>Conclusão</h2>
+<p>A Maleta de Colorir Princesas da Disney Anna e Elsa é um jogo encantador que permite às crianças mergulharem no mundo mágico de Frozen e soltarem a imaginação. Com folhas de desenhos das princesas mais queridas da Disney e materiais de colorir, o jogo é ideal para estimular a criatividade, desenvolver a coordenação motora e proporcionar momentos de diversão em família. Se você é fã de Frozen e adora colorir, não deixe de experimentar a Maleta de Colorir Princesas da Disney Anna e Elsa e se encantar com essa incrível experiência artística.</p>
+<p>
+<iframe  width="580" height="385" src="https://www.youtube.com/embed/acAanPQJRVo?cc_load_policy=1&hl=pt" frameborder="0" allowfullscreen></iframe></p>
+<h2>Desenhos da Frozen: Diversão e Criatividade</h2>
+<p>Os desenhos da Frozen são uma excelente forma de estimular a criatividade das crianças, permitindo que elas explorem cores, formas e texturas enquanto se divertem com os personagens adorados do filme. A maleta de colorir Princesas da Disney Anna e Elsa é uma ótima opção para presentear os pequenos fãs da animação, oferecendo uma variedade de desenhos para colorir e personalizar.</p>
+</p>
+<h2>Benefícios do Desenho para as Crianças</h2>
+<p>Além de ser uma atividade recreativa, colorir desenhos da Frozen proporciona diversos benefícios para o desenvolvimento infantil. A prática ajuda a melhorar a coordenação motora, o foco e a concentração, além de estimular a imaginação e a expressão artística. Com a maleta de colorir Princesas da Disney Anna e Elsa, as crianças podem se entreter por horas, exercitando habilidades essenciais para o seu crescimento.</p>
+</p>
+<h2>A Importância do Entretenimento Educativo</h2>
+<p>Os jogos da Frozen Maleta de Colorir Princesas da Disney Anna e Elsa proporcionam um entretenimento educativo, pois incentivam as crianças a serem criativas, organizadas e dedicadas em suas atividades. Ao colorir os desenhos das princesas, os pequenos também aprendem a combinar cores, aprimorando suas habilidades artísticas. Dessa forma, é possível unir diversão e aprendizado de forma dinâmica e envolvente.</p>
+</p>
+<h3>Frozen Maleta de Colorir Princesas da Disney Anna e Elsa: Uma Combinação Perfeita de Diversão e Aprendizado</h3>
+<p>A maleta de colorir Princesas da Disney Anna e Elsa é uma excelente opção para proporcionar momentos de diversão e criatividade para as crianças, ao mesmo tempo em que contribui para o seu desenvolvimento cognitivo e motor. Os desenhos da Frozen oferecem uma forma encantadora de explorar o mundo mágico das princesas, incentivando a imaginação e a expressão artística dos pequenos. Com atividades como essas, é possível estimular o aprendizado de maneira lúdica e prazerosa, promovendo um crescimento saudável e equilibrado para os pequenos fãs da animação.</p>
+<p>
+Fonte: Texto gerado à partir do Vídeo do Canal <a href="https://www.youtube.com/watch?v=acAanPQJRVo">Graci KIDS</a></p>
+        </div>
+
+        
+    </article>
+</main>
+
+<footer class="gs-footer">
+    <div class="container">
+        <div class="gs-footer__social">
+            
+            
+            
+            
+        </div>
+        
+        <ul class="gs-footer__menu">
+            
+        </ul>
+        
+        
+        <div class="gs-footer__copyright">
+            Powered by Ankars
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Carrossel nativo simplificado (substituto das chamadas de script originais caso tenha blocos CMS)
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.addEventListener('click', function(e) {
+            const btnPrev = e.target.closest('.btn-carousel-prev');
+            if (btnPrev) {
+                const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+            const btnNext = e.target.closest('.btn-carousel-next');
+            if (btnNext) {
+                const wrapper = btnNext.closest('div[id^="carrossel-"]');
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+                return;
+            }
+        });
+    });
+</script>
+</body>
+</html>

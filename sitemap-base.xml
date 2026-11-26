@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://yamatocorp.com.br/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    
+    <url>
+        <loc>https://yamatocorp.com.br/contato/</loc>
+        <lastmod>2024-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/politica-de-privacidade/</loc>
+        <lastmod>2024-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/termos-de-uso/</loc>
+        <lastmod>2024-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/sobre/</loc>
+        <lastmod>2024-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+
+    
+
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/cultura-pop-e-manga/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/desafios-e-jogos/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/dicas/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/mercado-de-arte/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/presentes/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/public/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/tecnologia-e-ferramentas/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://yamatocorp.com.br/categoria/tutoriais-e-aulas/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+
+</urlset>
